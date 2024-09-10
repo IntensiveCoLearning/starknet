@@ -25,37 +25,6 @@
 
 Starknet 残酷共学是由 LXDAO、Starknet Astro、AAStar 联合发起，旨在帮助大家更好地了解、学习、部署 Starknet 网络并加以实战。
 
-## 共学内容
-
-
-主要参考
-Starknet Book
-cairo book
-# 工具准备（前面应该讲过了，略过，或者补充前面没讲的）
-
-asdf(可选) [Getting Started | asdf (asdf-vm.com)](https://asdf-vm.com/guide/getting-started.html#official-download)
-scarb [Scarb, the Cairo and StarkNet development toolchain (swmansion.com)](https://docs.swmansion.com/scarb/)
-starkli [Starknet 之书 - The Starknet Book](https://book.starknet.io/zh-cn/title-page.html)
-Katana [Katana: 本地节点 - The Starknet Book](https://book.starknet.io/zh-cn/ch02-05-katana.html)
-
-# 编写合约
-
-（看时间，可以copy也可以手写）
-有两个版本，用openzepplin的和自己写的，二选一
-
-- 用foundry来开发和测试
-# 部署合约
-
-- 部署到katana
-- 部署到测试网
-# 验证合约
-- sncast verify
-# 与合约交互
-- 区块浏览器
-- 前端
-# 前端代码（略）
-
-
 ## 共学时间
 
 - 报名截止时间：9.9 - 9.15
@@ -92,15 +61,15 @@ Katana [Katana: 本地节点 - The Starknet Book](https://book.starknet.io/zh-cn
     笔记内容
     <!-- Content_END -->
     ```
-    - 日期格式为 `### 2024.07.11`，请不要随意更改
+    - 日期格式为 `### 2024.09.18`，请不要随意更改
 
-## {本期残酷共学名字}打卡记录表
+## Starknet 残酷共学打卡记录表
 
 ✅ = Done ⭕️ = Missed ❌ = Failed
 
 <!-- START_COMMIT_TABLE -->
 
-| Name(GitHub ID) | 9.18 | 9.19 | 6.26 | 6.27 | 6.28 | 6.29 | 6.30 | 7.01 | 7.02 | 7.03 | 7.04 | 7.05 | 7.06 | 7.07 | 7.08 | 7.09 | 7.10 | 7.11 | 7.12 | 7.13 | 7.14 |
+| Name(GitHub ID) | 9.18 | 9.19 | 9.20 | 9.21 | 9.22 | 9.23 | 9.24 | 9.25 | 9.26 | 9.27 | 9.28 | 9.29 | 9.30 | 10.1 | 10.2 | 10.3 | 10.4 | 10.5 | 10.6 | 10.7 | 10.8 |
 | --------------- | ---- | ---- | ---- | ---- | ---- | ---- | ---- | ---- | ---- | ---- | ---- | ---- | ---- | ---- | ---- | ---- | ---- | ---- | ---- | ---- | ---- |
 |                 |      |      |      |      |      |      |      |      |      |      |      |      |      |      |      |      |      |      |      |      |      |
 |                 |      |      |      |      |      |      |      |      |      |      |      |      |      |      |      |      |      |      |      |      |      |
@@ -121,39 +90,3 @@ Katana [Katana: 本地节点 - The Starknet Book](https://book.starknet.io/zh-cn
 
 <!-- STATISTICALDATA_START -->
 <!-- STATISTICALDATA_END -->
-
-> 如果你是此次共学发起人，请进行以下操作进行自动化发放权限的设置，完成后请将这一部分内容从你的仓库中删掉。
-
-### 为您的组织 【残酷共学营】 创建具有邀请协作者权限的个人访问令牌
-
-要创建具有邀请协作者权限的个人访问令牌，请按照以下步骤操作：
-
-1. 导航到您的个人设置: 转到 https://github.com/settings/profile 并登录您的 GitHub 帐户。
-
-2. 访问个人访问令牌页面: 在左侧菜单中，单击 “开发者设置”，然后选择 “个人访问令牌”。
-
-3. 创建新令牌: 点击 “生成新令牌” 按钮。选择 classic 的
-
-4. 命名您的令牌: 在 “令牌名称” 字段中输入一个描述性名称，例如 `invite-collaborators`。
-
-5. 选择适当的范围: 在 “范围” 部分，选择授予您的令牌所需的权限。对于邀请协作者，您需要授予以下范围：
-
-- `repo:invite`：允许您的令牌创建存储库邀请。最好是给这个令牌赋予 repo 总权限
-- `admin:org` 权限的用户才能创建具有邀请协作者权限的个人访问令牌。
-
-6. 将令牌值添加到存储库 secret: 按照上述步骤将您的个人访问令牌值添加到您的存储库 secret 中，并将名称设置为 `PAT_WITH_INVITE_PERMISSIONS`。
-
-![image](https://github.com/user-attachments/assets/d7c06540-9076-4557-b911-e5e484a742bb)
-
-### 配置共学信息配置变量
-
-1. 配置这四个仓库变量(Repository variables)，注意不要添加**换行**，**空格**符号
-
-| Field Name  | Value                     | Comments                        |
-| ----------- | ------------------------- | ------------------------------- |
-| START_DATE  | 2024-06-24T00:00:00+00:00 | Start time                      |
-| END_DATE    | 2024-07-06T23:59:59+00:00 | End time                        |
-| FIELD_NAME  | EICL1st· Name             | Field name in the readme        |
-| FILE_SUFFIX | _EICL1st.md_              | Shared learning activity number |
-
-![image](https://github.com/user-attachments/assets/d5b6f504-9eea-4215-9848-056fc33f00f8)
