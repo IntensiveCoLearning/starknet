@@ -8,7 +8,7 @@ import logging
 
 # Constants
 START_DATE = datetime.fromisoformat(os.environ.get(
-    'START_DATE', '2024-09-09T00:00:00+00:00')).replace(tzinfo=pytz.UTC)
+    'START_DATE', '2024-09-18T00:00:00+00:00')).replace(tzinfo=pytz.UTC)
 END_DATE = datetime.fromisoformat(os.environ.get(
     'END_DATE', '2024-10-08T23:59:59+00:00')).replace(tzinfo=pytz.UTC)
 DEFAULT_TIMEZONE = 'Asia/Shanghai'
