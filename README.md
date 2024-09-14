@@ -88,7 +88,9 @@ Starknet 残酷共学是由 LXDAO、Starknet Astro、AAStar 联合发起，旨�
 | Hansen | | | | | | | | | | | | | |   |   |   |   |   |   |   |   |
 | Reign | | | | | | | | | | | | | |   |   |   |   |   |   |   |   |
 | qiaopengjun | | | | | | | | | | | | | |   |   |   |   |   |   |   |   |
+| Ric-Li-C | | | | | | | | | | | | | |   |   |   |   |   |   |   |   |
 <!-- END_COMMIT_TABLE -->
+
 
 
 
