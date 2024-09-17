@@ -41,6 +41,28 @@ Starknet 残酷共学是由 LXDAO、Starknet Astro、AAStar 联合发起，旨�
 - **报名时间**：Starknet 残酷共学报名从 2024 年 9 月 9日开始，截止 9 月 17 日晚 23:00（UTC+8），之后不再接受报名。⚠️ **报名成功即可开始课前的自主学习**
 - 正式共学时间：第 1 期从 2024 年 9 月 18 号到 10 月 8 号，共 21 天持续 3 周，建议每天投入尽可能多的时间来残酷学习。
 
+## 共学内容
+
+### 公开分享安排
+
+1. Starknet & Cairo 技术概述
+  时间：9.16 21:00
+  回放：[Zoom 回放](https://us06web.zoom.us/rec/share/1rLhweXvdHmArUfcsbQQO81MTPvKoskKKWIpmOgGfHp2moA9EqZNhcLJHgR4zpBw.aD140GjC1XKaqYLV?startTime=1726490441000)
+
+2. Starknet 工具链与开发环境
+   时间：9.23
+3. Scaffold-Stark 开发框架
+   时间：9.29
+4. Starknet NFT
+   时间：10.6
+
+### 参考资料
+**主要参考**
+
+- [Starknet Book](https://book.starknet.io/index.html)
+
+- [Cairo Book](https://book.cairo-lang.org/)
+
 ## 共学规则
 
 - 报名规则：请在报名截止时间前进行报名，共学一旦开始后，不得中途加入
