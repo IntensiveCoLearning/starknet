@@ -1,5 +1,5 @@
 ---
-timezone: Asia/Shanghai
+timezone: Pacific/Auckland
 ---
 
 > 请在上边的 timezone 添加你的当地时区，这会有助于你的打卡状态的自动化更新，如果没有添加，默认为北京时间 UTC+8 时区
@@ -51,28 +51,24 @@ timezone: Pacific/Auckland # 新西兰标准时间 (UTC+12)
 
 ---
 
-# aliyan404
+# River
 
 1. 自我介绍
-   web3 前端开发初学者
+
+   有3年全栈软件开发经验，熟悉Java、Go、JS、Rust、Solidity等开发语言。目前有考虑在Starknet上构建项目的想法，因此来学习Starknet相关开发知识。
 
 2. 你认为你会完成本次残酷学习吗？
-   会
+
+   一定会完成。
 
 ## Notes
 
 <!-- Content_START -->
 
-### 2024.09.18
+### 2024.07.11
 
-​	（1）了解Cario基本知识及语法，使用straklings练习基础（到Structs 3）。
+笔记内容
 
-​	（2）windows下安装Cario编译运行及测试环境：安装Scarb；安装Starknet Foundry；安装vscode插件。
-
-​	（3）拉取 https://github.com/starknet-edu/counter-workshop 教学代码进行基本合约编写。
-
-​	（4）跟练到step5
-
-![image-20240918194942603](C:\Users\14344\AppData\Roaming\Typora\typora-user-images\image-20240918194942603.png)
+### 2024.07.12
 
 <!-- Content_END -->

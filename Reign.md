@@ -59,10 +59,20 @@ timezone: Pacific/Auckland # 新西兰标准时间 (UTC+12)
 
 <!-- Content_START -->
 
-### 2024.07.11
+### 2024.09.18
 
-笔记内容
+**Historical Management of Societal Roles:** Traditionally, societal roles such as currency, property rights, and social status have been governed by centralized entities through protocols and registries, with their value dependent on widespread trust in their integrity.
 
+**Challenges of Centralization:** Centralized management often faces issues like corruption, conflicts of interest, and exclusion (Eli Ben-Sasson, Bareli, Brandt, Volokh, 2023).
+
+**Bitcoin's Integrity Web:** Bitcoin introduced a novel approach called an "integrity web," characterized by:<br>
+>>**Public Protocol:** It is governed by an openly described protocol.<br>
+>>**Inclusive Peer-to-Peer Network:** It operates over a broad and decentralized network.<br>
+>>**Fair Value Distribution:** It distributes value fairly to maintain societal consensus on its integrity.<br>
+  
+**Ethereum's Expansion:** Ethereum built upon Bitcoin's concept by extending the integrity web to include any function definable by computer programming, beyond just monetary functions.
+
+**Scalability vs. Decentralization:** Both Bitcoin and Ethereum struggle with balancing scalability and decentralization. They often prioritize inclusivity, allowing verification of the system's integrity by those with limited resources, which can affect their ability to meet global demand.
 ### 2024.07.12
 
 <!-- Content_END -->
