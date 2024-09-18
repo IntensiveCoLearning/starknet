@@ -65,7 +65,46 @@ timezone: Pacific/Auckland # 新西兰标准时间 (UTC+12)
 
 ### 2024.09.18
 
-笔记内容
+[The Starknet Book](https://book.starknet.io/index.html)
+
+Starkli Installation
+
+```shell
+curl https://get.starkli.sh | sh
+starkliup
+```
+
+Restart your terminal and confirm installation:
+
+```shell
+starkli --version
+```
+
+To upgrade Starkli, simply repeat the steps.
+
+<https://book.starknet.io/ch02-01-basic-installation.html>
+
+```shell
+scarb --version
+katana --version
+```
+
+实操
+
+```shell
+starknet on  main [!] via 🅒 base
+➜
+      scarb --version  # For Cairo code compilation
+    starkli --version  # To interact with Starknet
+    katana --version # To declare and deploy on local development
+
+scarb 2.6.5 (d49f54394 2024-06-11)
+cairo: 2.6.4 (https://crates.io/crates/cairo-lang-compiler/2.6.4)
+sierra: 1.5.0
+
+0.3.4 (9f6ea67)
+katana 0.7.4
+```
 
 ### 2024.09.19
 
