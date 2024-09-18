@@ -13,10 +13,12 @@ timezone: Asia/Shanghai
 
 <!-- Content_START -->
 
-### 2024.07.11
+### 2024.9.18
 
-笔记内容
+Starknet 概述
 
-### 2024.07.12
+#### 技术特点
+
+一个以太坊 Layer2, 准确来说是一个 Rollup
 
 <!-- Content_END -->
