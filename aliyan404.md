@@ -63,10 +63,16 @@ timezone: Pacific/Auckland # 新西兰标准时间 (UTC+12)
 
 <!-- Content_START -->
 
-### 2024.07.11
+### 2024.09.18
 
-笔记内容
+​	（1）了解Cario基本知识及语法，使用straklings练习基础（到Structs 3）。
 
-### 2024.07.12
+​	（2）windows下安装Cario编译运行及测试环境：安装Scarb；安装Starknet Foundry；安装vscode插件。
+
+​	（3）拉取 https://github.com/starknet-edu/counter-workshop 教学代码进行基本合约编写。
+
+​	（4）跟练到step5
+
+![image-20240918194942603](C:\Users\14344\AppData\Roaming\Typora\typora-user-images\image-20240918194942603.png)
 
 <!-- Content_END -->
