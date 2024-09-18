@@ -65,10 +65,99 @@ timezone: Pacific/Auckland # 新西兰标准时间 (UTC+12)
 
 <!-- Content_START -->
 
-### 2024.07.11
+### 2024.09.18
 
-笔记内容
+#### 1. 环境准备
 
-### 2024.07.12
+1. 编程语言
+
+   * `Cairo`: 通过下载`Scarb`即可安装使用
+
+2. 编码环境
+
+   * `asdf`: 是一个工具版本管理器，能以项目为维度管理多种编程语言的运行时版本
+
+   * `Scarb`: 是`Cairo`的包管理器，将`Cairo`编译器和`Cairo`语言服务器打包到了一起
+
+#### 2. 安装环境
+
+操作系统：MacOS Big Sur
+
+1. 安装`asdf`
+
+   1. 安装依赖`coreutils`、`curl`、`git`，如果已经安装过了就无需再安装
+
+      `brew install coreutils curl git`
+
+   2. 下载`asdf`
+
+      * 官方下载方式：
+
+        `git clone https://github.com/asdf-vm/asdf.git ~/.asdf --branch {version}`
+
+      * 使用`MacOS`自带工具下载：
+
+        `brew install asdf`
+
+   3. 安装`asdf`
+
+      这里使用的官方的下载方式
+
+      因此安装时需要在`~/.bash_profile`文件下添加以下配置：
+
+      ~~~shell
+      . "$HOME/.asdf/asdf.sh"
+      . "$HOME/.asdf/completions/asdf.bash"
+      ~~~
+
+   4. 验证
+
+      执行`source ~/.bash_profile `使上面的配置生效
+
+      执行`asdf --version`后，显示以下内容：
+
+      ~~~shell
+      v0.14.1-f00f759
+      ~~~
+
+2. 安装`Scarb`
+
+   **通过`asdf`安装**
+
+   1. 添加`scarb`插件
+
+      ~~~shell
+      asdf plugin add scarb
+      ~~~
+
+   2. 查看所有可安装的版本
+
+      ~~~shell
+      asdf list-all scarb
+      ~~~
+
+   3. 安装指定版本
+
+      ~~~shell
+      # 安装最新版本
+      asdf install scarb latest
+      
+      # 或者根据版本号安装
+      asdf install scarb 2.8.2
+      ~~~
+
+   4. 设置全局版本
+
+      ~~~shell
+      asdf global scarb latest
+      ~~~
+
+   **通过`curl`命令安装**
+
+   ~~~shell
+   curl --proto '=https' --tlsv1.2 -sSf https://docs.swmansion.com/scarb/install.sh | sh
+   ~~~
+
+   
 
 <!-- Content_END -->
