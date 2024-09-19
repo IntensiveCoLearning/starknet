@@ -17,6 +17,9 @@ timezone: Asia/Shanghai
 ### 2024.09.18
 
 ### 2024.09.19
+fork 了 counter-workshop 
+按步骤完成设置
+通过了 Step 1 的要求
 
 
 <!-- Content_END -->
