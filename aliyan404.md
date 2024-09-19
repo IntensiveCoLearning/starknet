@@ -63,10 +63,24 @@ timezone: Pacific/Auckland # 新西兰标准时间 (UTC+12)
 
 <!-- Content_START -->
 
-### 2024.07.11
+### 2024.09.18
 
-笔记内容
+ （1）了解 Cario 基本知识及语法，使用 Starklings 练习基础（到 Structs 3）。
 
-### 2024.07.12
+ （2）windows 下安装 Cario 编译运行及测试环境：安装 Scarb；安装 Starknet Foundry；安装 vscode 插件。
+
+ （3）拉取 https://github.com/starknet-edu/counter-workshop 教学代码进行基本合约编写。
+
+ （4）跟练到 step5
+
+![image-20240918194942603](C:\Users\14344\AppData\Roaming\Typora\typora-user-images\image-20240918194942603.png)
+
+
+
+### 2024.09.19
+
+ （1）Starkings 练习到 Dict 3
+
+ （2）counter-workshop 跟练到 step10
 
 <!-- Content_END -->

@@ -65,11 +65,64 @@ timezone: Pacific/Auckland # 新西兰标准时间 (UTC+12)
 
 ### 2024.09.18
 
-笔记内容
+[The Starknet Book](https://book.starknet.io/index.html)
+
+Starkli Installation
+
+```shell
+curl https://get.starkli.sh | sh
+starkliup
+```
+
+Restart your terminal and confirm installation:
+
+```shell
+starkli --version
+```
+
+To upgrade Starkli, simply repeat the steps.
+
+<https://book.starknet.io/ch02-01-basic-installation.html>
+
+```shell
+scarb --version
+katana --version
+```
+
+实操
+
+```shell
+starknet on  main [!] via 🅒 base
+➜
+      scarb --version  # For Cairo code compilation
+    starkli --version  # To interact with Starknet
+    katana --version # To declare and deploy on local development
+
+scarb 2.6.5 (d49f54394 2024-06-11)
+cairo: 2.6.4 (https://crates.io/crates/cairo-lang-compiler/2.6.4)
+sierra: 1.5.0
+
+0.3.4 (9f6ea67)
+katana 0.7.4
+```
 
 ### 2024.09.19
 
-笔记内容
+部署合约前一定要先部署钱包账户，否则会报错。
+<https://docs.starknet.io/quick-start/set-up-an-account/>
+
+ Cairo  在 `Starknet` 智能合约中怎么写？
+
+- 需要定义一个模块 mod
+- 需要使用属性 `#[starknet::contract]`
+- 这种编程类型被称为元编程
+- 属性是宏
+- 宏的作用是消耗你在宏下定义的代码，并转换为其它代码
+- 在这种情况下，转化是将模块转换为智能合约，所以这就是所谓的元编程
+- 元编程在Rust当中流行起来、同样也在 cairo 中使用，只是使用了不同的宏或属性
+- 当我们想要定义合约的存储时，实际上是定义了一个结构体，这个结构体必须叫 `Storage`
+- 这个存储必须使用属性   `#[storage]` 来注解
+- 在 trait 中必须为 self 定义类型
 
 ### 2024.09.20
 

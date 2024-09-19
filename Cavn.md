@@ -52,7 +52,8 @@ timezone: Pacific/Auckland # 新西兰标准时间 (UTC+12)
 # CavnHan
 
 1. 自我介绍
-    CavnHan 有Java、Gosolidity的开发经验，有几年web2开发经验，现在在学习web3，希望进入web3是世界谋求发展，并找到工作，做几个项目
+   CavnHan 有Java、Gosolidity的开发经验，有几年web2开发经验，现在在学习web3，希望进入web3是世界谋求发展，并找到工作，做几个项目
+
 
 2. 你认为你会完成本次残酷学习吗？
    我认为我会完成本次残酷学习，因为我有信心，并且我相信我能够克服任何困难。
@@ -101,6 +102,10 @@ timezone: Pacific/Auckland # 新西兰标准时间 (UTC+12)
 
    配置环境变量，系统属性环境变量，path添加安装路径，例：D:\Scarb\bin
 
+   验证：
+
+   ![](profile/屏幕截图 2024-09-18 195246.png)
+
    Linux:
 
    安装asdf:
@@ -110,18 +115,25 @@ timezone: Pacific/Auckland # 新西兰标准时间 (UTC+12)
    安装scarb:   
 
    ```bash
+
 asdf plugin add scarb
    ```
 
    安装vscode插件：
    
-   ![](Cavn/profile/)
+   ![](Cavn/profile/
+   asdf plugin add scarb
+   ```
+
+   
+
 
 3. 
 
 4. 
 
 ### 2024.09.19
+
 
 #### Cairo学习
 
