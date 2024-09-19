@@ -101,10 +101,6 @@ timezone: Pacific/Auckland # 新西兰标准时间 (UTC+12)
 
    配置环境变量，系统属性环境变量，path添加安装路径，例：D:\Scarb\bin
 
-   验证：
-
-   ![](profile/屏幕截图 2024-09-18 195246.png)
-
    Linux:
 
    安装asdf:
@@ -114,12 +110,16 @@ timezone: Pacific/Auckland # 新西兰标准时间 (UTC+12)
    安装scarb:   
 
    ```bash
-   asdf plugin add scarb
+asdf plugin add scarb
    ```
 
+   安装vscode插件：
    
+   ![](Cavn/profile/)
 
-   
+3. 
+
+4. 
 
 ### 2024.09.19
 
@@ -147,7 +147,9 @@ timezone: Pacific/Auckland # 新西兰标准时间 (UTC+12)
    scarb cairo-run
    ```
 
-   
+   ![](cavn/profile/屏幕截图 2024-09-19 215710.png)
+
+4. 变量和可变性
 
 ### 2024.09.20
 
