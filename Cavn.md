@@ -1,6 +1,5 @@
 ---
 timezone: Asia/Shanghai # 中国标准时间 (UTC+8)
-
 ---
 
 > 请在上边的 timezone 添加你的当地时区，这会有助于你的打卡状态的自动化更新，如果没有添加，默认为北京时间 UTC+8 时区
@@ -54,6 +53,7 @@ timezone: Pacific/Auckland # 新西兰标准时间 (UTC+12)
 
 1. 自我介绍
    CavnHan 有Java、Gosolidity的开发经验，有几年web2开发经验，现在在学习web3，希望进入web3是世界谋求发展，并找到工作，做几个项目
+
 
 2. 你认为你会完成本次残酷学习吗？
    我认为我会完成本次残酷学习，因为我有信心，并且我相信我能够克服任何困难。
@@ -115,10 +115,18 @@ timezone: Pacific/Auckland # 新西兰标准时间 (UTC+12)
    安装scarb:   
 
    ```bash
+
+asdf plugin add scarb
+   ```
+
+   安装vscode插件：
+   
+   ![](Cavn/profile/
    asdf plugin add scarb
    ```
 
    
+
 
 3. 
 
@@ -126,7 +134,34 @@ timezone: Pacific/Auckland # 新西兰标准时间 (UTC+12)
 
 ### 2024.09.19
 
-笔记内容
+
+#### Cairo学习
+
+1. 创建项目
+
+   ```bash
+   scarb new hello_world
+   ```
+
+   
+
+2. 构建项目
+
+   ```bash
+   scarb build
+   ```
+
+   
+
+3. 运行项目
+
+   ```bash
+   scarb cairo-run
+   ```
+
+   ![](cavn/profile/屏幕截图 2024-09-19 215710.png)
+
+4. 变量和可变性
 
 ### 2024.09.20
 
