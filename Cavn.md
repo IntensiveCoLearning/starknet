@@ -104,7 +104,7 @@ timezone: Pacific/Auckland # 新西兰标准时间 (UTC+12)
 
    验证：
 
-   ![](profile/屏幕截图 2024-09-18 195246.png)
+   ![](Cavn/profile/屏幕截图 2024-09-18 195246.png)
 
    Linux:
 
@@ -115,22 +115,12 @@ timezone: Pacific/Auckland # 新西兰标准时间 (UTC+12)
    安装scarb:   
 
    ```bash
-
-asdf plugin add scarb
-   ```
-
-   安装vscode插件：
-   
-   ![](Cavn/profile/
    asdf plugin add scarb
    ```
-
    
-
-
-3. 
-
-4. 
+   安装vscode插件：
+   
+   ![](cavn/profile/屏幕截图 2024-09-18 200049.png)
 
 ### 2024.09.19
 
