@@ -56,5 +56,28 @@ StarkNet's tokenomics .
 
 
 ### 2024.09.19
+# 快速上手Cairo
+- [Cairo 101](https://www.wtf.academy/en/docs/cairo-101/Constructor/)
+- [Starknet Remix](https://remix.ethereum.org/#lang=en&optimize=false&runs=200&evmVersion=null)
+
+**Cairo与Rust语法非常相似，但本人并不会rust**
+- mod 模块关键字创建合约
+- #[starknet::contract] 合约关键字，如果不声明，则不能部署在 Starknet 上
+- #[starknet::storage] 修饰符，用于声明合约存储变量
+- #[external(v0)] 外部函数声明
+- let y_u8: u8 = 2; 类型声明
+- local变量     // use `let` keywods to declare local variables 
+- 可变，不可变，Shadowing
+- self: @ContractState  view函数 self.var_name.read()
+- self: ContractState  使用self.var_name.write(new_value) 修改
+- use array::ArrayTrait; 数组
+- loop循环
+- Mapping/enum/Storage struct
+- :: 用于访问结构体、枚举或模块的关联函数、常量或类型或者指定泛型类型的具体参数 
+  
+  MyStruct::my_function(); 
+  
+  let map: LegacyMap<ContractAddress, u256> = LegacyMap::new(); // 指定 LegacyMap 的类型参数
+
 
 <!-- Content_END -->
