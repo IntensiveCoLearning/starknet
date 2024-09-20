@@ -126,7 +126,29 @@ katana 0.7.4
 
 ### 2024.09.20
 
-笔记内容
+protostar
+installed
+
+```shell
+curl -L https://raw.githubusercontent.com/software-mansion/protostar/master/install.sh | bash
+
+
+Detected your preferred shell is zsh and added Protostar to PATH. Run 'source /Users/qiaopengjun/.zshrc' or start a new terminal session to use Protostar.
+Then, run 'protostar --help'.
+
+
+source /Users/qiaopengjun/.zshrc
+protostar --help
+
+protostar -v
+Protostar version: 0.14.0
+Cairo-lang version: 0.11.2
+Cairo 1 compiler version: 1.1.0
+22:55:11 [INFO] Execution time: 1.78 s
+```
+
+<https://www.youtube.com/watch?v=30gk2v2gXyo&list=PLKhUlfTgU76DVMLsoGD8C30pCWh66peRC>
+<https://www.youtube.com/watch?v=NzXvkiSuwR0&list=PLthnZsjX96VjbSvvdKf1cyx5lBWU9mnJ7&index=3>
 
 ### 2024.09.21
 
