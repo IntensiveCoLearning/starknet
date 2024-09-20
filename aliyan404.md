@@ -83,4 +83,12 @@ timezone: Pacific/Auckland # 新西兰标准时间 (UTC+12)
 
  （2）counter-workshop 跟练到 step10
 
+
+
+### 2024.09.20
+
+ （1）Starkings 剩余部分中遇到不太理解的问题，遂查阅Cairo book，后续也准备从Cairo book继续深化学习。
+
+（2）couter-workshop剩余step也遇到同样问题，查阅Cairo book与ai解决部分。
+
 <!-- Content_END -->
