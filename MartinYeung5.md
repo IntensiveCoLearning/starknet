@@ -81,4 +81,15 @@ https://remix.ethereum.org/#activate=Starknet&lang=en&optimize=false&runs=200&ev
 1.1 過程中可能會出現問題，例如沒有成功獲得完整的sample project.
 解決 - 需要重新打開網址，再觀察是否成功獲得完整的sample project.
 
+### 2024.09.20
+實操:
+首先訪問一個以開啟動Starknet插件的Remix IDE.
+https://remix.ethereum.org/#activate=Starknet&lang=en&optimize=false&runs=200&evmVersion=null&version=soljson-v0.8.24+commit.e11b9ed9.js
+
+1. compile 成功
+![alt text](https://github.com/MartinYeung5/20240918_starknet/blob/main/20240919_1.png?raw=true)
+
+2. deploy 成功
+![alt text](https://github.com/MartinYeung5/20240918_starknet/blob/main/20240919_2.png?raw=true)
+
 <!-- Content_END -->
