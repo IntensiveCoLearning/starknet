@@ -21,4 +21,7 @@ Starknet 概述
 
 一个以太坊 Layer2, 准确来说是一个 Rollup
 
+### 2024.9.20
+
+[Starknet 之书 中文版](https://book.starknet.io/zh-cn/index.html)
 <!-- Content_END -->
