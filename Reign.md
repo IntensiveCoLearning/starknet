@@ -112,5 +112,21 @@ Starknet’s governance is overseen by the Starknet Foundation, focusing on comm
 **SNIP: Starknet Improvement Proposals**
 SNIPs (Starknet Improvement Proposals) are formal blueprints for enhancing the Starknet protocol. They outline technical specifications and rationale for proposed changes. SNIPs provide transparency and are vital for technical discussions and decision-making within the Starknet community.
 
+### 2024.09.20
+
+Starknet is a scalable layer 2 solution built on Ethereum, designed to improve transaction throughput while maintaining Ethereum's security. The guide you provided outlines how to deploy and interact with a Starknet smart contract using the Cairo programming language, which specializes in creating validity proofs.
+
+
+1. **Setting Up the Development Environment**:  
+   Developers are advised to use the Remix IDE with the Starknet plugin enabled. After installation, they need to select the appropriate Cairo version (v2.5.4 in this example) under the settings tab.
+
+2. **Modifying the Sample Project**:  
+   The tutorial begins with a preconfigured sample project. Developers need to check and update the Cairo version in the `Scarb.toml` file to ensure it matches the version being used (v2.5.4). 
+
+3. **Cleaning and Renaming the Project**:  
+   Rename the root directory to "ownable" and adjust the `Scarb.toml` file's `[package]` section to reflect this change. Certain files (`balance.cairo` and `forty_two.cairo`) must be deleted, and the `lib.cairo` file should be cleared to prepare for new content.
+
+These steps form the groundwork for deploying an example contract (`Ownable`) on Starknet. For full details on the process, visit the guide directly.
+
 
 <!-- Content_END -->
