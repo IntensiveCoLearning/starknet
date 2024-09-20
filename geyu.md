@@ -20,6 +20,8 @@ timezone: Asia/Shanghai
 fork 了 counter-workshop 
 按步骤完成设置
 通过了 Step 1 的要求
+### 2024.09.20
+通过了counter-workshop  Step 2 
 
 
 <!-- Content_END -->
