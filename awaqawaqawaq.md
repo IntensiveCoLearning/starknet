@@ -78,6 +78,41 @@ StarkNet's tokenomics .
   MyStruct::my_function(); 
   
   let map: LegacyMap<ContractAddress, u256> = LegacyMap::new(); // 指定 LegacyMap 的类型参数
+### 2024.09.19 
+- match模式匹配,类似switch
+- 模式绑定 Colors::Red(()) 括号内携带参数
+  ``` rust
+  // match pattern with data (Actions)
+  fn match_action(self: @ContractState, action: Actions) -> u128 {
+    match action {
+        Actions::Forward(dist) => {
+            dist//将匹配到的值绑定至dist
+        },
+        Actions::Stop(_) => {
+            0_u128
+        }
+    }
+  } 
+  ```
+
+- Option
+  调用Option::Some(value)创建一个Option::Some(value)的值，调用Option::None()创建一个Option::None的值 
+  ``` rust
+  let x: Option<u8> = Option::Some(5);
+  let y: Option<u8> = Option::None();
+  
+  ```
+  x y 为option类型，可使用match模式匹配
+  ``` rust  
+  match option{
+      Option::Some(value) => value,
+      Option::None(_) => 0_u8,
+  }
+  ```
+- Into\TryInto  类型转换
+- #[constructor] 在合约部署期间自动运行一次
+
+
 
 
 <!-- Content_END -->
