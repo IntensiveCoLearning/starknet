@@ -78,7 +78,7 @@ StarkNet's tokenomics .
   MyStruct::my_function(); 
   
   let map: LegacyMap<ContractAddress, u256> = LegacyMap::new(); // 指定 LegacyMap 的类型参数
-### 2024.09.19 
+### 2024.09.20
 - match模式匹配,类似switch
 - 模式绑定 Colors::Red(()) 括号内携带参数
   ``` rust
