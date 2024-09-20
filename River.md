@@ -200,4 +200,147 @@ const ONE_HOUR_IN_SECONDS: u32 = 3600;
 2. 在子作用域内修改“哨兵变量”时，应该避免使用变量遮蔽功能，防止引起逻辑bug。
 3. 如果使用变量遮蔽，禁止用不同类型的变量遮蔽前一个变量，如果实现同一个 `trait` 的可以例外。
 
+### 2024.09.20
+
+#### 数据类型
+
+在`Cairo`中，每个值都有明确的数据类型。
+
+* `Cairo`是一门**静态类型语言**，意味着在编译期就要知道所有变量的类型。
+
+
+
+##### 标量类型（Scalar Types）
+
+标量类型代表的是单个值，有三个主要的标量类型：`felts`、`integers`、`booleans`
+
+###### Felt Type
+
+如果变量或者参数没有被指定明确的类型，它的类型默认是一个`field element`，用关键字`felt252`表示。
+
+* `field element`：一个在$0 \leq x < P$范围内的整型。其中`P`是一个非常大的素数，目前等于$2^{251} + 17 * 2^{192} + 1$。如果数值在做加法、减法、或者乘法时，结果的大小超过这个范围，则对`P`进行模运算。
+
+* `integers`与`field elements`最重要的区别在于除法：`integers`的除法结果是向下取整，不一定满足$\frac{x}{y} * y == x$。而`field elements`总是满足这一等式。
+
+
+
+###### Integer Types
+
+ 在任何时候都建议使用`integer`类型，而不是`felt252`类型，因为`integer`类型有额外的安全特征来避免代码中潜在的安全隐患，比如上溢和下溢检查。
+
+
+
+###### Boolean Types
+
+使用`true`和`false`这两个字面量作为值，`Boolean`类型的大小为一个`felt252`。声明时使用关键字`bool`。
+
+
+
+###### String Types
+
+`Cairo`中没有为字符串提供原生类型。短字符串使用单引号表示，`ByteArray`字符串使用双引号表示
+
+* 短字符串：是`ASCII`码字符串。每个字符编码为**一个字节**。
+
+  `Cairo`中字符串的类型使用`felt252`，由于`felt252`有251比特大小，因此一个短字符串的大小不能超过**31个字符**（$31 * 8 = 248bi$t）
+
+* `ByteArray`字符串：使用`ByteArray`类型来处理超过短字符串大小的字符串和字节序列。
+
+  `ByteArray`的实现有两部分组成：
+
+  1. 一个`bytes31`个字的数组，其中每个字包含31个字节的数据
+  2. 一个待定的`felt252`的字作为尚未填满完整`bytes31`个字的字节缓冲区
+
+
+
+##### 复合类型（Compounds Types）
+
+###### 元组类型（Tuple Type）
+
+一个元组是将许多的多种类型的变量分组为一个复合类型的通用方法。元组的长度是固定的，一旦声明后，其大小无法增加或者减少。
+
+~~~rust
+fn main() {
+    let tup: (u32, u64, bool) = (10, 20, true);
+  
+  	let (x, y, z) = tup;
+
+    if y == 6 {
+        println!("y is 6!");
+    }
+  
+  	let (a, b): (felt252, felt252) = (2, 3);
+}
+~~~
+
+**Unit Type**
+
+一个单元类型只有一个值`()`。它表示一个没有元素的元组，它的大小总是0。在编译的代码中是不存在的。
+
+
+
+###### 大小固定的数组类型
+
+一个大小固定的数组是一个包含多个值的集合，其中每个值的类型必须相同。
+
+~~~rust
+fn main() {
+    let arr1: [u64; 5] = [1, 2, 3, 4, 5];
+  
+    // [3, 3, 3, 3, 3]
+  	let arr2 = [3; 5];
+}
+~~~
+
+
+
+##### 类型转换
+
+###### Into
+
+`Into`特征允许一个类型来定义如何转换为另一种类型。可以被用于确保能转换成功的类型转换。
+
+执行变量的`into()`方法进行类型转换。转换的变量的类型必须显式声明
+
+~~~rust
+fn main() {
+    let my_u8: u8 = 10;
+    let my_u16: u16 = my_u8.into();
+    let my_u32: u32 = my_u16.into();
+    let my_u64: u64 = my_u32.into();
+    let my_u128: u128 = my_u64.into();
+
+    let my_felt252 = 10;
+    // As a felt252 is smaller than a u256, we can use the into() method
+    let my_u256: u256 = my_felt252.into();
+    let my_other_felt252: felt252 = my_u8.into();
+    let my_third_felt252: felt252 = my_u16.into();
+}
+~~~
+
+
+
+###### TryInto
+
+功能与`Into`一样用于类型转换，不同的地方在于，`TryInto`在可能会转换失败的场景下使用，返回`Option<T>`，需要使用`unwrap()`方法获取转换后的变量值。
+
+~~~rust
+fn main() {
+    let my_u256: u256 = 10;
+
+    // Since a u256 might not fit in a felt252, we need to unwrap the Option<T> type
+    let my_felt252: felt252 = my_u256.try_into().unwrap();
+    let my_u128: u128 = my_felt252.try_into().unwrap();
+    let my_u64: u64 = my_u128.try_into().unwrap();
+    let my_u32: u32 = my_u64.try_into().unwrap();
+    let my_u16: u16 = my_u32.try_into().unwrap();
+    let my_u8: u8 = my_u16.try_into().unwrap();
+
+    let my_large_u16: u16 = 2048;
+    let my_large_u8: u8 = my_large_u16.try_into().unwrap(); // panics with 'Option::unwrap failed.'
+}
+~~~
+
+
+
 <!-- Content_END -->
