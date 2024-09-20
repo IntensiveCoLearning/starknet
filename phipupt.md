@@ -74,6 +74,9 @@ Starknet Foundry 使用：
 待续...
 
 
+### 2024.09.20
+今天阅读[官方文档](https://docs.starknet.io/)，整理了一些 Starknet 相关概念
+![starket-concepts](./starket-concepts.png)
 
 
 
