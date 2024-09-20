@@ -92,4 +92,14 @@ https://remix.ethereum.org/#activate=Starknet&lang=en&optimize=false&runs=200&ev
 2. deploy 成功
 ![alt text](https://github.com/MartinYeung5/20240918_starknet/blob/main/20240919_2.png?raw=true)
 
+### 2024.09.21
+實操:Remix IDE
+
+* interact 失敗 (Opera)
+![alt text](https://github.com/MartinYeung5/20240918_starknet/blob/main/20240921_interact_error_opera.png?raw=true)
+
+* interact 成功 (Opera)
+試過重新刪所有cache、緩沖等，再重新開機，最後成功
+![alt text](https://github.com/MartinYeung5/20240918_starknet/blob/main/20240921_interact_done.png?raw=true)
+
 <!-- Content_END -->
