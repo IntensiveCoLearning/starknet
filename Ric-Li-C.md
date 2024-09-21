@@ -20,8 +20,10 @@ Yes 75%
 
 观看在线视频 ~ Starknet 残酷共学分享 #1: Starknet & Cairo 技术概述
 
-### 2024.09.19
+### 2024.09.21
 
-### 2024.09.20
+学习 Starknet Book (https://book.starknet.io/index.html)
+
+### 2024.09.22
 
 <!-- Content_END -->
