@@ -12,6 +12,54 @@ timezone: Asia/Shanghai
 
 <!-- Content_START -->
 
+### 2024.09.21
+
+完成  starknet 的Getting Started   
+在Remix IDE 中 ，部署和调用了 合约 
+
+### 2024.09.19
+学习了 视频的内容  https://youtu.be/p6mPT2HOGKI
+
+交易生命周期：
+1. mempools -> sequencer -> prover  
+2. 提交到L1 层， 再做其他的vertifer
+
+智能合约：
+1. 类hash  
+   每个合约1个类， 一个hash  
+2. 编译过程
+   cairo  sierra  casm 
+3. 部署过程 
+   declare   ，deploy  ，调用 
+   
+账户抽象：
+1. 签名抽象 
+   会话密钥，社交回复，密钥替换
+2. 支付抽象
+   支持非eth gas
+   
+Multicall  多重调用
+1. 多个调用，一次打包  
+
+Cairo 合约审计
+1. 权限控制
+   replace_class_syscall ,为了升级方便，但要注意安全  
+   self.ownable.assert_only_owner();  账号检查
+2. Felt 算数
+   可能会越界   
+   30/9    uint 类型 。
+3. Tx.Origin 验证 
+   get_caller_address() 作为验证的对象 
+4. 隐私数据泄露
+    密码存在了合约上，是有问题 
+	采用hash 存储 。
+5. 重入漏洞
+   在调用外部合约之前，避免更新本合约的相关内部状态 。 
+6. 不安全的library call 
+7. 跨链
+   以太坊 和 starknet 的地址，位数不同 。 
+   跨链桥数据不一致性   
+
 ### 2024.09.18
 
 Starknet is a Layer-2 network that makes Ethereum transactions faster, cheaper, and more secure using zk-STARKs technology. 

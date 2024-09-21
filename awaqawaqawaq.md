@@ -56,5 +56,63 @@ StarkNet's tokenomics .
 
 
 ### 2024.09.19
+# 快速上手Cairo
+- [Cairo 101](https://www.wtf.academy/en/docs/cairo-101/Constructor/)
+- [Starknet Remix](https://remix.ethereum.org/#lang=en&optimize=false&runs=200&evmVersion=null)
+
+**Cairo与Rust语法非常相似，但本人并不会rust**
+- mod 模块关键字创建合约
+- #[starknet::contract] 合约关键字，如果不声明，则不能部署在 Starknet 上
+- #[starknet::storage] 修饰符，用于声明合约存储变量
+- #[external(v0)] 外部函数声明
+- let y_u8: u8 = 2; 类型声明
+- local变量     // use `let` keywods to declare local variables 
+- 可变，不可变，Shadowing
+- self: @ContractState  view函数 self.var_name.read()
+- self: ContractState  使用self.var_name.write(new_value) 修改
+- use array::ArrayTrait; 数组
+- loop循环
+- Mapping/enum/Storage struct
+- :: 用于访问结构体、枚举或模块的关联函数、常量或类型或者指定泛型类型的具体参数 
+  
+  MyStruct::my_function(); 
+  
+  let map: LegacyMap<ContractAddress, u256> = LegacyMap::new(); // 指定 LegacyMap 的类型参数
+### 2024.09.20
+- match模式匹配,类似switch
+- 模式绑定 Colors::Red(()) 括号内携带参数
+  ``` rust
+  // match pattern with data (Actions)
+  fn match_action(self: @ContractState, action: Actions) -> u128 {
+    match action {
+        Actions::Forward(dist) => {
+            dist//将匹配到的值绑定至dist
+        },
+        Actions::Stop(_) => {
+            0_u128
+        }
+    }
+  } 
+  ```
+
+- Option
+  调用Option::Some(value)创建一个Option::Some(value)的值，调用Option::None()创建一个Option::None的值 
+  ``` rust
+  let x: Option<u8> = Option::Some(5);
+  let y: Option<u8> = Option::None();
+  
+  ```
+  x y 为option类型，可使用match模式匹配
+  ``` rust  
+  match option{
+      Option::Some(value) => value,
+      Option::None(_) => 0_u8,
+  }
+  ```
+- Into\TryInto  类型转换
+- #[constructor] 在合约部署期间自动运行一次
+
+
+
 
 <!-- Content_END -->
