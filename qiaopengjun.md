@@ -152,7 +152,17 @@ Cairo 1 compiler version: 1.1.0
 
 ### 2024.09.21
 
-笔记内容
+remix 第一次部署调用合约成功，第二次无法点击 Declare， 调用合约失败， 换了浏览器可以成功。
+猜测原因是缓存问题， 清理缓存后可以成功。
+<https://www.youtube.com/watch?v=qrnbf2Ji-oU>
+
+STARKWARE ：是位于以色列的公司，开发了 Starknet，包括 Starknet 相关的技术，目前负责构建和发展， Starknet 的核心团队是 Starkware 的员工。 Starkware 的创始人及现任的CEO 发明了 Starks ZK
+
+的证明，这种证明推动了所有这些创新。 STARKWARE 做的第一个 ZKSTARKS 的实现被称为 STARKEx，STARKEx 是一个需要授权的系统，所以你不能直接使用STARKEx，你需要与 STARKWARE 签订合同协议才能使用它。STARKEx 有一些固定的功能，比如说你可以交易代币，做期货合约、资产交易等待。例如：DYDXVERSION3 实际就是运行在 STARKEx 上的。许多应用程序幕后都是使用的是STARKEx。 这是 STARKWARE 开发的第一个产品。
+
+实际上Cairo 就是为 STARKEx 开发的。最初是作为一种内部工具，以便更容易提高系统的能力，一段时间以后，它们希望创建一种系统，使用相同的技术、相同类型的零知识证明，使得人们可以自己使用 Cairo 创建智能合约，并随时部署它们，无须任何许可。这就是 STARKNET。因此 STARKNET是一个无需许可的系统。是一个二层汇总。使用以太坊作为安全层，你可以通过智能合约部署你的代码逻辑，无需得到 STARKWARE 的任何许可。
+
+STARKNET Foundation ： STARKNET 基金会是成立大约一年的一个非营利组织。目标是帮助发展 STARKNET 生态系统，或者与一些开发者达成协议来创建一些应用，或者帮助分散系统的治理。
 
 ### 2024.09.22
 
