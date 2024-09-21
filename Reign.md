@@ -61,6 +61,8 @@ timezone: Pacific/Auckland # 新西兰标准时间 (UTC+12)
 
 ### 2024.09.18
 
+### Introduction_1
+
 **Historical Management of Societal Roles:** Traditionally, societal roles such as currency, property rights, and social status have been governed by centralized entities through protocols and registries, with their value dependent on widespread trust in their integrity.
 
 **Challenges of Centralization:** Centralized management often faces issues like corruption, conflicts of interest, and exclusion (Eli Ben-Sasson, Bareli, Brandt, Volokh, 2023).
@@ -73,7 +75,10 @@ timezone: Pacific/Auckland # 新西兰标准时间 (UTC+12)
 **Ethereum's Expansion:** Ethereum built upon Bitcoin's concept by extending the integrity web to include any function definable by computer programming, beyond just monetary functions.
 
 **Scalability vs. Decentralization:** Both Bitcoin and Ethereum struggle with balancing scalability and decentralization. They often prioritize inclusivity, allowing verification of the system's integrity by those with limited resources, which can affect their ability to meet global demand.
+
 ### 2024.09.19
+
+### Introduction_2
 
 **Blockchain Definition**
 In the rapidly evolving technological landscape, defining "Blockchain" is complex, but Eli Ben-Sasson (2023) highlights three key properties:
@@ -114,6 +119,7 @@ SNIPs (Starknet Improvement Proposals) are formal blueprints for enhancing the S
 
 ### 2024.09.20
 
+### 1.Getting Strated
 Starknet is a scalable layer 2 solution built on Ethereum, designed to improve transaction throughput while maintaining Ethereum's security. The guide you provided outlines how to deploy and interact with a Starknet smart contract using the Cairo programming language, which specializes in creating validity proofs.
 
 
@@ -127,6 +133,31 @@ Starknet is a scalable layer 2 solution built on Ethereum, designed to improve t
    Rename the root directory to "ownable" and adjust the `Scarb.toml` file's `[package]` section to reflect this change. Certain files (`balance.cairo` and `forty_two.cairo`) must be deleted, and the `lib.cairo` file should be cleared to prepare for new content.
 
 These steps form the groundwork for deploying an example contract (`Ownable`) on Starknet. For full details on the process, visit the guide directly.
+
+### 2024.09.21
+
+### 2.Straknet Tooling
+
+### Suggested Learning Path:
+1. **Cairo Programming Language**: It is essential to have a basic understanding of Cairo. Reading chapters 1-6 of the *Cairo Book* (covering topics such as Getting Started, Enums, and Pattern Matching) is advised, followed by the *Starknet Smart Contracts* chapter. This will help developers understand the examples in this chapter.
+
+2. **Starknet Development Tools**:
+   - Starknet supports multiple programming languages for development, such as **JavaScript**, **Rust**, and **Python**.
+   - Front-end developers can use **Starknet.js** with **React**, while **Rust** and **Python** are ideal for back-end development.
+   - The **Starknet SDK** is available for various languages to facilitate dApp creation.
+
+3. **Tools and Frameworks**:
+   - **Scarb**: A package manager for compiling smart contracts.
+   - **Starkli**: A CLI tool for interacting with the Starknet network.
+   - **Starknet Foundry**: A framework for testing smart contracts.
+   - **Katana**: Creates a local test node for development and testing.
+
+4. **SDKs and Front-end Development**:
+   - **Starknet.js**: Used for building front-end applications with React.
+   - **Starknet_py** and **Starknet_rs**: SDKs for interfacing with Starknet using Python and Rust.
+
+5. **Testing**:
+   - **Starknet-Foundry** and **Devnet** provide tools for testing smart contracts effectively in a local environment.
 
 
 <!-- Content_END -->
