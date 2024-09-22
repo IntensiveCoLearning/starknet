@@ -166,7 +166,61 @@ STARKNET Foundation ： STARKNET 基金会是成立大约一年的一个非营�
 
 ### 2024.09.22
 
-笔记内容
+cairo 特征
+创建可证明的程序 计算的完整性
+在 CairoVM 上运行
+类似 Rust 的语法
+相似的所有权模型
+强类型 traits macros
+不专为智能合约设计
+不需要了解 ZK
+强类型的语言
+通用语言
+目前的主要用例是为 STARKNET 创建智能合约
+利用了零知识证明
+Cairo 就是一种高级语言、强类型、非常灵活、非常类似于 Rust，但是并不完全相同
+
+Cairo 在 Starknet 智能合约中怎么写？
+需要定义一个模块 mod
+需要使用属性 #[starknet::contract]
+这种编程类型被称为元编程
+属性是宏
+宏的作用是消耗你在宏下定义的代码，并转换为其它代码
+在这种情况下，转化是将模块转换为智能合约，所以这就是所谓的元编程
+元编程在Rust当中流行起来、同样也在 cairo 中使用，只是使用了不同的宏或属性
+当我们想要定义合约的存储时，实际上是定义了一个结构体，这个结构体必须叫 Storage
+这个存储必须使用属性 #[storage] 来注解
+在 trait 中必须为 self 定义类型
+
+```rust
+#[starknet::interface]
+trait ISimpleStorage<TContractState> {
+  // 当你有一个方法实际上想修改智能合约内部状态时，你需要传递智能合约的状态，self 参数作为引用 ref
+  fn set(ref self: TContractState, x: u128);
+  // 如果从状态中只读而不修改 可以请求状态作为快照作为传递  快照使用 @ 符号
+  fn get(self: @TContractState) -> u128;
+}
+
+#[starknet::contract]
+mod SimpleStorage {
+  #[storage]
+  struct Storage {
+    stored_data: u128
+  }
+  
+  // 以下实现将成为智能合约的 ABI ，所以这是任何人都可以调用的智能合约的公共接口
+  #[abi(embed_v0)]
+  impl SimpleStorage of super::ISimpleStorage<ContractState> {
+    fn set(ref self: ContractState, x: u128) {
+      self.stored_data.write(x);
+    }
+    
+    fn get(self: @ContractState) -> u128 {
+      self.stored_data.read()
+    }
+  }
+}
+```
 
 ### 2024.09.23
 
