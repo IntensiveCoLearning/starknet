@@ -136,7 +136,7 @@ These steps form the groundwork for deploying an example contract (`Ownable`) on
 
 ### 2024.09.21
 
-### 2.Straknet Tooling
+### 2. Straknet Tooling
 
 ### Suggested Learning Path:
 1. **Cairo Programming Language**: It is essential to have a basic understanding of Cairo. Reading chapters 1-6 of the *Cairo Book* (covering topics such as Getting Started, Enums, and Pattern Matching) is advised, followed by the *Starknet Smart Contracts* chapter. This will help developers understand the examples in this chapter.
@@ -160,7 +160,7 @@ These steps form the groundwork for deploying an example contract (`Ownable`) on
    - **Starknet-Foundry** and **Devnet** provide tools for testing smart contracts effectively in a local environment.
 
 ### 2024.09.22
-
+### 2.1 Basic Installation
 This chapter focuses on setting up the essential tools for Starknet development, including Starkli, Scarb, and Katana.
 
 #### Key Tools:
@@ -199,13 +199,9 @@ dojoup
 ~~~
 katana --version
 ~~~
-These tools enable developers to efficiently build and test smart contracts locally before deploying to Starknet. For further support, users are encouraged to visit GitHub Issues or contact the development community.
 
 
 
 
 
-
-
-You’ve hit the Free plan limit for GPT-4o.
 <!-- Content_END -->
