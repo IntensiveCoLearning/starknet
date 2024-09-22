@@ -11,6 +11,9 @@ timezone: Asia/Shanghai
 ## Notes
 
 <!-- Content_START -->
+### 2024.09.22
+今天 大概看了一下  ， cairo  的语法，   
+安装了 scarb 包管理器  
 
 ### 2024.09.21
 
