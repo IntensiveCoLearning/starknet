@@ -12,6 +12,11 @@ timezone: Asia/Shanghai
 
 <!-- Content_START -->
 
+### 2024.09.21
+
+完成  starknet 的Getting Started   
+在Remix IDE 中 ，部署和调用了 合约 
+
 ### 2024.09.19
 学习了 视频的内容  https://youtu.be/p6mPT2HOGKI
 

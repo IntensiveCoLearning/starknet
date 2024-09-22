@@ -101,14 +101,29 @@ timezone: Pacific/Auckland # 新西兰标准时间 (UTC+12)
 
    3. 安装`asdf`
 
-      这里使用的官方的下载方式
+      * 使用的官方的下载方式
 
-      因此安装时需要在`~/.bash_profile`文件下添加以下配置：
+        安装时需要在`~/.bash_profile`文件下添加以下配置：
 
-      ~~~shell
-      . "$HOME/.asdf/asdf.sh"
-      . "$HOME/.asdf/completions/asdf.bash"
-      ~~~
+        ~~~shell
+        . "$HOME/.asdf/asdf.sh"
+        . "$HOME/.asdf/completions/asdf.bash"
+        ~~~
+
+      * 使用`brew`方式安装
+
+        安装完成后会提示设置环境变量
+
+        ~~~shell
+        To use asdf, add the following line (or equivalent) to your shell profile
+        e.g. ~/.profile or ~/.zshrc:
+          . /opt/homebrew/opt/asdf/libexec/asdf.sh
+        e.g. ~/.config/fish/config.fish
+          source /opt/homebrew/opt/asdf/libexec/asdf.fish
+        Restart your terminal for the settings to take effect.
+        ~~~
+
+        
 
    4. 验证
 
@@ -338,6 +353,82 @@ fn main() {
 
     let my_large_u16: u16 = 2048;
     let my_large_u8: u8 = my_large_u16.try_into().unwrap(); // panics with 'Option::unwrap failed.'
+}
+~~~
+
+
+
+### 2024.09.21
+
+#### 函数
+
+使用关键字`fn`声明一个函数。
+
+函数的名称格式通常是下划线格式。如：
+
+~~~rust
+fn another_function() {
+    println!("Another function.");
+}
+~~~
+
+#### 参数
+
+参数是函数签名的一部分。在函数签名中，必须声明参数的类型。
+
+~~~rust
+fn print_labeled_measurement(value: u128, unit_label: ByteArray) {
+    println!("The measurement is: {value}{unit_label}");
+}
+~~~
+
+#### 命名参数（Named Parameters）
+
+在`Cairo`中，当调用函数时，可以指定参数的名称。可以让函数调用有可读性和自描述性。
+
+语法：`parameter_name: value`，如果传递的变量与参数的名称一样时，可以简写为`:parameter_name`。
+
+~~~rust
+fn foo(x: u8, y: u8) {}
+
+fn main() {
+    let first_arg = 3;
+    let second_arg = 4;
+    foo(x: first_arg, y: second_arg);
+    let x = 1;
+    let y = 2;
+    foo(:x, :y)
+}
+~~~
+
+
+
+#### 语句与表达式
+
+* 语句：执行一些操作的指令，没有返回值
+
+  ~~~rust
+  let y = 6;
+  ~~~
+
+* 表达式：进行求值并得到结果值。可以是一行代码，也可以是代码块。**末尾没有分号**。
+
+  ~~~rust
+  let y = {
+    let x = 3;
+    x + 1
+  };
+  ~~~
+
+
+
+#### 方法返回值
+
+在`Cairo`中，在函数签名后面的`->`之后来声明返回值类型
+
+~~~rust
+fn plus_one(x: u32) -> u32 {
+    x + 1
 }
 ~~~
 

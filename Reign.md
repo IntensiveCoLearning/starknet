@@ -136,7 +136,7 @@ These steps form the groundwork for deploying an example contract (`Ownable`) on
 
 ### 2024.09.21
 
-### 2.Straknet Tooling
+### 2. Straknet Tooling
 
 ### Suggested Learning Path:
 1. **Cairo Programming Language**: It is essential to have a basic understanding of Cairo. Reading chapters 1-6 of the *Cairo Book* (covering topics such as Getting Started, Enums, and Pattern Matching) is advised, followed by the *Starknet Smart Contracts* chapter. This will help developers understand the examples in this chapter.
@@ -159,5 +159,46 @@ These steps form the groundwork for deploying an example contract (`Ownable`) on
 5. **Testing**:
    - **Starknet-Foundry** and **Devnet** provide tools for testing smart contracts effectively in a local environment.
 
+### 2024.09.22
+
+#### 2.1 Basic Installation
+This chapter focuses on setting up the essential tools for Starknet development, including Starkli, Scarb, and Katana.
+
+#### Key Tools:
+1. **Starkli:** A command-line tool for interacting with the Starknet network.
+
+- Install via:
+~~~
+curl https://get.starkli.sh | sh
+starkliup
+~~~
+- Verify installation with:
+~~~
+starkli --version
+~~~
+2. **Scarb:** Cairo's package manager, similar to Rust’s Cargo, used to compile Cairo code to Sierra (an intermediate language between Cairo and CASM).
+
+- Requirements: Git must be installed and added to the system's PATH.
+- Recommended installation method: Use asdf to manage Scarb versions.
+~~~
+asdf plugin add scarb
+asdf install scarb 2.5.4
+asdf global scarb 2.5.4
+~~~
+- Alternatively, install Scarb via the official script:
+~~~
+curl --proto '=https' --tlsv1.2 -sSf https://docs.swmansion.com/scarb/install.sh | sh
+~~~
+3. **Katana:** A local Starknet node for development.
+
+- Install using the dojoup installer:
+~~~
+curl -L https://install.dojoengine.org | bash
+dojoup
+~~~
+- Verify installation with:
+~~~
+katana --version
+~~~
 
 <!-- Content_END -->

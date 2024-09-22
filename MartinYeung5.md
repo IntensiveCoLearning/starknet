@@ -102,4 +102,13 @@ https://remix.ethereum.org/#activate=Starknet&lang=en&optimize=false&runs=200&ev
 試過重新刪所有cache、緩沖等，再重新開機，最後成功
 ![alt text](https://github.com/MartinYeung5/20240918_starknet/blob/main/20240921_interact_done.png?raw=true)
 
+### 2024.09.22
+實操:Remix IDE
+* 心得
+當透過官方提供的link進行時，會出現如下圖的popup提示: (需要下載整個repo, 要按6次"Accept", 否則就不能獲得完整repo)
+![alt text](https://github.com/MartinYeung5/20240918_starknet/blob/main/20240922_remix_start_1.png?raw=true)
+另外在deploy時也會出現2次popup，要求你去"Accept"。
+最後，在按"Accept"時也要快，如果錯過了，就要刪緩沖的所有紀錄，重新開始，有需要時要重開機。
+
+
 <!-- Content_END -->
