@@ -161,7 +161,7 @@ These steps form the groundwork for deploying an example contract (`Ownable`) on
 
 ### 2024.09.22
 
-#### 2.1 Basic Installation
+#### Basic Installation
 This chapter focuses on setting up the essential tools for Starknet development, including Starkli, Scarb, and Katana.
 
 #### Key Tools:
