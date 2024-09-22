@@ -26,4 +26,6 @@ Yes 75%
 
 ### 2024.09.22
 
+学习 Starknet Book (Continued)
+
 <!-- Content_END -->
