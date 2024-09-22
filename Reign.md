@@ -160,6 +160,7 @@ These steps form the groundwork for deploying an example contract (`Ownable`) on
    - **Starknet-Foundry** and **Devnet** provide tools for testing smart contracts effectively in a local environment.
 
 ### 2024.09.22
+
 ### 2.1 Basic Installation
 This chapter focuses on setting up the essential tools for Starknet development, including Starkli, Scarb, and Katana.
 
