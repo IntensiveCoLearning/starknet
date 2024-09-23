@@ -96,4 +96,11 @@ timezone: Pacific/Auckland # 新西兰标准时间 (UTC+12)
 ### 2024.09.22
 
 ​	完成edu-couter-workshop。
+
+
+
+### 2024.09.23
+
+​	阅读Cairo book第四章，深入理解所有权，快照，引用等概念。完成相关测试，并作笔记。
+
 <!-- Content_END -->
