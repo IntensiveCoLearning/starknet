@@ -11,6 +11,11 @@ timezone: Asia/Shanghai
 ## Notes
 
 <!-- Content_START -->
+### 2024.09.23
+听 线上的课程：starknet 工具链与开发环境  
+下一步目标，做一个合约，部署在测试链上。 
+
+
 ### 2024.09.22
 今天 大概看了一下  ， cairo  的语法，   
 安装了 scarb 包管理器  
