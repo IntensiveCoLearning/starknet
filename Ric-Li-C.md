@@ -28,4 +28,8 @@ Yes 75%
 
 学习 Starknet Book (Continued)
 
+### 2024.09.23
+
+参加 Starknet 残酷共学分享会 #2： Starknet 工具链与开发环境
+
 <!-- Content_END -->
