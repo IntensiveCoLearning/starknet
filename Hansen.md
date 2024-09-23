@@ -15,6 +15,13 @@ timezone: Asia/Shanghai
 听 线上的课程：starknet 工具链与开发环境  
 下一步目标，做一个合约，部署在测试链上。 
 
+- https://voyager.online/   stark  的浏览器
+- 部署合约，可以用 starkli  命令行  ，也可以用js-sdk 方式 ， 后者更简单
+- address  是 account 的一个属性， 通过address 可以确定你的账号信息。 在部署合约的时候， 只有address 是不够的。
+- 用“人”钱包，部署合约时， 先要 将账号 部署，
+
+
+
 
 ### 2024.09.22
 今天 大概看了一下  ， cairo  的语法，   
