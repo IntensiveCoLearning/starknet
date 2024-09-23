@@ -110,7 +110,7 @@ https://remix.ethereum.org/#activate=Starknet&lang=en&optimize=false&runs=200&ev
 另外在deploy時也會出現2次popup，要求你去"Accept"。
 最後，在按"Accept"時也要快，如果錯過了，就要刪緩沖的所有紀錄，重新開始，有需要時要重開機。
 
-## 2024.09.23
+### 2024.09.23
 執行安裝工具的部分
 https://asdf-vm.com/guide/getting-started.html
 我的本機環境:
