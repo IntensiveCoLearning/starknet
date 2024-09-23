@@ -24,4 +24,8 @@ Starknet 概述
 ### 2024.9.20
 
 [Starknet 之书 中文版](https://book.starknet.io/zh-cn/index.html)
+
+### 2024.9.22
+
+还没有进度
 <!-- Content_END -->

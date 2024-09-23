@@ -110,5 +110,24 @@ https://remix.ethereum.org/#activate=Starknet&lang=en&optimize=false&runs=200&ev
 另外在deploy時也會出現2次popup，要求你去"Accept"。
 最後，在按"Accept"時也要快，如果錯過了，就要刪緩沖的所有紀錄，重新開始，有需要時要重開機。
 
+### 2024.09.23
+執行安裝工具的部分
+https://asdf-vm.com/guide/getting-started.html
+我的本機環境:
+* WSL Ubuntu 24.04 LTS
+
+開始安裝相關工具:
+* apt install curl git
+* git clone https://github.com/asdf-vm/asdf.git ~/.asdf --branch v0.14.1
+* open .bashrc (at root / ~) in Vscode
+update .bashrc (只要加入以下2句)
+* . "$HOME/.asdf/asdf.sh"
+* . "$HOME/.asdf/completions/asdf.bash"
+然後執行
+* code ~/.bashrc
+測試一下
+* asdf
+成功安裝asdf
+
 
 <!-- Content_END -->
