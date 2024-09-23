@@ -493,6 +493,181 @@ fn plus_one(x: u32) -> u32 {
   }
   ~~~
 
+### 2024.09.23
+
+#### 流程控制
+
+##### if表达式
+
+###### 常规写法
+
+~~~rust
+fn main() {
+    let number = 3;
+
+    if number == 12 {
+        println!("number is 12");
+    } else if number == 3 {
+        println!("number is 3");
+    } else if number - 2 == 1 {
+        println!("number minus 2 is 1");
+    } else {
+        println!("number not found");
+    }
+}
+~~~
+
+###### 在let语句中使用if
+
+~~~rust
+fn main() {
+    let condition = true;
+    let number = if condition {
+        5
+    } else {
+        6
+    };
+}
+~~~
+
+##### 循环控制
+
+ 在`Cairo`中有三种Loop循环类型：`loop`、`while`、`for`
+
+###### `loop`
+
+* 常规
+
+  ~~~rust
+  fn main() {
+      loop {
+          println!("again!");
+      }
+  }
+  ~~~
+
+* 带有`break`关键字
+
+  ~~~rust
+  fn main() {
+      let mut i: usize = 0;
+      loop {
+          if i > 10 {
+              break;
+          }
+          println!("i = {}", i);
+          i += 1;
+      }
+  }
+  ~~~
+
+* 带有`continue`关键字
+
+  ~~~rust
+  fn main() {
+      let mut i: usize = 0;
+      loop {
+          if i > 10 {
+              break;
+          }
+          if i == 5 {
+              i += 1;
+              continue;
+          }
+          println!("i = {}", i);
+          i += 1;
+      }
+  }
+  ~~~
+
+* 带有返回值
+
+  ~~~rust
+  fn main() {
+      let mut counter = 0;
   
+      let result = loop {
+          if counter == 10 {
+              break counter * 2;
+          }
+          counter += 1;
+      };
+  
+      println!("The result is {}", result);
+  }
+  ~~~
+
+###### `while`
+
+~~~rust
+fn main() {
+    let mut number = 3;
+
+    while number != 0 {
+        println!("{number}!");
+        number -= 1;
+    };
+
+    println!("LIFTOFF!!!");
+}
+~~~
+
+###### `for`
+
+~~~rust
+fn main() {
+    let a = [10, 20, 30, 40, 50].span();
+
+    for element in a {
+        println!("the value is: {element}");
+    }
+  
+  	for number in 1..4_u8 {
+        println!("{number}!");
+    };
+}
+~~~
+
+###### Loops与递归
+
+Loops和递归是两种重复执行代码的方式。
+
+* `loop`关键字用来创建一个无限循环，同时使用`break`关键字退出循环。
+
+  ~~~rust
+  fn main() -> felt252 {
+      let mut x: felt252 = 0;
+      loop {
+          if x == 2 {
+              break;
+          } else {
+              x += 1;
+          }
+      };
+      x
+  }
+  ~~~
+
+* 递归通过在函数内部调用自身来实现
+
+  ~~~rust
+  fn main() -> felt252 {
+      recursive_function(0)
+  }
+  
+  fn recursive_function(mut x: felt252) -> felt252 {
+      if x == 2 {
+          x
+      } else {
+          recursive_function(x + 1)
+      }
+  }
+  ~~~
+
+在`Cairo`中，Loops与递归不仅仅在概念上是等价的，同时通过编译在底层表达上也类似。
+
+
+
+
 
 <!-- Content_END -->
