@@ -117,17 +117,60 @@ https://asdf-vm.com/guide/getting-started.html
 * WSL Ubuntu 24.04 LTS
 
 開始安裝相關工具:
+Starkli Installation
+
+curl https://get.starkli.sh | sh
+![alt text](https://github.com/MartinYeung5/tarknet/blob/main/MartinYeung5/20240923_1.png?raw=true)
+
+starkliup
+![alt text](https://github.com/MartinYeung5/starknet/blob/main/MartinYeung5/20240923_2.png?raw=true)
+
+starkli --version
+![alt text](https://github.com/MartinYeung5/starknet/blob/main/MartinYeung5/20240923_3.png?raw=true)
+
+asdf installation
 * apt install curl git
+![alt text](https://github.com/MartinYeung5/starknet/blob/main/MartinYeung5/20240923_4.png?raw=true)
+
 * git clone https://github.com/asdf-vm/asdf.git ~/.asdf --branch v0.14.1
+![alt text](https://github.com/MartinYeung5/starknet/blob/main/MartinYeung5/20240923_5.png?raw=true)
+
 * open .bashrc (at root / ~) in Vscode
 update .bashrc (只要加入以下2句)
 * . "$HOME/.asdf/asdf.sh"
 * . "$HOME/.asdf/completions/asdf.bash"
+
+![alt text](https://github.com/MartinYeung5/starknet/blob/main/MartinYeung5/20240923_6.png?raw=true)
+
 然後執行
 * code ~/.bashrc
+![alt text](https://github.com/MartinYeung5/starknet/blob/main/MartinYeung5/20240923_7.png?raw=true)
+
+
 測試一下
 * asdf
 成功安裝asdf
+![alt text](https://github.com/MartinYeung5/starknet/blob/main/MartinYeung5/20240923_8.png?raw=true)
+
+4. Install a Plugin
+asdf plugin add nodejs https://github.com/asdf-vm/asdf-nodejs.git
+
+5. Install a Version
+asdf install nodejs latest
+
+![alt text](https://github.com/MartinYeung5/starknet/blob/main/MartinYeung5/20240923_9.png?raw=true)
+
+6. Set a Version
+
+Add to global
+* asdf global nodejs latest
+
+檢查
+* asdf current
+
+![alt text](https://github.com/MartinYeung5/starknet/blob/main/MartinYeung5/20240923_10.png?raw=true)
+
+Scarb Package Manager Installation
 
 
 <!-- Content_END -->
