@@ -89,5 +89,13 @@ Starknet Foundry 使用：
 ![starknet-components.png](./phipupt/starknet-components.png)
 
 
+### 2024.09.23
+一些开发需要用到的资源：
+- [vscode Cairo 扩展](https://marketplace.visualstudio.com/items?itemName=starkware.cairo1)，提供在编写 Cairo 智能合约时的帮助
+- [starknet-devnet-rs](https://github.com/0xSpaceShard/starknet-devnet-rs) 使用 Rust 开发的 Starknet 本地测试节点
+- [Katana](https://book.dojoengine.org/toolchain/katana) 由 Dojo 团队开发的一个极其快速的开发网络。可以将 Katana 用作通用开发网络
+
+Starknet Foundry 居然还没有本地节点？
+
 
 <!-- Content_END -->
