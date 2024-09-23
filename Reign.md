@@ -161,7 +161,7 @@ These steps form the groundwork for deploying an example contract (`Ownable`) on
 
 ### 2024.09.22
 
-#### 2.1 Basic Installation
+#### Basic Installation
 This chapter focuses on setting up the essential tools for Starknet development, including Starkli, Scarb, and Katana.
 
 #### Key Tools:
@@ -201,4 +201,66 @@ dojoup
 katana --version
 ~~~
 
+
+### 2024.09.23
+
+### Starkli, Scarb, Katana
+
+This chapter provides a guide for compiling, deploying, and interacting with a Starknet smart contract using tools like Starkli, Scarb, and Katana.
+
+#### Installation and Setup
+1. **Version Check**: Ensure the following commands return specified versions:
+   ~~~
+   scarb --version
+   starkli --version
+   katana --version
+   ~~~
+
+   Required versions:
+   - Katana: 0.6.0-alpha.7
+   - Starkli: 0.2.8 (f59724e)
+
+3. **Project Initialization**:
+   - Create a new Scarb project with `scarb new my_contract`.
+   - Update the `Scarb.toml` file to include Starknet dependencies.
+
+4. **Environment Variables**:
+   - Set up a `.env` file in the `src/` directory with:
+     ```
+     export STARKNET_ACCOUNT=katana-0
+     export STARKNET_RPC=http://0.0.0.0:5050
+     ```
+
+#### Contract Declaration
+1. **Create a Smart Contract**:
+   - Edit `src/lib.cairo` to include a basic contract template.
+   - Compile the contract using `scarb build`.
+
+2. **Declare the Contract**:
+   - Ensure environmental variables are loaded with `source .env`.
+   - Start Katana in a separate terminal using `katana`.
+   - Declare the contract with:
+     ```
+     starkli declare target/dev/my_contract_hello.contract_class.json
+     ```
+   - Successful declaration returns a unique contract class hash.
+
+#### Contract Deployment
+1. **Deploy the Contract**:
+   - Use the command:
+     ```
+     starkli deploy <CLASS_HASH> <CONSTRUCTOR_INPUTS>
+     ```
+   - Convert strings to felt252 format with `starkli to-cairo-string`.
+
+#### Interacting with Contracts
+1. **Read Data**:
+   - Use `starkli call <CONTRACT_ADDRESS> get_name` to fetch data without modifying state.
+   - Decode the result with `starkli parse-cairo-string`.
+
+2. **Modify State**:
+   - Use `starkli invoke <CONTRACT_ADDRESS> set_name <felt252>` to change the contract state.
+   - Convert new names to felt252 format before invoking.
+
+This chapter outlines the complete workflow for developing and managing Starknet smart contracts, focusing on ensuring compatibility between tools and providing practical commands for contract management.
 <!-- Content_END -->

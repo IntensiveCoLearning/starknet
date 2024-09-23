@@ -434,4 +434,65 @@ fn plus_one(x: u32) -> u32 {
 
 
 
+### 2024.09.22
+
+#### 注释
+
+* 普通注释：以`//`开头
+
+  ~~~rust
+  fn main() -> felt252 {
+      // this function performs a simple addition
+      1 + 4
+  }
+  ~~~
+
+* 项目级文档：以`///`开头。提供项目的详细描述，比如用法、任何可能造成`panic`的条件
+
+  ~~~rust
+  /// Returns the sum of `arg1` and `arg2`.
+  /// `arg1` cannot be zero.
+  ///
+  /// # Panics
+  ///
+  /// This function will panic if `arg1` is `0`.
+  ///
+  /// # Examples
+  ///
+  /// ```
+  /// let a: felt252 = 2;
+  /// let b: felt252 = 3;
+  /// let c: felt252 = add(a, b);
+  /// assert(c == a + b, "Should equal a + b");
+  /// ```
+  fn add(arg1: felt252, arg2: felt252) -> felt252 {
+      assert(arg1 != 0, 'Cannot be zero');
+      arg1 + arg2
+  }
+  ~~~
+
+* 模块级文档：以`//!`开头。提供整个模块的概述，包括其意图和用例。这种文档类型通常描述模块是做什么的以及如何使用。
+
+  ~~~rust
+  //! # my_module and implementation
+  //!
+  //! This is an example description of my_module and some of its features.
+  //!
+  //! # Examples
+  //!
+  //! ```
+  //! mod my_other_module {
+  //!   use path::to::my_module;
+  //!
+  //!   fn foo() {
+  //!     my_module.bar();
+  //!   }
+  //! }
+  //! ```
+  mod my_module { // rest of implementation...
+  }
+  ~~~
+
+  
+
 <!-- Content_END -->

@@ -21,4 +21,7 @@
 - 执行 test hello world 成功
 - 学习合约逻辑，了解存储结构
 
+### 2024.09.22
+- 学习 https://docs.openzeppelin.com/contracts-cairo/0.16.0/erc20 
+
 <!-- Content_END -->
