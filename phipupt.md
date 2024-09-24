@@ -98,4 +98,28 @@ Starknet Foundry 使用：
 Starknet Foundry 居然还没有本地节点？
 
 
+### 2024.09.24
+starknet-devnet-rs 使用
+
+安装：
+```
+cargo install starknet-devnet
+```
+运行节点：
+```
+starknet-devnet-rs
+```
+
+RPC 调用(获取账户余额)：
+curl -X POST --data '{
+    "jsonrpc": "2.0",
+    "id": "1",
+    "method": "devnet_getAccountBalance",
+    "params": {
+        "address": "<address>",
+        "unit": "WEI",
+        "block_tag": "latest"
+    }
+}' http://127.0.0.1:5050/rpc
+
 <!-- Content_END -->
