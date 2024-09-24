@@ -266,6 +266,7 @@ This chapter outlines the complete workflow for developing and managing Starknet
 
 
 ### 2024.09.24
+
 ### Summary of Scarb: The Package Manager
 
 **Scarb** is the package manager for Cairo and Starknet projects, handling dependencies, compiling projects, and streamlining the development process, similar to Rust's Cargo. Here's an overview of its usage:
