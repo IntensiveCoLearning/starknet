@@ -120,7 +120,7 @@ https://asdf-vm.com/guide/getting-started.html
 Starkli Installation
 
 curl https://get.starkli.sh | sh
-![alt text](https://github.com/MartinYeung5/tarknet/blob/main/MartinYeung5/20240923_1.png?raw=true)
+![alt text](https://github.com/MartinYeung5/starknet/blob/main/MartinYeung5/20240923_1.png?raw=true)
 
 starkliup
 ![alt text](https://github.com/MartinYeung5/starknet/blob/main/MartinYeung5/20240923_2.png?raw=true)
