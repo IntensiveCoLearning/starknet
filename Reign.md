@@ -263,4 +263,39 @@ This chapter provides a guide for compiling, deploying, and interacting with a S
    - Convert new names to felt252 format before invoking.
 
 This chapter outlines the complete workflow for developing and managing Starknet smart contracts, focusing on ensuring compatibility between tools and providing practical commands for contract management.
+
+
+### 2024.09.23
+### Summary of Scarb: The Package Manager
+
+**Scarb** is the package manager for Cairo and Starknet projects, handling dependencies, compiling projects, and streamlining the development process, similar to Rust's Cargo. Here's an overview of its usage:
+
+1. **Initialization and Workflow**:
+   - Set up a project with `scarb new <project_name>`, which generates a `Scarb.toml` file and a `src/lib.cairo` file.
+   - Add dependencies directly in the `Scarb.toml` file or via the `scarb add` command.
+   - Compile projects into Sierra code using `scarb build`, producing an intermediate output for deployment to Starknet.
+
+2. **Project Structure**:
+   - A typical Cairo package includes a `Scarb.toml` file and a `src` directory containing `.cairo` files (e.g., `lib.cairo`).
+   - External libraries can be added via the `[dependencies]` section of `Scarb.toml`, specifying either registry or Git sources.
+
+3. **Components**:
+   - Starting with version 2.3.0, Scarb supports **Components**—modular add-ons that encapsulate reusable logic, storage, and events for smart contracts, allowing for easy extension of contract functionality.
+
+4. **Example**:
+   - A simple Cairo contract can be modularized using components, such as separating ownership logic into an `ownable_component` module and integrating it with the main contract.
+
+5. **Commands Cheat Sheet**:
+   - `scarb new <project_name>`: Initialize a new project.
+   - `scarb build`: Compile the project into Sierra code.
+   - `scarb add <dependency> --git <repo>`: Add a Git-hosted dependency.
+   - `scarb clean`: Remove build artifacts.
+
+6. **Version Changes**:
+   - Version 2.3.0 introduced JSON outputs for Sierra and CASM code and support for components.
+
+
+
+
+
 <!-- Content_END -->
