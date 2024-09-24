@@ -668,6 +668,104 @@ Loops和递归是两种重复执行代码的方式。
 
 
 
+### 2024.09.24
 
+#### 数组
+
+数组是一系列具有相同类型的元素的集合。可以使用核心库的特征`ArrayTrait`来创建和使用数组。
+
+⚠️ 数组是一种队列，里面的值无法修改。事实上一旦写入到内存槽中就无法重写，只能读取。在数组中，只能在最后添加元素，以及从前面删除元素。
+
+###### 创建数组
+
+* `ArrayTrait::new()`
+* `ArrayTrait::<T>::new();`
+
+~~~rust
+fn main() {
+    let mut a = ArrayTrait::new();
+    a.append(0);
+    a.append(1);
+    a.append(2);
+  
+  	let mut arr1 = ArrayTrait::<u128>::new();
+  
+		let mut arr2:Array<u128> = ArrayTrait::new();
+}
+~~~
+
+###### 更新数组
+
+* 添加元素：`append()`
+
+* 删除元素：`pop_front()`。会返回`Option`，使用`unwrap()`获取删除的元素，如果返回`Option::None`表示数组是空的
+
+  ~~~rust
+  fn main() {
+      let mut a = ArrayTrait::new();
+      a.append(10);
+      a.append(1);
+      a.append(2);
+  
+      let first_value = a.pop_front().unwrap();
+      println!("The first value is {}", first_value);
+  }
+  ~~~
+
+###### 读取数组
+
+* `get()`：返回`Option<Box<@T>>`，如果元素不存在则返回None，
+* `at()`：`arr.at(index)`和`arr[index]`等价，如果下标益处则会Panic
+
+
+
+###### 容量相关的方法
+
+* `len()`：确定数组的元素个数，返回`usize`类型的值
+* `is_empty()`：判断数组是否为空
+
+
+
+###### `array!`Macro
+
+如果需要创建在编译期就能确定值的数组时，可以使用`array!`来简化创建带有元素的数组
+
+~~~rust
+let arr = array![1, 2, 3, 4, 5];
+~~~
+
+
+
+###### 存储多种类型
+
+可以使用`Enum`自定义的数据类型在数组中存储多种数据类型
+
+~~~rust
+#[derive(Copy, Drop)]
+enum Data {
+    Integer: u128,
+    Felt: felt252,
+    Tuple: (u32, u32),
+}
+
+fn main() {
+    let mut messages: Array<Data> = array![];
+    messages.append(Data::Integer(100));
+    messages.append(Data::Felt('hello world'));
+    messages.append(Data::Tuple((10, 30)));
+}
+~~~
+
+
+
+###### `Span`
+
+`Span`是一种表示数组快照的结构。
+
+用来在不修改原数组的前提下，提供数组中元素的安全以及访问控制。
+
+在函数间传递数组或者执行只读操作的时候，保证数据完整性和避免借用问题时非常有用。
+
+使用方法：`array.span()`
 
 <!-- Content_END -->
