@@ -32,4 +32,8 @@ Yes 75%
 
 参加 Starknet 残酷共学分享会 #2： Starknet 工具链与开发环境
 
+### 2024.09.24
+
+学习 Cairo Book （https://book.cairo-lang.org/）
+
 <!-- Content_END -->
