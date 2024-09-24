@@ -11,6 +11,18 @@ timezone: Asia/Shanghai
 ## Notes
 
 <!-- Content_START -->
+### 2024.09.24
+
+学习 Starknet-js: Javascript SDK
+- Starknet.js 是web 前端连接starknet 链的库。
+- js-》 provider -》链 
+
+- Starknet accounts are contracts.
+- The provider allows you to interact with the Starknet network.
+- contracts： 合约地址 和 abi 接口
+
+- Next.js是一个基于React的框架，构建服务器端渲染的应用程序。React仍然是应用程序的基础，但结构和导航机制--架构--是由Next.js定义的。
+  
 ### 2024.09.23
 听 线上的课程：starknet 工具链与开发环境  
 下一步目标，做一个合约，部署在测试链上。 
