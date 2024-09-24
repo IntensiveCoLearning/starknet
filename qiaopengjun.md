@@ -255,7 +255,65 @@ L2 的最终确认也就是 Starknet 的最终确认非常短
 
 ### 2024.09.24
 
-笔记内容
+问题：
+
+```shell
+hellostarknet on  main [?] via 🅒 base took 4.7s 
+➜ scarb test 
+     Running test hellostarknet (snforge test)
+   Compiling snforge_scarb_plugin v0.1.0 (git+https://github.com/foundry-rs/starknet-foundry?tag=v0.30.0#196f06b251926697c3d66800f2a93ae595e76496)
+    Finished `release` profile [optimized] target(s) in 0.17s
+   Compiling test(hellostarknet_unittest) hellostarknet v0.1.0 (/Users/qiaopengjun/Code/starknet-code/hello_starknet/hellostarknet/Scarb.toml)
+   Compiling test(hellostarknet_integrationtest) hellostarknet_integrationtest v0.1.0 (/Users/qiaopengjun/Code/starknet-code/hello_starknet/hellostarknet/Scarb.toml)
+    Finished release target(s) in 8 seconds
+   Compiling snforge_scarb_plugin v0.1.0 (git+https://github.com/foundry-rs/starknet-foundry?tag=v0.30.0#196f06b251926697c3d66800f2a93ae595e76496)
+    Finished `release` profile [optimized] target(s) in 0.16s
+   Compiling hellostarknet v0.1.0 (/Users/qiaopengjun/Code/starknet-code/hello_starknet/hellostarknet/Scarb.toml)
+    Finished release target(s) in 4 seconds
+[ERROR] Error while compiling Sierra. Make sure you have the latest universal-sierra-compiler binary installed. Contact us if it doesn't help: Command universal-sierra-compiler failed with status exit status: 2
+```
+
+解决：
+
+```shell
+cargo install universal-sierra-compiler --force
+```
+
+`sncast` 和 `starkli` 都可以用来与 Starknet 交互，但它们的用途略有不同，具体选择取决于你的工作流和项目需求。下面是它们的区别：
+
+### 1. **sncast**
+
+`sncast` 是 Starknet Foundry 工具的一部分，通常与 Foundry 集成使用，它专注于 Starknet 的开发、测试和部署。它的主要用途包括：
+
+- **合约声明**：支持声明合约（Declare），并且与 Foundry 无缝集成。
+- **部署和调用合约**：提供类似于 Ethereum 上 `cast` 的命令行工具，用于部署、调用合约以及其他链上交互。
+- **开发工具链**：专注于开发者工具，特别是在 Solidity 和 Starknet 开发者的工作流中很有用。
+
+`sncast` 适合那些已经熟悉 Foundry 开发环境并希望集成 Starknet 工作流的人群。
+
+### 2. **starkli**
+
+`starkli` 是 Starkware 的官方命令行工具，用于直接与 Starknet 交互。它的主要用途包括：
+
+- **合约声明和部署**：通过 `declare` 和 `deploy` 命令来声明和部署 Cairo 合约。
+- **合约调用**：能够查询、调用已经部署的合约函数。
+- **官方工具链**：`starkli` 是由 Starkware 官方提供的工具，功能全面且适合与 Starknet 进行低级别交互。它对于那些使用 Cairo 开发合约并直接部署到 Starknet 上的用户特别有用。
+
+`starkli` 更适合于想要使用 Starknet 官方工具链并直接与网络交互的用户。
+
+### 为什么你看到两个教程？
+
+不同的教程可能面向不同的开发者工作流：
+
+- 如果你主要是使用 Foundry 或者已经熟悉以太坊开发工具链，那么 `sncast` 是一种方便的选择。
+- 如果你更接近 Starkware 官方工具链，或者你只专注于 Cairo 和 Starknet，那么 `starkli` 可能是更好的选择。
+
+### 如何选择？
+
+- 如果你偏向于使用 Solidity 与 Starknet 进行交互，或者已经习惯了 Foundry 的开发工具链，**选择 `sncast`**。
+- 如果你是 Cairo 开发者，想要使用 Starknet 的官方工具链，**选择 `starkli`**。
+
+你可以根据个人开发环境和项目需求选择适合的工具。
 
 ### 2024.09.25
 

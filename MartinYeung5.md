@@ -87,26 +87,26 @@ https://remix.ethereum.org/#activate=Starknet&lang=en&optimize=false&runs=200&ev
 https://remix.ethereum.org/#activate=Starknet&lang=en&optimize=false&runs=200&evmVersion=null&version=soljson-v0.8.24+commit.e11b9ed9.js
 
 1. compile 成功
-![alt text](https://github.com/MartinYeung5/20240918_starknet/blob/main/20240919_1.png?raw=true)
+![alt text](https://github.com/MartinYeung5/starknet/blob/main//MartinYeung5/20240919_1.png?raw=true)
 
 2. deploy 成功
-![alt text](https://github.com/MartinYeung5/20240918_starknet/blob/main/20240919_2.png?raw=true)
+![alt text](https://github.com/MartinYeung5/starknet/blob/main//MartinYeung5/20240919_2.png?raw=true)
 
 ### 2024.09.21
 實操:Remix IDE
 
 * interact 失敗 (Opera)
-![alt text](https://github.com/MartinYeung5/20240918_starknet/blob/main/20240921_interact_error_opera.png?raw=true)
+![alt text](https://github.com/MartinYeung5/starknet/blob/main//MartinYeung5/20240921_interact_error_opera.png?raw=true)
 
 * interact 成功 (Opera)
 試過重新刪所有cache、緩沖等，再重新開機，最後成功
-![alt text](https://github.com/MartinYeung5/20240918_starknet/blob/main/20240921_interact_done.png?raw=true)
+![alt text](https://github.com/MartinYeung5/starknet/blob/main//MartinYeung5/20240921_interact_done.png?raw=true)
 
 ### 2024.09.22
 實操:Remix IDE
 * 心得
 當透過官方提供的link進行時，會出現如下圖的popup提示: (需要下載整個repo, 要按6次"Accept", 否則就不能獲得完整repo)
-![alt text](https://github.com/MartinYeung5/20240918_starknet/blob/main/20240922_remix_start_1.png?raw=true)
+![alt text](https://github.com/MartinYeung5/starknet/blob/main//MartinYeung5/20240922_remix_start_1.png?raw=true)
 另外在deploy時也會出現2次popup，要求你去"Accept"。
 最後，在按"Accept"時也要快，如果錯過了，就要刪緩沖的所有紀錄，重新開始，有需要時要重開機。
 
@@ -117,17 +117,95 @@ https://asdf-vm.com/guide/getting-started.html
 * WSL Ubuntu 24.04 LTS
 
 開始安裝相關工具:
+Starkli Installation
+
+curl https://get.starkli.sh | sh
+![alt text](https://github.com/MartinYeung5/starknet/blob/main/MartinYeung5/20240923_1.png?raw=true)
+
+starkliup
+![alt text](https://github.com/MartinYeung5/starknet/blob/main/MartinYeung5/20240923_2.png?raw=true)
+
+starkli --version
+![alt text](https://github.com/MartinYeung5/starknet/blob/main/MartinYeung5/20240923_3.png?raw=true)
+
+asdf installation
 * apt install curl git
+![alt text](https://github.com/MartinYeung5/starknet/blob/main/MartinYeung5/20240923_4.png?raw=true)
+
 * git clone https://github.com/asdf-vm/asdf.git ~/.asdf --branch v0.14.1
+![alt text](https://github.com/MartinYeung5/starknet/blob/main/MartinYeung5/20240923_5.png?raw=true)
+
 * open .bashrc (at root / ~) in Vscode
 update .bashrc (只要加入以下2句)
 * . "$HOME/.asdf/asdf.sh"
 * . "$HOME/.asdf/completions/asdf.bash"
+
+![alt text](https://github.com/MartinYeung5/starknet/blob/main/MartinYeung5/20240923_6.png?raw=true)
+
 然後執行
 * code ~/.bashrc
+![alt text](https://github.com/MartinYeung5/starknet/blob/main/MartinYeung5/20240923_7.png?raw=true)
+
+
 測試一下
 * asdf
 成功安裝asdf
+![alt text](https://github.com/MartinYeung5/starknet/blob/main/MartinYeung5/20240923_8.png?raw=true)
+
+4. Install a Plugin
+asdf plugin add nodejs https://github.com/asdf-vm/asdf-nodejs.git
+
+5. Install a Version
+asdf install nodejs latest
+
+![alt text](https://github.com/MartinYeung5/starknet/blob/main/MartinYeung5/20240923_9.png?raw=true)
+
+6. Set a Version
+
+Add to global
+* asdf global nodejs latest
+
+檢查
+* asdf current
+
+![alt text](https://github.com/MartinYeung5/starknet/blob/main/MartinYeung5/20240923_10.png?raw=true)
+
+Scarb Package Manager Installation
+
+### 2024.09.24
+Scarb Package Manager Installation
+* asdf plugin add scarb
+![alt text](https://github.com/MartinYeung5/starknet/blob/main/MartinYeung5/20240924_1.png?raw=true)
+
+下一步就是要download scarb的版本，如果不download及于設置就會顯示沒有版本
+![alt text](https://github.com/MartinYeung5/starknet/blob/main/MartinYeung5/20240924_2.png?raw=true)
+
+download specific versions:
+* asdf install scarb 2.5.4
+![alt text](https://github.com/MartinYeung5/starknet/blob/main/MartinYeung5/20240924_3.png?raw=true)
+
+如果不設置就會繼續顯示沒有版本
+![alt text](https://github.com/MartinYeung5/starknet/blob/main/MartinYeung5/20240924_4.png?raw=true)
+
+要設置版本
+* asdf global scarb 2.5.4
+![alt text](https://github.com/MartinYeung5/starknet/blob/main/MartinYeung5/20240924_5.png?raw=true)
+
+再一次確認有沒有成功
+* scarb --version
+![alt text](https://github.com/MartinYeung5/starknet/blob/main/MartinYeung5/20240924_6.png?raw=true)
+
+* Katana Node Installation
+開始安裝
+* curl -L https://install.dojoengine.org | bash
+![alt text](https://github.com/MartinYeung5/starknet/blob/main/MartinYeung5/20240924_7.png?raw=true)
+
+* dojoup
+![alt text](https://github.com/MartinYeung5/starknet/blob/main/MartinYeung5/20240924_8.png?raw=true)
+
+進行版本檢查
+* katana --version
+![alt text](https://github.com/MartinYeung5/starknet/blob/main/MartinYeung5/20240924_9.png?raw=true)
 
 
 <!-- Content_END -->

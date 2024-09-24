@@ -24,4 +24,12 @@
 ### 2024.09.22
 - 学习 https://docs.openzeppelin.com/contracts-cairo/0.16.0/erc20 
 
+
+### 2024.09.23
+- 听分享部署合约
+- sncast account deploy --fee-token eth --name Test1
+- sncast --account Test1 declare --fee-token eth --contract-name HelloStarknet
+- sncast deploy --class-hash 0x1a6835329277e9a402a747e041546d418cee105c2a8de41c6dd4930e80c8681  --fee-token eth
+
+
 <!-- Content_END -->
