@@ -127,4 +127,6 @@ StarkNet's tokenomics .
 - 异常处理
   - assert() 
   - panic()
+### 2024.9.25
+#### 因为之前没有接触过Rust，所以对Rust的语法和特性感觉理解困难，观看了 [https://www.bilibili.com/video/BV1hjh1emEAY/?spm_id_from=333.337.search-card.all.click&vd_source=1356c9c3725643abb61fbb2c32756c84] 对所有权、借用规则、引用、生命周期 有了一定了解
 <!-- Content_END -->
