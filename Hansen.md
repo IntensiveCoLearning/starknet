@@ -11,6 +11,11 @@ timezone: Asia/Shanghai
 ## Notes
 
 <!-- Content_START -->
+
+### 2024.09.25
+简单看一下 cario 语言的 基本语法 
+
+
 ### 2024.09.24
 
 学习 Starknet-js: Javascript SDK
