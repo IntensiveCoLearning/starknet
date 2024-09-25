@@ -36,4 +36,8 @@ Yes 75%
 
 学习 Cairo Book （https://book.cairo-lang.org/）
 
+### 2024.09.25
+
+学习 Cairo Book （Continued）
+
 <!-- Content_END -->
