@@ -265,7 +265,8 @@ This chapter provides a guide for compiling, deploying, and interacting with a S
 This chapter outlines the complete workflow for developing and managing Starknet smart contracts, focusing on ensuring compatibility between tools and providing practical commands for contract management.
 
 
-### 2024.09.23
+### 2024.09.24
+
 ### Summary of Scarb: The Package Manager
 
 **Scarb** is the package manager for Cairo and Starknet projects, handling dependencies, compiling projects, and streamlining the development process, similar to Rust's Cargo. Here's an overview of its usage:
@@ -294,6 +295,44 @@ This chapter outlines the complete workflow for developing and managing Starknet
 6. **Version Changes**:
    - Version 2.3.0 introduced JSON outputs for Sierra and CASM code and support for components.
 
+### 2024.09.25
+
+#### Installation Steps for Starknet Development Tools
+
+This guide helps set up essential Starknet development tools.
+
+1. **Essential Tools**:
+   - **Starkli**: A command-line interface (CLI) for interacting with Starknet.
+   - **Scarb**: Cairo’s package manager for compiling code to Sierra, the intermediary language for Starknet.
+   - **Katana**: A Starknet node designed for local development.
+
+2. **Starkli Installation**:
+   - Install via command:
+     ```
+     curl https://get.starkli.sh | sh
+     ```
+   - Verify installation with `starkli --version`. Repeat the steps to upgrade.
+
+3. **Scarb Package Manager Installation**:
+   - **Requirements**: Ensure a Git executable is available in your PATH.
+   - Install via **asdf** for version management:
+     ```
+     asdf plugin add scarb
+     asdf install scarb 2.5.4
+     asdf global scarb 2.5.4
+     ```
+   - Alternatively, install directly:
+     ```
+     curl --proto '=https' --tlsv1.2 -sSf https://docs.swmansion.com/scarb/install.sh | sh
+     ```
+   - Verify installation with `scarb --version`.
+
+4. **Katana Node Installation**:
+   - Install using the Dojo engine installer:
+     ```
+     curl -L https://install.dojoengine.org | bash
+     ```
+   - Verify installation with `katana --version`.
 
 
 

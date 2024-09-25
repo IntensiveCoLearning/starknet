@@ -28,6 +28,7 @@ fork 了 counter-workshop
 通过了counter-workshop  Step 4
 ### 2024.09.23
 学习 https://docs.starknet.io/ 的文档，目前进度：Deploying a smart contract
-
+### 2024.09.24
+学习 https://docs.starknet.io/ 的文档，目前进度: Using a development network
 
 <!-- Content_END -->

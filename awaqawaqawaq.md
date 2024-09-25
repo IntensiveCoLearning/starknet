@@ -116,7 +116,15 @@ StarkNet's tokenomics .
 ### 2024.09.23
 - [观看了第一期视频，看的懂但是看不懂🙃🙃🙃](https://youtu.be/p6mPT2HOGKI)
 
-
-
-
+### 2024.09.24
+- 事件 
+   - 将数据存储在事件中比存储在存储变量中更具成本效益
+   - 事件不能直接从合约内部读取。
+   - 诸如 starknet.js 的应用程序可以通过 RPC 接口订阅这些事件，并在前端触发响应。
+   - #[event]和#[derive(Drop, starknet::Event)]
+   - 事件变体成员必须是一个与变体同名的结构体
+   - 使用emit()释放
+- 异常处理
+  - assert() 
+  - panic()
 <!-- Content_END -->

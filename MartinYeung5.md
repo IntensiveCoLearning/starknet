@@ -207,5 +207,89 @@ download specific versions:
 * katana --version
 ![alt text](https://github.com/MartinYeung5/starknet/blob/main/MartinYeung5/20240924_9.png?raw=true)
 
+### 2024.09.25
+* initiating a Scarb project
+
+* scarb new my_contract
+![alt text](https://github.com/MartinYeung5/starknet/blob/main/MartinYeung5/20240925_1.png?raw=true)
+
+* update Scarb.toml
+```
+[package]
+name = "my_contract"
+version = "0.1.0"
+edition = "2023_11"
+
+[dependencies]
+starknet = ">=2.5.4"
+
+[[target.starknet-contract]]
+
+```
+
+有2個變數是必需要的，1個是starknet戶口，另一個是starknet代理: 用於設置使用網絡。
+* 創建一個src/.env，
+然後加入以下修改:
+```
+export STARKNET_ACCOUNT=katana-0
+export STARKNET_RPC=http://0.0.0.0:5050
+```
+
+* 更新src/lib.cairo
+```
+#[starknet::interface]
+trait IHello<T> {
+    fn get_name(self: @T) -> felt252;
+    fn set_name(ref self: T, name: felt252);
+}
+
+#[starknet::contract]
+mod hello {
+    #[storage]
+    struct Storage {
+        name: felt252,
+    }
+
+    #[constructor]
+    fn constructor(ref self: ContractState, name: felt252) {
+        self.name.write(name);
+    }
+
+    #[abi(embed_v0)]
+    impl HelloImpl of super::IHello<ContractState> {
+        fn get_name(self: @ContractState) -> felt252 {
+            self.name.read()
+        }
+
+        fn set_name(ref self: ContractState, name: felt252) {
+            self.name.write(name);
+        }
+    }
+}
+```
+
+Compile the contract with the Scarb compiler:
+* scarb build
+![alt text](https://github.com/MartinYeung5/starknet/blob/main/MartinYeung5/20240925_1.png?raw=true)
+
+The above command results in a compiled contract under target/dev/, named "my_contract_hello.contract_class.json"
+
+去src, 執行:
+* source .env
+
+如果沒有執行 source src/.env , 會有以下錯誤訊息:
+![alt text](https://github.com/MartinYeung5/starknet/blob/main/MartinYeung5/20240925_3.png?raw=true)
+
+執行
+* katanakatana
+如下圖所示
+![alt text](https://github.com/MartinYeung5/starknet/blob/main/MartinYeung5/20240925_4.png?raw=true)
+
+去my_contract
+To declare your contract, execute:
+* starkli declare target/dev/my_contract_hello.contract_class.json
+正常會出現以下錯誤訊息:
+![alt text](https://github.com/MartinYeung5/starknet/blob/main/MartinYeung5/20240925_5.png?raw=true)
+
 
 <!-- Content_END -->
