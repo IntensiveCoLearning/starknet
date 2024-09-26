@@ -122,4 +122,18 @@ curl -X POST --data '{
     }
 }' http://127.0.0.1:5050/rpc
 
+
+
+### 2024.09.25
+今天正式开始学习 Cairo。
+
+Cairo 是第一个用于创建可证明程序的图灵完备语言，适用于一般计算。Cairo 还引入了 Sierra，这是一种新的中间表示，确保每次 Cairo 运行都可以被证明。
+
+Scarb 是 Cairo 的包管理器。
+
+使用 Scarb 创建项目：
+```
+scarb new hello_world
+```
+
 <!-- Content_END -->

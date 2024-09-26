@@ -768,4 +768,68 @@ fn main() {
 
 使用方法：`array.span()`
 
+
+
+### 2024.09.25
+
+#### 字典
+
+ ##### 字典的基础用法
+
+在`Cairo`中，键的类型被限制为`felt252`，只能指定值的数据类型，在`Felt252Dict<T>`中由`T`表示。
+
+`Felt252Dict<T>`的核心功能实现于特征`Felt252DictTrait`，其中包含所有基础的操作：
+
+1. `insert(felt252, T) -> ()`：写入值到字典实例中
+2. `get(felt252) -> T`：从字典中读取值
+
+🌰例子：创建一个字典来表示个人与余额之间的映射：
+
+~~~rust
+use core::dict::Felt252Dict;
+
+fn main() {
+    let mut balances: Felt252Dict<u64> = Default::default();
+
+    balances.insert('Alex', 100);
+    balances.insert('Maria', 200);
+
+    let alex_balance = balances.get('Alex');
+    assert!(alex_balance == 100, "Balance is not 100");
+
+    let maria_balance = balances.get('Maria');
+    assert!(maria_balance == 200, "Balance is not 200");
+}
+~~~
+
+💡尽管在`Cairo`中内存是不可变的，意味着一个内存单元只能写入一次，但是`Felt252Dict<T>`类型展示了一种克服这个障碍的方法。
+
+使用上面的例子，对其中的一个用户修改其余额：
+
+~~~rust
+use core::dict::Felt252Dict;
+
+fn main() {
+    let mut balances: Felt252Dict<u64> = Default::default();
+
+    // Insert Alex with 100 balance
+    balances.insert('Alex', 100);
+    // Check that Alex has indeed 100 associated with him
+    let alex_balance = balances.get('Alex');
+    assert!(alex_balance == 100, "Alex balance is not 100");
+
+    // Insert Alex again, this time with 200 balance
+    balances.insert('Alex', 200);
+    // Check the new balance is correct
+    let alex_balance_2 = balances.get('Alex');
+    assert!(alex_balance_2 == 200, "Alex balance is not 200");
+}
+~~~
+
+当实例化`Felt252Dict<T>`后，所有的键关联的值被实例化为0。意味着如果读取一个不存在的数据则会返回0，而不是错误或者未定义的值。也意味着无法从字典中删除数据。
+
+
+
+
+
 <!-- Content_END -->
