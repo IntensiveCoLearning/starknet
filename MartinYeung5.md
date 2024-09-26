@@ -337,6 +337,20 @@ starkli account fetch 0x07bf212a91454ec1f129a8f4a29054211dc013f73bbbe50374426a41
 Error: account config file not found
 ![alt text](https://github.com/MartinYeung5/starknet/blob/main/MartinYeung5/20240925_10.png?raw=true)
 
+### 2024.09.27
+starkli account fetch 0x07bf212a91454ec1f129a8f4a29054211dc013f73bbbe50374426a41ce0a68ea --output ~/.starkli-wallets/deployer/account.json --rpc https://starknet-sepolia.g.alchemy.com/starknet/version/rpc/v0_7/x
 
+* 關鍵點: Braavos wallet 需要先deploy
+
+成功:
+![alt text](https://github.com/MartinYeung5/starknet/blob/main/MartinYeung5/20240925_11.png?raw=true)
+
+檢查:
+* cat ~/.starkli-wallets/deployer/account.json
+![alt text](https://github.com/MartinYeung5/starknet/blob/main/MartinYeung5/20240925_12.png?raw=true)
+
+* starkli account deploy ~/.starkli-wallets/deployer/account.json
+但我的wallet已經deployed，因為Braavos wallet的已經在錢包上deployed
+![alt text](https://github.com/MartinYeung5/starknet/blob/main/MartinYeung5/20240925_13.png?raw=true)
 
 <!-- Content_END -->
