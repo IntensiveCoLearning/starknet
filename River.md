@@ -826,10 +826,59 @@ fn main() {
 }
 ~~~
 
+`Felt252Dict<T>`允许“重写”任何键对应的值。
+
 当实例化`Felt252Dict<T>`后，所有的键关联的值被实例化为0。意味着如果读取一个不存在的数据则会返回0，而不是错误或者未定义的值。也意味着无法从字典中删除数据。
 
+### 2024.09.26
 
+##### 字典底层结构
 
+`Cairo`使用Entry列表来实现`Felt252Dict<T>`。每个Entry表示一条可以进行读取、更新、写入操作的记录。
 
+Entry结构包含三个值：
+
+1. `key`：用于识别字典的键值对
+2. `previous_value`：表示`key`的前一个值
+3. `new_value`：表示`key`更新的值
+
+如果使用高级结构来实现`Felt252Dict<T>`， 可以定义`Array<Entry<T>>`，`Entry<T>`的结构可以是：
+
+~~~rust
+struct Entry<T> {
+    key: felt252,
+    previous_value: T,
+    new_value: T,
+}
+~~~
+
+每一次与`Felt252Dict<T>`交互，就会注册一个新的`Entry<T>`：
+
+1. `get`操作将注册一个状态未改变的entry，然后`previous_value`和`new_value`存储为同一个值。
+2. `insert`操作将注册一个新的`Entry<T>`，`new_value`为写入的值，`previous_value`则是写入操作之前的值，如果是第一次写入，则为0。
+
+使用Entry列表展示了为何不存在重写，仅仅是在每次与`Felt252Dict<T>`交互创建一个新的内存单元。
+
+🌰例子：分别更新字典balance的'Alex'和'Maria'两个值：
+
+~~~rust
+balances.insert('Alex', 100_u64);
+balances.insert('Maria', 50_u64);
+balances.insert('Alex', 200_u64);
+balances.get('Maria');
+~~~
+
+上面的操作将产生如下entry列表：
+
+|  key  | previous | new  |
+| :---: | :------: | :--: |
+| Alex  |    0     | 100  |
+| Maria |    0     |  50  |
+| Alex  |   100    | 200  |
+| Maria |    50    |  50  |
+
+这种实现方式意味着每次读取或者写入操作，都会遍历整个entry列表来查找与`key`相同的最近的那个entry。一旦找到对应的entry，它的`new_value`会被提取出来，并添加到新的entry的`previous_value`中。
+
+与常规语言不同，`Cairo`的目的之一是使用STARK证明系统生成计算完整性的证明。这意味着需要验证程序的执行是正确的，并且在`Cairo`限制的范围内。其中一个边界检查包括“**字典压缩**”（dictionary squashing），它需要每个条目的旧值和新值的信息。
 
 <!-- Content_END -->
