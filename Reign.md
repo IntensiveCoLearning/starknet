@@ -334,7 +334,47 @@ This guide helps set up essential Starknet development tools.
      ```
    - Verify installation with `katana --version`.
 
+### 2024.09.26
 
+### Summary of Scarb: The Package Manager
 
+**Scarb** is Cairo’s package manager designed for both Cairo and Starknet projects. It simplifies development by handling dependencies, compiling code, and integrating with tools like Foundry.
+
+#### **Scarb Workflow**
+1. **Initialize** a project with `scarb new`, generating a `Scarb.toml` file and a basic project structure.
+2. **Add Code** to the `src` directory.
+3. **Add Dependencies** via `scarb add`.
+4. **Compile** the project using `scarb build`, converting it into Sierra code, the intermediate layer between Cairo and CASM.
+
+#### **Cairo Project Structure**
+- Projects follow a modular structure where each package has a `Scarb.toml` manifest file and a `src/lib.cairo` file. 
+- Packages can include external libraries and modules, which are declared in the `Scarb.toml` file.
+
+Example project structure:
+```
+my_package/
+├── src/
+│   ├── lib.cairo
+├── Scarb.toml
+```
+
+#### **Building and Adding Dependencies**
+- **Build** projects using `scarb build`, which generates the compiled Sierra code.
+- **Add dependencies** by editing `Scarb.toml` or using `scarb add`. Dependencies can be hosted on GitHub or other sources and pinned to specific commits for consistency.
+
+#### **Components (since version 2.3.0)**
+Components in Scarb allow for reusable modular add-ons that extend contracts without rewriting logic. For instance, ownership functionality can be separated into a component and plugged into various contracts.
+
+#### **Example of Adding a Component**
+A typical Starknet contract can use components like `ownable_component` for ownership management, ensuring reusable and cleaner contract design.
+
+#### **Key Commands:**
+- `scarb new <project_name>`: Initialize a new project.
+- `scarb build`: Compile Cairo code into Sierra.
+- `scarb add <dependency>`: Add a dependency from a Git repository.
+- `scarb clean`: Remove build artifacts.
+
+#### **Conclusion**
+Scarb is a powerful tool in the Cairo ecosystem, helping developers efficiently manage packages, dependencies, and code. With more experience, developers can fully leverage its capabilities to enhance their Starknet projects. Components, in particular, make it easier to build modular, reusable contract logic.
 
 <!-- Content_END -->
