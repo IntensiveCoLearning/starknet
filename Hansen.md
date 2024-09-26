@@ -12,6 +12,20 @@ timezone: Asia/Shanghai
 
 <!-- Content_START -->
 
+### 2024.09.26
+
+分两个链 ：StarkEx 企业服务，  StarkNet  通用服务
+starknet 不兼容evm，而是cvm 
+    - Warp：将 Solidity 转译为 Cairo 语言的转译器
+    - Kakarot：一个用 Cairo 语言编写的 zkEVM
+三个特性：
+- 工作原理：StarkNet 有五个组成部分。分别是在 StarkNet 上的 Prover（证明者），Sequencer（排序器）和全节点；以及部署在以太坊上的验证者（Verifier）和核心状态合约（StarkNet Core）。
+- 账户抽象：StarkNet 实现了原生账户抽象
+- 证明系统：STARK 证明 相比 SNARK 有更多创新，更安全
+
+StarkNet 有一些原生的创新应用，分别是全链游戏、合约钱包和链上 AI
+
+
 ### 2024.09.25
 简单看一下 cario 语言的 基本语法 
 
