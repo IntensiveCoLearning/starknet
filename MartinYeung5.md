@@ -291,5 +291,52 @@ To declare your contract, execute:
 正常會出現以下錯誤訊息:
 ![alt text](https://github.com/MartinYeung5/starknet/blob/main/MartinYeung5/20240925_5.png?raw=true)
 
+### 2024.09.26
+應該要先做設置Account:
+https://docs.starknet.io/quick-start/set-up-an-account/
+* starkli --version
+* mkdir -p ~/.starkli-wallets/deployer
+
+在執行下一步前，必須要有Wallet
+Argent X or Braavos wallet
+https://braavos.app/download-braavos-wallet/
+
+測試用:
+siren thought depart stem cycle lazy reunion spatial shock local six there
+
+account address:0x07bf212a91454ec1f129a8f4a29054211dc013f73bbbe50374426a41ce0a68ea
+private:
+0x0364fb6a326af3224b7fffd73731cd99f81e2c655eb84996ec66736c2cc6fd51
+public:
+0x44c91132de72543b5b92eae7875876f281d4706fc57b95c277ad7ced13aa4e
+
+* starkli signer keystore from-key ~/.starkli-wallets/deployer/keystore.json
+1. 需要輸入private key
+2. 需要輸入密碼 (自設)
+
+去新增STARKNET_KEYSTORE
+https://docs.starknet.io/quick-start/environment-setup/#setting_up_starkli_environment_variables
+
+更新.env
+
+* starkli declare target/dev/my_contract_hello.contract_class.json
+都是有錯誤訊息
+Error: account config file not found
+![alt text](https://github.com/MartinYeung5/starknet/blob/main/MartinYeung5/20240925_9.png?raw=true)
+
+starkli account fetch 0x07bf212a91454ec1f129a8f4a29054211dc013f73bbbe50374426a41ce0a68ea --output ~/.starkli-wallets/deployer/account.json --rpc https://starknet-sepolia.g.alchemy.com/starknet/version/rpc/v0_7/xx
+
+get faucet:
+https://starknet-faucet.vercel.app/
+
+
+starkli account fetch 0x07bf212a91454ec1f129a8f4a29054211dc013f73bbbe50374426a41ce0a68ea --output ~/.starkli-wallets/deployer/account.json
+
+* starkli declare target/dev/my_contract_hello.contract_class.json
+都是有錯誤訊息
+Error: account config file not found
+![alt text](https://github.com/MartinYeung5/starknet/blob/main/MartinYeung5/20240925_10.png?raw=true)
+
+
 
 <!-- Content_END -->
