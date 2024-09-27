@@ -377,4 +377,31 @@ A typical Starknet contract can use components like `ownable_component` for owne
 #### **Conclusion**
 Scarb is a powerful tool in the Cairo ecosystem, helping developers efficiently manage packages, dependencies, and code. With more experience, developers can fully leverage its capabilities to enhance their Starknet projects. Components, in particular, make it easier to build modular, reusable contract logic.
 
+### 2024.09.27
+
+**Katana: A Local Node for Starknet Development**
+
+**Katana** is a tool developed by the Dojo team to aid in local development for Starknet. It allows developers to run a local Starknet environment for testing and interacting with smart contracts without needing to rely on public testnets. This local node is highly beneficial for fast, iterative contract development and debugging.
+
+### Features of Katana:
+- **Local Development & Testing**: Katana provides a local node, making it easier to test contracts, similar to the starknet-devnet (a public testnet maintained by Shard Labs). 
+- **Contract Interaction**: It enables developers to deploy and interact with contracts in a local setting. Examples of contract interaction using Katana can be found in resources like *The Cairo Book*.
+- **RPC Integration**: Katana supports Remote Procedure Calls (RPC), allowing communication between nodes and making it possible to interact with your local node via tools like Infura or Alchemy.
+
+### Getting Started with Katana:
+1. **Installation**: Katana can be installed using the `dojoup` installer with the following commands:
+   ```bash
+   curl -L https://install.dojoengine.org | bash
+   dojoup
+   ```
+   After installation, verify it using `katana --version`.
+   
+2. **Starting a Local Node**: Launch a local Starknet node with specific parameters such as the number of accounts and seed:
+   ```bash
+   katana --accounts 3 --seed 0
+   ```
+   This creates prefunded accounts for testing, with output displaying their addresses, private and public keys, and the URL for the JSON-RPC server (e.g., `http://0.0.0.0:5050`).
+
+3. **Persistence**: The local node does not store data permanently, meaning all information is erased after the node stops. To stop the node, simply use `Ctrl+C`.
+
 <!-- Content_END -->
