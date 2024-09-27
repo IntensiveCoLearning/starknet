@@ -191,7 +191,7 @@ Scarb：Cairo构建工具和包管理器
 3. 参考
 - [Scarb 官方文档](https://docs.swmansion.com/scarb/docs.html)
 
-### 0204.09.27
+### 2024.09.27
 Cairo 笔记：
 在 Cairo 中，代码包被称为 crates
 
