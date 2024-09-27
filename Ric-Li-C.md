@@ -44,4 +44,8 @@ Yes 75%
 
 学习 Starknet Book 和 Cairo Book
 
+### 2024.09.27
+
+学习 Starknet Book 和 Cairo Book （Continued）
+
 <!-- Content_END -->
