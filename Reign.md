@@ -404,4 +404,21 @@ Scarb is a powerful tool in the Cairo ecosystem, helping developers efficiently 
 
 3. **Persistence**: The local node does not store data permanently, meaning all information is erased after the node stops. To stop the node, simply use `Ctrl+C`.
 
+### 2024.09.28
+
+1. **环境准备**：确保安装 `scarb` 和 `starkli`，并成功运行相关命令。
+
+2. **智能钱包设置**：创建包含私钥的Signer和包含钱包地址的Account Descriptor，部署到Sepolia Testnet。
+
+3. **密钥管理**：使用Starkli生成和安全存储keystore文件。
+
+4. **RPC提供者选择**：推荐使用Infura、Alchemy或免费RPC服务。
+
+5. **账户描述符创建**：通过Starkli的fetch命令生成Account Descriptor文件，包含智能钱包的独特信息。
+
+6. **合约声明与部署**：先声明合约，再部署实例，确保使用正确的class hash和构造参数。
+
+7. **与合约交互**：使用call命令读取合约状态，使用invoke命令修改状态，处理潜在错误。
+
+8. **验证与确认**：通过区块浏览器检查合约部署状态和交互结果。
 <!-- Content_END -->
