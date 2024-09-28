@@ -209,7 +209,7 @@ felt252 Cairo 有三种主要的标量类型：felts、整数和布尔值
 开罗有三种循环：loop、while和for
 
 
-### 2024.09.26
+### 2024.09.28
 
 Cairo 笔记--字典(Dictionary)数据结构:
 
