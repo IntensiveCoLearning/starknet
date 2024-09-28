@@ -621,7 +621,247 @@ Tx 类型
 
 ### 2024.09.28
 
-笔记内容
+### 主题
+
+1. 设置开发工具
+2. 合约类和实例
+3. 合约剖析
+4. 实战
+
+### 设置开发工具
+
+#### `Scarb`的介绍与安装
+
+- 包管理
+- 处理依赖
+- 项目编译
+- 与 Foundry 集成
+
+- <https://asdf-vm.com/guide/getting-started.html>
+- <https://www.cairo-lang.org/tutorial/>
+
+```shell
+brew install asdf
+
+asdf plugin add scarb 
+asdf install scarb latest 
+asdf global scarb latest
+
+scarb --version
+```
+
+#### `Starknet Foundry`
+
+专为 `Starknet` 合约的开发和测试而设计
+
+组成部分：
+
+- Forge
+- Cast
+
+<https://foundry-rs.github.io/starknet-foundry/index.html>
+
+```shell
+curl -L https://raw.githubusercontent.com/foundry-rs/starknet-foundry/master/scripts/install.sh | sh
+
+snfoundryup
+
+asdf plugin add starknet-foundry
+asdf install starknet-foundry latest
+
+snforge --version
+sncast --version
+
+```
+
+### [Universal-Sierra-Compiler update](https://foundry-rs.github.io/starknet-foundry/getting-started/installation.html#universal-sierra-compiler-update)
+
+If you would like to bump the USC manually (e.g. when the new Sierra version is released) you can do it by running:
+
+```shell
+curl -L https://raw.githubusercontent.com/software-mansion/universal-sierra-compiler/master/scripts/install.sh | sh
+```
+
+### 2 合约类和实例
+
+#### 合约类
+
+Contract Class
+
+- Code (cairo => Compiled to sierra)
+- ABI (which functions are accessible)
+- Class HASH
+
+声明合约生成类哈希
+
+#### 合约实例
+
+Contract instance
+
+- Storage
+- Associated class hash
+- Contract ADDRESS
+
+工厂模式
+
+READ => CALLS(free)
+
+WRITE => INVOKE (it's a transaction = gas to pay)
+
+| Declare | Invoke   | Deploy_account |
+| ------- | -------- | -------------- |
+| class   | instance | instance       |
+
+可以用智能合约做什么
+
+- 链游
+- 可验证神经网络
+- AppChains
+- zkEVM
+- ...
+
+### 3 智能合约剖析
+
+#### 最基本的合约
+
+```rust
+#[starknet::contract]
+mod CounterContract {
+  
+  #[storage]
+  struct Storage {
+    
+  }
+}
+```
+
+#### 构造函数
+
+```rust
+#[starknet::contract]
+mod CounterContract {
+  #[storage]
+  struct Storage {
+    counter: u32,
+  }
+  
+  #[constructor]
+  fn constructor(ref self: ContractState, initial_counter: u32) {
+    self.counter.write(initial_counter);
+  }
+}
+```
+
+#### 特征实现 trait
+
+```rust
+#[abi(embed_v0)]
+impl CounterContract of super::ICounterContract<ContractState> {
+  fn get_counter(self: @ContractState) -> u32 {
+    self.counter.read()
+  }
+  
+  fn increase_counter(ref self: ContractState) {
+    let current_counter = self.counter.read();
+    self.counter.write(current_counter + 1);
+  }
+}
+```
+
+#### 特征
+
+```rust
+#[starknet::interface]
+trait ICounterContract<TContractState> {
+  fn get_counter(self: @TContractState) -> u32;
+  fn increase_counter(ref self: TContractState);
+}
+```
+
+#### 事件
+
+```rust
+#[event]
+#[derive(Drop, starknet::Event)]
+enum Event {
+  OwnershipTransferred: OwnershipTransferred,
+}
+
+#[derive(Drop, starknet::Event)]
+struct OwnershipTransferred {
+  #[key]
+  previous_owner: ContractAddress,
+  new_owner: ContractAddress,
+}
+```
+
+#### Dispatcher
+
+```rust
+#[starknet::interface]
+trait IData<T>{
+  fn get_data(self: @T) -> felt252;
+  fn set_data(ref self: T, data: felt252);
+}
+
+#[starknet::contract]
+mod MyContract {
+  use starknet::ContractAddress;
+  use super::{IDataDispatcher, IDataDispatcherTrait};
+  
+  #[storage]
+  struct Storage {
+    
+  }
+  
+  #[abi(embed_v0)]
+  fn get_data_call(self: @ContractState, data_address: ContractAddress) -> felt252 {
+    let dispatcher = IDataDispatcher {contract_address: data_address};
+    dispatcher.get_data()
+  }
+}
+```
+
+#### 组件
+
+```rust
+#[starknet::interface]
+trait IOwnable<TCcontractState> {
+  // CODE
+}
+
+#[starknet::component]
+mod ownable_component {
+  #[storage]
+  struct Storage {
+    
+  }
+  
+  #[event]
+  #[derive(Drop, starknet::Event)]
+  enum Event {
+    OwnershipTransferred: OwnershipTransferred
+  }
+  
+  #[derive(Drop, starknet::Event)]
+  struct OwnershipTransferred {
+    // CODE
+  }
+  
+  #[embeddable_as(OwnableImpl)]
+  impl Ownable<TContractState, +HasComponent<TContractState>> of super::IOwnable<ComponentState<TContractState>> {
+    // CODE
+  }
+}
+```
+
+组件不能被部署，只能嵌入到合约中，称为合约的一部分
+
+### 4 实战
+
+<https://github.com/starknet-edu/counter-workshop>
+
+使用vscode 打开并安装 `Cairo 1` 扩展
 
 ### 2024.09.29
 
