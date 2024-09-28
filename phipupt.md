@@ -208,4 +208,19 @@ felt252 Cairo 有三种主要的标量类型：felts、整数和布尔值
 
 开罗有三种循环：loop、while和for
 
+
+### 2024.09.26
+
+Cairo 笔记--字典(Dictionary)数据结构:
+
+- Cairo提供了Felt252Dict<T>类型来实现字典功能,其中键的类型限定为felt252,值的类型可以自定义。
+- 基本操作包括insert插入键值对和get获取值。
+- Felt252Dict<T>通过维护一个entries列表来模拟可变内存,每次操作都会添加一个新entry。
+- 字典的内部实现基于entry列表,每个entry包含key、previous_value和new_value。
+- 字典操作的时间复杂度为O(n),n为entry数量。
+- 通过"squashing"过程来验证字典操作的正确性。
+- 字典在销毁时会自动调用squash操作。
+- 提供了entry和finalize方法来手动操作entry。
+- 对于复杂类型(如数组),可以使用Nullable<T>和Box<T>来存储。
+- 存储数组时需要特殊处理,不能直接使用get方法,而要使用entry方式读取和修改。
 <!-- Content_END -->
