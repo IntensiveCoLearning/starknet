@@ -421,4 +421,34 @@ Scarb is a powerful tool in the Cairo ecosystem, helping developers efficiently 
 7. **与合约交互**：使用call命令读取合约状态，使用invoke命令修改状态，处理潜在错误。
 
 8. **验证与确认**：通过区块浏览器检查合约部署状态和交互结果。
+   
+### 2024.09.29
+
+1. **Starkli简介**：
+   - Starkli是一个命令行工具，旨在简化与Starknet的交互，基于starknet-rs。
+
+2. **基本设置**：
+   - 确保完成基本安装后，可以通过命令 `starkli --version` 验证安装。
+
+3. **连接Starknet**：
+   - Starkli使用JSON-RPC提供者进行连接，选项包括：
+     - Infura或Alchemy等服务。
+     - 临时本地节点（如katana）用于开发和测试。
+     - 自建节点。
+
+4. **使用Katana交互**：
+   - 启动Katana并获取链ID和最新区块号的命令示例。
+   - 通过命令 `starkli declare` 声明合约并查看状态变化。
+
+5. **合约部署**：
+   - Starkli支持参数解析，简化合约部署过程，通过特定格式传递构造函数输入。
+
+6. **与Testnet交互**：
+   - 使用第三方JSON-RPC API与Testnet交互，示例命令可获取最新区块号。
+
+7. **环境变量设置**：
+   - 设置环境变量以便进行ETH转账等操作，并通过`starkli invoke`命令执行。
+
+8. **脚本创建**：
+   - 提到将在下一小节中创建一个Bash脚本，以进一步与Starknet交互。
 <!-- Content_END -->
