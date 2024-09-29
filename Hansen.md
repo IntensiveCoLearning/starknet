@@ -17,6 +17,18 @@ timezone: Asia/Shanghai
 starknet js 的文档
 https://starknetjs.com/docs/guides/intro
 
+官网:
+https://docs.starknet.io/
+
+starkli book:
+https://book.starkli.rs/
+
+Foundry Book:
+https://foundry-rs.github.io/starknet-foundry/starknet/index.html
+
+Cairo Registry: 仓库
+https://scarbs.xyz/
+
 ### 2024.09.28
 今天写合约 ，调试 和部署  
 写了一个 counter 的合约 ， 
