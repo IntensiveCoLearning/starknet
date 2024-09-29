@@ -993,6 +993,48 @@ fn main() {
 }
 ~~~
 
+### 2024.09.28
+
+#### 原生不支持的类型的字典
+
+​        使用`Felt252Dict<T>`其中的一条限制来自`Felt252DictValue<T>`特征。这个特征定义了`zero_default`方法，当一个值在字典中不存在时会调用该方法。只有部分公共数据类型（比如大多数的无符号整型、`bool`和`felt252`）实现了该方法。但是一些更复杂的类型（数组、结构包括`u256`）则没有实现。
+
+​        如果要创建原生不支持的类型的字典时，需要手动实现一些特征，来让这些数据类型有合法的字典值类型，可以使用`Nullable<T>`来包装数据类型。`Nullable<T>`是一个智能指针类型，它能指向一个值或者值不存在时为`null`。
+
+🌰例子：将`Span<felt252>`存储到字典中（使用`Span<T>`而不是`Array<T>`的原因是后者没有实现字典的读取操作所需要的`Copy<T>`特征）
+
+~~~rust
+use core::dict::Felt252Dict;
+use core::nullable::{NullableTrait, match_nullable, FromNullableResult};
+
+fn main() {
+    // Create the dictionary
+    let mut d: Felt252Dict<Nullable<Span<felt252>>> = Default::default();
+
+    // Create the array to insert
+    let a = array![8, 9, 10];
+
+    // Insert it as a `Span`
+    d.insert(0, NullableTrait::new(a.span()));
+
+    // Get value back
+    let val = d.get(0);
+
+    // Search the value and assert it is not null
+    let span = match match_nullable(val) {
+        FromNullableResult::Null => panic!("No value found"),
+        FromNullableResult::NotNull(val) => val.unbox(),
+    };
+
+    // Verify we are having the right values
+    assert!(*span.at(0) == 8, "Expecting 8");
+    assert!(*span.at(1) == 9, "Expecting 9");
+    assert!(*span.at(2) == 10, "Expecting 10");
+}
+~~~
+
+
+
 
 
 <!-- Content_END -->
