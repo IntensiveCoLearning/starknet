@@ -48,4 +48,8 @@ Yes 75%
 
 学习 Starknet Book 和 Cairo Book （Continued）
 
+### 2024.09.29
+
+参加 Starknet 残酷共学分享会 #3： Scaffold-Stark 开发框架
+
 <!-- Content_END -->
