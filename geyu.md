@@ -30,5 +30,8 @@ fork 了 counter-workshop
 学习 https://docs.starknet.io/ 的文档，目前进度：Deploying a smart contract
 ### 2024.09.24
 学习 https://docs.starknet.io/ 的文档，目前进度: Using a development network
-
+### 2024.09.27
+学习 https://docs.starknet.io/ 的文档，目前进度: Provers
+### 2024.09.28
+开始学习 Cairo Book 目前进度 https://book.cairo-lang.org/ch02-02-data-types.html
 <!-- Content_END -->

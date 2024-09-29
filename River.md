@@ -881,4 +881,118 @@ balances.get('Maria');
 
 与常规语言不同，`Cairo`的目的之一是使用STARK证明系统生成计算完整性的证明。这意味着需要验证程序的执行是正确的，并且在`Cairo`限制的范围内。其中一个边界检查包括“**字典压缩**”（dictionary squashing），它需要每个条目的旧值和新值的信息。
 
+### 2024.09.27
+
+#### 字典压缩
+
+为了验证`Cairo`程序使用`Felt252Dict<T>`执行生成的证明是正确的，需要检查字典没有被非法篡改。这里通过`squash_dict`方法来实现，该方法检查entry列表中的每个entry，并且检查对字典的访问在整个执行过程中是否保持一致。
+
+压缩过程：给定所有键为k的entry，按照插入顺序，验证第i个entry的`new_value`是否等于第i+1个entry的`previous_value`。
+
+🌰例子：给定一张entry列表：
+
+|   key   | previous | new  |
+| :-----: | :------: | :--: |
+|  Alex   |    0     | 150  |
+|  Maria  |    0     | 100  |
+| Charles |    0     |  70  |
+|  Maria  |   100    | 250  |
+|  Alex   |   150    |  40  |
+|  Alex   |    40    | 300  |
+|  Maria  |   250    | 190  |
+|  Alex   |   300    |  90  |
+
+在压缩之后，entry列表将为精简为：
+
+|   key   | previous | new  |
+| :-----: | :------: | :--: |
+|  Alex   |    0     |  90  |
+|  Maria  |    0     | 190  |
+| Charles |    0     |  70  |
+
+如果第一张表的值有任何修改，在运行时压缩操作将会失败。
+
+#### 字典解构
+
+当运行“字典的基础用法”一节中的例子时，并不会执行字典压缩的操作，但是程序还是会编译成功。这是因为压缩操作会通过`Felt252Dict<T>`所实现的`Destruct<T>`特征来自动调用，这个调用仅仅在字典离开其作用域前执行
+
+### 2024.09.28
+
+#### 字典的`Entry`和`Finalize`
+
+`Cairo`提供了`entry`和`finalize`方法来复制字典数据。
+
+* `entry`：通过给定的`key`来创建一个新的entry。一旦被调用，这个方法会获得字典的所有权，并返回要更新的entry。方法签名如下：
+
+  ~~~rust
+  fn entry(self: Felt252Dict<T>, key: felt252) -> (Felt252DictEntry<T>, T) nopanic
+  ~~~
+
+  第一个参数来获取字典的所有权，第二个参数是用来创建合适的entry。该方法返回一个元组：`Felt252DictEntry<T>`表示字典的entry，`T`表示entry的前一个值。`nopanic`表示该方法不会发生panic
+
+* `finalize`：向字典中插入entry，并返回其所有权。方法签名如下：
+
+  ~~~rust
+  fn finalize(self: Felt252DictEntry<T>, new_value: T) -> Felt252Dict<T>
+  ~~~
+
+🌰例子：
+
+自定义`get`方法：
+
+~~~rust
+use core::dict::{Felt252Dict, Felt252DictEntryTrait};
+
+fn custom_get<T, +Felt252DictValue<T>, +Drop<T>, +Copy<T>>(
+    ref dict: Felt252Dict<T>, key: felt252
+) -> T {
+    // Get the new entry and the previous value held at `key`
+    let (entry, prev_value) = dict.entry(key);
+
+    // Store the value to return
+    let return_value = prev_value;
+
+    // Update the entry with `prev_value` and get back ownership of the dictionary
+    dict = entry.finalize(prev_value);
+
+    // Return the read value
+    return_value
+}
+~~~
+
+自定义`insert`方法：
+
+~~~rust
+use core::dict::{Felt252Dict, Felt252DictEntryTrait};
+
+fn custom_insert<T, +Felt252DictValue<T>, +Destruct<T>, +Drop<T>>(
+    ref dict: Felt252Dict<T>, key: felt252, value: T
+) {
+    // Get the last entry associated with `key`
+    // Notice that if `key` does not exist, `_prev_value` will
+    // be the default value of T.
+    let (entry, _prev_value) = dict.entry(key);
+
+    // Insert `entry` back in the dictionary with the updated value,
+    // and receive ownership of the dictionary
+    dict = entry.finalize(value);
+}
+~~~
+
+使用上面自定义的`get`和`insert`方法：
+
+~~~rust
+fn main() {
+    let mut dict: Felt252Dict<u64> = Default::default();
+
+    custom_insert(ref dict, '0', 100);
+
+    let val = custom_get(ref dict, '0');
+
+    assert!(val == 100, "Expecting 100");
+}
+~~~
+
+
+
 <!-- Content_END -->

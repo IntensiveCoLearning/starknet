@@ -12,6 +12,22 @@ timezone: Asia/Shanghai
 
 <!-- Content_START -->
 
+### 2024.09.28
+今天写合约 ，调试 和部署  
+写了一个 counter 的合约 ， 
+
+
+### 2024.09.27
+
+安装 scarb 
+安装 starkli  
+熟悉 starkli 命令   
+- starkli signer
+- starkli block-number
+- starkli balance
+- starkli account deploy    等
+
+
 ### 2024.09.26
 
 分两个链 ：StarkEx 企业服务，  StarkNet  通用服务

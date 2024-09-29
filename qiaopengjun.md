@@ -586,11 +586,282 @@ transaction 是由你的钱包发起的，可以是智能手机或笔记本电�
 
 ### 2024.09.27
 
-笔记内容
+Tx 生命周期
+你发送一笔交易，需要对其进行签署，然后该交易被发送到内存池，内存池会检查该交易结构是否正确、字段是否正确以及格式是否正确
+当交易被确认时，Starknet 就会接收它， 这时候它的状态就会变成 RECEIVED
+如果发生某些事情，比如智能手机和排序器直接的连接中断了，你的交易将被忽略，故它的状态会变成 IGNORED
+这个状态并不是一个标准状态，它意味着Starknet不会知道你的交易
+有可能发生交易已经到了内存池，但因为格式不正确，比如使用了错误的客户端或SDK。在这种情况下，Sequencer 排序器会忽略该交易，不会解析其中的数据。
+如果交易格式正确，被排序器和内存池接收，下一步就到签名验证阶段了，每笔交易都必须签名，如果签名不正确，意味着它的公私钥不对应，交易会被拒绝。如果签名有效，它就继续在CairoVM 虚拟机中运行。
+如果排序器能成功使用 CairoVM 执行该交易，它的状态会变为ACCEPTEN_ON_L2。也就是在L2 上被接受。这就是在L2 上最终被确认的状态。是在Starknet 上执行你的交易后网络的新状态。
+如果在执行过程中发生某些事情，例如、燃气耗尽或者断言错误，交易将停止并执行回滚。但你仍然会被收取执行交易从发生到回滚哪一刻产生的费用，最终的状态会变为 REVERTED。
+无论交易成功或失败，最终都会生成 trace，并发送给证明者，证明者会生成有效证明，如果被以太坊接受，交易状态将变为ACCEPTED_ON_L1，也就是说在 L1 上被接受。
+总结：你的交易首先被内存池接收并确认，如果结构正确，通过签名验证，它将进入CairoVM 虚拟机执行，如果执行失败，交易将被拒绝。如果执行成功，交易将获得在L2 上被接受的状态，即 ACCEPTED_ON_L2。并在L2 上达到最终确认。有效性证明生成后发送给以太坊的验证器，如果被接受，交易状态将变为在L1上被接受，即 ACCEPTED_ON_L1。这就是整个生命周期
+
+Tx 类型
+声明 Declare
+
+在 SN 注册新的类
+调用 Invoke
+
+执行 write 函数
+部署账户 deploy_account
+
+部署账户合约
+假设性部署 - 部署账户合约
+没有账户合约的前提下如何部署账户合约
+
+预先计算合约地址
+给这个地址发送资金
+发送 deploy_account tx
+序列器扣减 gas 后部署
+部署账户合约与常规的智能合约是不同的
+
+要部署智能合约你需要先有智能钱包
 
 ### 2024.09.28
 
-笔记内容
+### 主题
+
+1. 设置开发工具
+2. 合约类和实例
+3. 合约剖析
+4. 实战
+
+### 设置开发工具
+
+#### `Scarb`的介绍与安装
+
+- 包管理
+- 处理依赖
+- 项目编译
+- 与 Foundry 集成
+
+- <https://asdf-vm.com/guide/getting-started.html>
+- <https://www.cairo-lang.org/tutorial/>
+
+```shell
+brew install asdf
+
+asdf plugin add scarb 
+asdf install scarb latest 
+asdf global scarb latest
+
+scarb --version
+```
+
+#### `Starknet Foundry`
+
+专为 `Starknet` 合约的开发和测试而设计
+
+组成部分：
+
+- Forge
+- Cast
+
+<https://foundry-rs.github.io/starknet-foundry/index.html>
+
+```shell
+curl -L https://raw.githubusercontent.com/foundry-rs/starknet-foundry/master/scripts/install.sh | sh
+
+snfoundryup
+
+asdf plugin add starknet-foundry
+asdf install starknet-foundry latest
+
+snforge --version
+sncast --version
+
+```
+
+### [Universal-Sierra-Compiler update](https://foundry-rs.github.io/starknet-foundry/getting-started/installation.html#universal-sierra-compiler-update)
+
+If you would like to bump the USC manually (e.g. when the new Sierra version is released) you can do it by running:
+
+```shell
+curl -L https://raw.githubusercontent.com/software-mansion/universal-sierra-compiler/master/scripts/install.sh | sh
+```
+
+### 2 合约类和实例
+
+#### 合约类
+
+Contract Class
+
+- Code (cairo => Compiled to sierra)
+- ABI (which functions are accessible)
+- Class HASH
+
+声明合约生成类哈希
+
+#### 合约实例
+
+Contract instance
+
+- Storage
+- Associated class hash
+- Contract ADDRESS
+
+工厂模式
+
+READ => CALLS(free)
+
+WRITE => INVOKE (it's a transaction = gas to pay)
+
+| Declare | Invoke   | Deploy_account |
+| ------- | -------- | -------------- |
+| class   | instance | instance       |
+
+可以用智能合约做什么
+
+- 链游
+- 可验证神经网络
+- AppChains
+- zkEVM
+- ...
+
+### 3 智能合约剖析
+
+#### 最基本的合约
+
+```rust
+#[starknet::contract]
+mod CounterContract {
+  
+  #[storage]
+  struct Storage {
+    
+  }
+}
+```
+
+#### 构造函数
+
+```rust
+#[starknet::contract]
+mod CounterContract {
+  #[storage]
+  struct Storage {
+    counter: u32,
+  }
+  
+  #[constructor]
+  fn constructor(ref self: ContractState, initial_counter: u32) {
+    self.counter.write(initial_counter);
+  }
+}
+```
+
+#### 特征实现 trait
+
+```rust
+#[abi(embed_v0)]
+impl CounterContract of super::ICounterContract<ContractState> {
+  fn get_counter(self: @ContractState) -> u32 {
+    self.counter.read()
+  }
+  
+  fn increase_counter(ref self: ContractState) {
+    let current_counter = self.counter.read();
+    self.counter.write(current_counter + 1);
+  }
+}
+```
+
+#### 特征
+
+```rust
+#[starknet::interface]
+trait ICounterContract<TContractState> {
+  fn get_counter(self: @TContractState) -> u32;
+  fn increase_counter(ref self: TContractState);
+}
+```
+
+#### 事件
+
+```rust
+#[event]
+#[derive(Drop, starknet::Event)]
+enum Event {
+  OwnershipTransferred: OwnershipTransferred,
+}
+
+#[derive(Drop, starknet::Event)]
+struct OwnershipTransferred {
+  #[key]
+  previous_owner: ContractAddress,
+  new_owner: ContractAddress,
+}
+```
+
+#### Dispatcher
+
+```rust
+#[starknet::interface]
+trait IData<T>{
+  fn get_data(self: @T) -> felt252;
+  fn set_data(ref self: T, data: felt252);
+}
+
+#[starknet::contract]
+mod MyContract {
+  use starknet::ContractAddress;
+  use super::{IDataDispatcher, IDataDispatcherTrait};
+  
+  #[storage]
+  struct Storage {
+    
+  }
+  
+  #[abi(embed_v0)]
+  fn get_data_call(self: @ContractState, data_address: ContractAddress) -> felt252 {
+    let dispatcher = IDataDispatcher {contract_address: data_address};
+    dispatcher.get_data()
+  }
+}
+```
+
+#### 组件
+
+```rust
+#[starknet::interface]
+trait IOwnable<TCcontractState> {
+  // CODE
+}
+
+#[starknet::component]
+mod ownable_component {
+  #[storage]
+  struct Storage {
+    
+  }
+  
+  #[event]
+  #[derive(Drop, starknet::Event)]
+  enum Event {
+    OwnershipTransferred: OwnershipTransferred
+  }
+  
+  #[derive(Drop, starknet::Event)]
+  struct OwnershipTransferred {
+    // CODE
+  }
+  
+  #[embeddable_as(OwnableImpl)]
+  impl Ownable<TContractState, +HasComponent<TContractState>> of super::IOwnable<ComponentState<TContractState>> {
+    // CODE
+  }
+}
+```
+
+组件不能被部署，只能嵌入到合约中，称为合约的一部分
+
+### 4 实战
+
+<https://github.com/starknet-edu/counter-workshop>
+
+使用vscode 打开并安装 `Cairo 1` 扩展
 
 ### 2024.09.29
 

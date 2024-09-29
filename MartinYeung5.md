@@ -353,4 +353,37 @@ starkli account fetch 0x07bf212a91454ec1f129a8f4a29054211dc013f73bbbe50374426a41
 但我的wallet已經deployed，因為Braavos wallet的已經在錢包上deployed
 ![alt text](https://github.com/MartinYeung5/starknet/blob/main/MartinYeung5/20240925_13.png?raw=true)
 
+### 2024.09.28
+下一部分
+https://docs.starknet.io/quick-start/declare-a-smart-contract/
+Declaring a smart contract
+
+* 更新 Scarb.toml
+```
+[package]
+name = "my_contract"
+version = "0.1.0"
+edition = "2023_11"
+
+[dependencies]
+starknet = ">=2.5.4"
+
+[[target.starknet-contract]]
+sierra = true
+
+```
+
+* update rpc at .env
+
+starkli declare target/dev/my_contract_hello.contract_class.json --network=sepolia --compiler-version=2.7.1
+有錯誤訊息:
+![alt text](https://github.com/MartinYeung5/starknet/blob/main/MartinYeung5/20240925_14.png?raw=true)
+
+my_contract.starknet_artifacts
+starkli declare target/dev/my_contract.starknet_artifacts.json --network=sepolia --compiler-version=2.7.1
+
+每次打開terminal
+每次都要執行source src/.env 
+
+
 <!-- Content_END -->

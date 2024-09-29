@@ -191,5 +191,36 @@ Scarb：Cairo构建工具和包管理器
 3. 参考
 - [Scarb 官方文档](https://docs.swmansion.com/scarb/docs.html)
 
+### 2024.09.27
+Cairo 笔记：
+在 Cairo 中，代码包被称为 crates
 
+开罗使用不可变内存模型，这意味着一旦内存单元被写入， 它不能被覆盖，只能被读取。为了反映这种不可变的内存模型， 在开罗中，变量默认是不可变的。
+Caironautes
+
+felt252 Cairo 有三种主要的标量类型：felts、整数和布尔值
+
+布尔值的大小为一个 felt252
+
+开罗没有原生的字符串类型，但提供了两种处理字符串的方法：使用单引号的短字符串和使用双引号的字节数组。 开罗使用felt252来处理短字符串。由于felt252是 251 位的，短字符串限制为 31 个字符（31 * 8 = 248 位，这是适合 251 位的最大 8 的倍数）
+
+开罗代码使用蛇形命名法作为函数和变量名称的常规风格，其中所有字母都是小写字母，且下划线用于分隔单词
+
+开罗有三种循环：loop、while和for
+
+
+### 2024.09.28
+
+Cairo 笔记--字典(Dictionary)数据结构:
+
+- Cairo提供了Felt252Dict<T>类型来实现字典功能,其中键的类型限定为felt252,值的类型可以自定义。
+- 基本操作包括insert插入键值对和get获取值。
+- Felt252Dict<T>通过维护一个entries列表来模拟可变内存,每次操作都会添加一个新entry。
+- 字典的内部实现基于entry列表,每个entry包含key、previous_value和new_value。
+- 字典操作的时间复杂度为O(n),n为entry数量。
+- 通过"squashing"过程来验证字典操作的正确性。
+- 字典在销毁时会自动调用squash操作。
+- 提供了entry和finalize方法来手动操作entry。
+- 对于复杂类型(如数组),可以使用Nullable<T>和Box<T>来存储。
+- 存储数组时需要特殊处理,不能直接使用get方法,而要使用entry方式读取和修改。
 <!-- Content_END -->
