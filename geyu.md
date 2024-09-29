@@ -34,4 +34,6 @@ fork 了 counter-workshop
 学习 https://docs.starknet.io/ 的文档，目前进度: Provers
 ### 2024.09.28
 开始学习 Cairo Book 目前进度 https://book.cairo-lang.org/ch02-02-data-types.html
+### 2024.09.29
+参加zoom会议，学习 scaffold-stark 工具的使用
 <!-- Content_END -->
