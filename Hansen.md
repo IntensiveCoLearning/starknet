@@ -12,6 +12,11 @@ timezone: Asia/Shanghai
 
 <!-- Content_START -->
 
+### 2024.09.29
+
+starknet js 的文档
+https://starknetjs.com/docs/guides/intro
+
 ### 2024.09.28
 今天写合约 ，调试 和部署  
 写了一个 counter 的合约 ， 
