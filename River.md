@@ -993,7 +993,7 @@ fn main() {
 }
 ~~~
 
-### 2024.09.28
+### 2024.09.29
 
 #### 原生不支持的类型的字典
 
@@ -1033,8 +1033,69 @@ fn main() {
 }
 ~~~
 
+### 2024.09.30
 
+#### 使用字典存储数组
 
+* 插入操作：简单，与插入其他类型的数据相似
 
+  ~~~rust
+  use core::dict::Felt252Dict;
+  
+  fn main() {
+      let arr = array![20, 19, 26];
+      let mut dict: Felt252Dict<Nullable<Array<u8>>> = Default::default();
+      dict.insert(0, NullableTrait::new(arr));
+      println!("Array inserted successfully.");
+  }
+  ~~~
+
+* 读取操作：使用`get`方法读取字典会在编译时报错。因为`get`方法会尝试在内存中复制数组，但是`Array<T>`没有实现`Copy<T>`特征，无法进行复制操作。
+
+  ~~~rust
+  use core::nullable::{match_nullable, FromNullableResult};
+  use core::dict::Felt252Dict;
+  
+  fn main() {
+      let arr = array![20, 19, 26];
+      let mut dict: Felt252Dict<Nullable<Array<u8>>> = Default::default();
+      dict.insert(0, NullableTrait::new(arr));
+      println!("Array: {:?}", get_array_entry(ref dict, 0));
+  }
+  
+  fn get_array_entry(ref dict: Felt252Dict<Nullable<Array<u8>>>, index: felt252) -> Span<u8> {
+      let val = dict.get(0); // This will cause a compiler error
+      let arr = match match_nullable(val) {
+          FromNullableResult::Null => panic!("No value!"),
+          FromNullableResult::NotNull(val) => val.unbox()
+      };
+      arr.span()
+  }
+  ~~~
+
+  正确的读取方式需要使用到字典的entry，这样可以获取数组的引用而不需要进行复制。
+
+  ~~~rust
+  fn get_array_entry(ref dict: Felt252Dict<Nullable<Array<u8>>>, index: felt252) -> Span<u8> {
+      let (entry, _arr) = dict.entry(index);
+      let mut arr = _arr.deref_or(array![]);
+      let span = arr.span();
+      dict = entry.finalize(NullableTrait::new(arr));
+      span
+  }
+  ~~~
+
+* 修改操作：同样使用字典的entry进行操作
+
+  ~~~rust
+  fn append_value(ref dict: Felt252Dict<Nullable<Array<u8>>>, index: felt252, value: u8) {
+      let (entry, arr) = dict.entry(index);
+      let mut unboxed_val = arr.deref_or(array![]);
+      unboxed_val.append(value);
+      dict = entry.finalize(NullableTrait::new(unboxed_val));
+  }
+  ~~~
+
+  
 
 <!-- Content_END -->
