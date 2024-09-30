@@ -451,4 +451,69 @@ Scarb is a powerful tool in the Cairo ecosystem, helping developers efficiently 
 
 8. **脚本创建**：
    - 提到将在下一小节中创建一个Bash脚本，以进一步与Starknet交互。
+   
+### 2024.09.30
+
+这段内容详细说明了如何创建和运行自定义Bash脚本与Starknet进行交互，具体分为两个示例：Katana Local Node和Goerli Testnet。
+
+### 1. Katana Local Node
+- **目的**：连接到本地StarkNet开发网络，获取当前链ID、最新区块号和指定账户的余额。
+- **步骤**：
+  1. 确保Katana在终端1中运行：
+     ```bash
+     katana
+     ```
+  2. 在终端2中创建一个脚本文件：
+     ```bash
+     touch script_devnet
+     ```
+  3. 使用文本编辑器编辑该文件，插入以下脚本：
+     ```bash
+     #!/bin/bash
+     chain=$(starkli chain-id --rpc http://0.0.0.0:5050)
+     echo "Connected to the Starknet local devnet with chain id: $chain"
+     
+     block=$(starkli block-number --rpc http://0.0.0.0:5050)
+     echo "The latest block number on Katana is: $block"
+     
+     account1="0x517ececd29116499f4a1b64b094da79ba08dfd54a3edaa316134c41f8160973"
+     balance=$(starkli balance $account1 --rpc http://0.0.0.0:5050)
+     echo "The balance of account $account1 is: $balance ETH"
+     ```
+  4. 执行脚本：
+     ```bash
+     bash script_devnet
+     ```
+  5. 输出内容将显示连接的链ID、最新区块号以及指定账户的余额。
+
+### 2. Goerli Testnet
+- **目的**：连接到Goerli测试网络，读取最新区块号并检索特定交易哈希的交易收据。
+- **步骤**：
+  1. 创建一个脚本文件：
+     ```bash
+     touch script_testnet
+     ```
+  2. 编辑文件并粘贴以下脚本：
+     ```bash
+     echo "Input your testnet API URL: "
+     read url
+     chain=$(starkli chain-id --rpc $url)
+     echo "Connected to the Starknet testnet with chain id: $chain"
+     
+     block=$(starkli block-number --rpc $url)
+     echo "The latest block number on Goerli is: $block"
+     
+     echo "Input your transaction hash: "
+     read hash
+     receipt=$(starkli receipt $hash --rpc $url)
+     echo "The receipt of transaction $hash is: $receipt"
+     ```
+  3. 执行脚本：
+     ```bash
+     bash script_testnet
+     ```
+  4. 输入测试网API URL和交易哈希（示例哈希：`0x2dd73eb1802aef84e8d73334ce0e5856b18df6626fe1a67bb247fcaaccaac8c`）。
+  
+### 总结
+这些示例展示了如何通过自定义Bash脚本实现与Starknet的交互，帮助用户获取链信息、区块数据和账户余额等，增强了对区块链网络的操作能力。
 <!-- Content_END -->
