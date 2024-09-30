@@ -385,5 +385,23 @@ starkli declare target/dev/my_contract.starknet_artifacts.json --network=sepolia
 每次打開terminal
 每次都要執行source src/.env 
 
+### 2024.09.30
+
+starkli declare target/dev/my_contract.starknet_artifacts.json \
+    --rpc=https://starknet-sepolia.g.alchemy.com/starknet/version/rpc/v0_7/bG3D2u3pNQ0XI5lXiWcaGWGEzmA2G5zw\
+    --compiler-version=2.7.1\
+    --keystore=/root/.starkli-wallets/deployer/keystore.json\
+
+都是有錯誤
+![alt text](https://github.com/MartinYeung5/starknet/blob/main/MartinYeung5/20240925_15.png?raw=true)
+
+starkli declare target/dev/my_contract.starknet_artifacts.json \
+    --rpc=https://starknet-sepolia.g.alchemy.com/starknet/version/rpc/v0_7/bG3D2u3pNQ0XI5lXiWcaGWGEzmA2G5zw\
+    --compiler-version=2.7.1\
+    --keystore=/root/.starkli-wallets/deployer/keystore.json\
+    --account=/root/.starkli-wallets/deployer/account.json
+
+* 暫時不知道可以怎樣做，不能成功declare
+
 
 <!-- Content_END -->
