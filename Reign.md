@@ -516,4 +516,46 @@ Scarb is a powerful tool in the Cairo ecosystem, helping developers efficiently 
   
 ### 总结
 这些示例展示了如何通过自定义Bash脚本实现与Starknet的交互，帮助用户获取链信息、区块数据和账户余额等，增强了对区块链网络的操作能力。
+
+### 2024.10.01
+
+Starknet Devnet (Rust-based) is a local development environment designed for testing and development on the Starknet platform. It is similar to the Python-based version but implemented in Rust for performance.
+
+#### **Installation Options**
+1. **Docker**: Starknet Devnet can be installed using Docker (follow provided instructions).
+2. **Manual Installation**: 
+   - Prerequisites: Install Rust (follow Rust installation guide).
+   - Procedure: Clone the repository using the command `git clone https://github.com/0xSpaceShard/starknet-devnet-rs.git`, and then run `cargo run` to start.
+
+#### **Running Starknet Devnet**
+Once installed, running the command `cargo run` starts the Devnet, predeploying several contracts and accounts (with addresses, private and public keys, and seed values provided). A sample output will include details such as:
+- **Fee Token Contract**
+- **Universal Deployer Contract**
+- **Predeployed Accounts**
+
+#### **Key Features**
+- **Seed-based Account Replication**: The `--seed` flag enables reproducing the same account sequence across different sessions.
+   - Example: `cargo run -- --seed 912753742`
+  
+- **Dumping and Loading Data**: 
+   - To save your progress, use the `--dump-on exit --dump-path` flag. To load saved data, specify the dump path and seed during launch.
+   - Example for dumping: `cargo run -- --dump-on exit --dump-path ./dumps/contract_1`
+   - Example for loading: `cargo run -- --dump-path ./dumps/contract_1 --seed 912753742`
+  
+#### **Additional Flags**
+- `--accounts`: Specify number of predeployed accounts.
+- `--account-class`: Set the class used by predeployed accounts (e.g., `cairo0` or `cairo1`).
+- `--initial-balance`: Set initial account balance.
+- `--port` and `--host`: Define where the server listens for connections.
+
+#### **Cross-Version Compatibility Warning**
+Dumping and loading data across different versions may not be compatible, so caution is advised when upgrading Devnet versions.
+
+#### **Minting Tokens**
+Tokens can be minted by making a POST request:
+```bash
+curl -d '{"amount":8646000000000, "address":"0x6e...eadf"}' -H "Content-Type: application/json" -X POST http://localhost:5050/mint
+```
+
+This Rust version of Starknet Devnet offers a similar feature set to the Python-based version but provides performance optimizations through Rust.
 <!-- Content_END -->
