@@ -12,6 +12,11 @@ timezone: Asia/Shanghai
 
 <!-- Content_START -->
 
+### 2024.09.30
+
+写demo合约，  并用 starkli  部署到测试网络  
+合约地址为：0x036ff386a7bfb7f06e7c1b29ba23837d8c7c06a6c88b3741cdec3d79a803054f
+
 ### 2024.09.29
 
 starknet js 的文档

@@ -150,5 +150,28 @@ StarkNet's tokenomics .
 - 使用 @ 操作符创建 x 的快照,使用 desnap 操作符 * 将快照转换回普通值
 ### 2024.9.27
 - 观看了共学第二期视频
+### 2024.9.30
+- Trait
+    - Trait 是一种定义了某些行为（方法）的抽象类型
+    - 使用impl 实现trait
+    - 使用 #[starknet::contract] 属性标记的 trait
+    - 使用#[generate_trait]属性，在不用单独声明trait的情况下直接使用impl构建功能 语法糖
+- 泛型 
+    - 类型参数在函数名后的尖括号 < > 中指定。例如 <T>
+    - impl PairImpl<T> of PairTrait<T>  // 实现泛型方法
+    - 约束
+- 接口
+    - 用 #[starknet::interface] 属性标记的 trait
+    - 必须明确声明函数的装饰器。
+  
+      其中的函数不应被实现。
 
+      不应声明构造函数。
+
+      不应声明状态变量。
+
+      不应声明事件（与 Solidity 不同）。
+
+      所有view函数需要包含参数self: @TContractState，external函数需要包含参数ref self: TContractState。 
+     
 <!-- Content_END -->
