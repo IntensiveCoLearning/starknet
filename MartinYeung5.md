@@ -403,5 +403,22 @@ starkli declare target/dev/my_contract.starknet_artifacts.json \
 
 * 暫時不知道可以怎樣做，不能成功declare
 
+### 2024.10.01
+Starknet 工具鏈與開發環境
+
+一般安裝:
+curl --proto '=https' --tlsv1.2 -sSf https://docs.swmansion.com/scarb/install.sh | sh
+最新版本的安裝:
+curl --proto '=https' --tlsv1.2 -sSf https://docs.swmansion.com/scarb/install.sh | sh -s -- -v nightly
+![alt text](https://github.com/MartinYeung5/starknet/blob/main/MartinYeung5/20241001_1.png?raw=true)
+* source /root/.bashrc
+* scarb --version
+![alt text](https://github.com/MartinYeung5/starknet/blob/main/MartinYeung5/20241001_2.png?raw=true)
+
+創建新的項目:
+* scarb init --name hello_world
+![alt text](https://github.com/MartinYeung5/starknet/blob/main/MartinYeung5/20241001_3.png?raw=true)
+但就不能創建帶有項目名稱的目錄，要自行創建。
+
 
 <!-- Content_END -->
