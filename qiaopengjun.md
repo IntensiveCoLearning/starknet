@@ -896,7 +896,246 @@ StarkNet中的节点与比特币或以太坊区块链的节点相比，有着独
 
 ### 2024.10.01
 
-笔记内容
+### 六步：执行测试
+
+<https://foundry-rs.github.io/starknet-foundry/testing/running-tests.html>
+
+#### 运行所有测试
+
+```bash
+simple_storage on  main [?] via 🅒 base 
+➜ scarb test
+     Running test simple_storage (snforge test)
+   Compiling snforge_scarb_plugin v0.31.0 (git+https://github.com/foundry-rs/starknet-foundry?tag=v0.31.0#72ea785ca354e9e506de3e5d687da9fb2c1b3c67)
+    Finished `release` profile [optimized] target(s) in 0.18s
+   Compiling simple_storage v0.1.0 (/Users/qiaopengjun/Code/starknet-code/hello_starknet/simple_storage/Scarb.toml)
+    Finished release target(s) in 4 seconds
+   Compiling snforge_scarb_plugin v0.31.0 (git+https://github.com/foundry-rs/starknet-foundry?tag=v0.31.0#72ea785ca354e9e506de3e5d687da9fb2c1b3c67)
+    Finished `release` profile [optimized] target(s) in 0.12s
+   Compiling test(simple_storage_unittest) simple_storage v0.1.0 (/Users/qiaopengjun/Code/starknet-code/hello_starknet/simple_storage/Scarb.toml)
+   Compiling test(simple_storage_integrationtest) simple_storage_integrationtest v0.1.0 (/Users/qiaopengjun/Code/starknet-code/hello_starknet/simple_storage/Scarb.toml)
+    Finished release target(s) in 8 seconds
+
+
+Collected 5 test(s) from simple_storage package
+Running 0 test(s) from src/
+Running 5 test(s) from tests/
+[PASS] simple_storage_integrationtest::test_contract::test_owner (gas: ~169)
+[PASS] simple_storage_integrationtest::test_contract::test_initial_value (gas: ~233)
+[PASS] simple_storage_integrationtest::test_contract::test_set_and_get_data (gas: ~245)
+[PASS] simple_storage_integrationtest::test_contract::test_zero_value (gas: ~184)
+[PASS] simple_storage_integrationtest::test_contract::test_multiple_updates (gas: ~261)
+Tests: 5 passed, 0 failed, 0 skipped, 0 ignored, 0 filtered out
+```
+
+#### 运行指定测试
+
+```bash
+simple_storage on  main [?] via 🅒 base took 14.1s 
+➜ scarb test test_set_and_get_data          
+     Running test simple_storage (snforge test)
+   Compiling snforge_scarb_plugin v0.31.0 (git+https://github.com/foundry-rs/starknet-foundry?tag=v0.31.0#72ea785ca354e9e506de3e5d687da9fb2c1b3c67)
+    Finished `release` profile [optimized] target(s) in 0.18s
+   Compiling simple_storage v0.1.0 (/Users/qiaopengjun/Code/starknet-code/hello_starknet/simple_storage/Scarb.toml)
+    Finished release target(s) in 4 seconds
+   Compiling snforge_scarb_plugin v0.31.0 (git+https://github.com/foundry-rs/starknet-foundry?tag=v0.31.0#72ea785ca354e9e506de3e5d687da9fb2c1b3c67)
+    Finished `release` profile [optimized] target(s) in 0.12s
+   Compiling test(simple_storage_unittest) simple_storage v0.1.0 (/Users/qiaopengjun/Code/starknet-code/hello_starknet/simple_storage/Scarb.toml)
+   Compiling test(simple_storage_integrationtest) simple_storage_integrationtest v0.1.0 (/Users/qiaopengjun/Code/starknet-code/hello_starknet/simple_storage/Scarb.toml)
+    Finished release target(s) in 8 seconds
+
+
+Collected 1 test(s) from simple_storage package
+Running 1 test(s) from tests/
+[PASS] simple_storage_integrationtest::test_contract::test_set_and_get_data (gas: ~245)
+Running 0 test(s) from src/
+Tests: 1 passed, 0 failed, 0 skipped, 0 ignored, 4 filtered out
+
+```
+
+#### [显示测试期间使用的资源](https://foundry-rs.github.io/starknet-foundry/testing/running-tests.html#displaying-resources-used-during-tests)
+
+```bash
+simple_storage on  main [?] via 🅒 base took 14.6s 
+➜ scarb test test_set_and_get_data --detailed-resources       
+     Running test simple_storage (snforge test)
+   Compiling snforge_scarb_plugin v0.31.0 (git+https://github.com/foundry-rs/starknet-foundry?tag=v0.31.0#72ea785ca354e9e506de3e5d687da9fb2c1b3c67)
+    Finished `release` profile [optimized] target(s) in 0.18s
+   Compiling simple_storage v0.1.0 (/Users/qiaopengjun/Code/starknet-code/hello_starknet/simple_storage/Scarb.toml)
+    Finished release target(s) in 4 seconds
+   Compiling snforge_scarb_plugin v0.31.0 (git+https://github.com/foundry-rs/starknet-foundry?tag=v0.31.0#72ea785ca354e9e506de3e5d687da9fb2c1b3c67)
+    Finished `release` profile [optimized] target(s) in 0.12s
+   Compiling test(simple_storage_unittest) simple_storage v0.1.0 (/Users/qiaopengjun/Code/starknet-code/hello_starknet/simple_storage/Scarb.toml)
+   Compiling test(simple_storage_integrationtest) simple_storage_integrationtest v0.1.0 (/Users/qiaopengjun/Code/starknet-code/hello_starknet/simple_storage/Scarb.toml)
+    Finished release target(s) in 8 seconds
+
+
+Collected 1 test(s) from simple_storage package
+Running 1 test(s) from tests/
+[PASS] simple_storage_integrationtest::test_contract::test_set_and_get_data (gas: ~245)
+        steps: 7255
+        memory holes: 1057
+        builtins: (range_check: 115, pedersen: 7)
+        syscalls: (StorageWrite: 3, StorageRead: 2, CallContract: 2, Deploy: 1, GetExecutionInfo: 1)
+        
+Running 0 test(s) from src/
+Tests: 1 passed, 0 failed, 0 skipped, 0 ignored, 4 filtered out
+
+```
+
+### 第七步：查看测试覆盖率
+
+<https://github.com/software-mansion/cairo-coverage>
+
+<https://foundry-rs.github.io/starknet-foundry/testing/coverage.html>
+
+#### 1. 安装 `cairo-coverage`
+
+```bash
+curl -L https://raw.githubusercontent.com/software-mansion/cairo-coverage/main/scripts/install.sh | sh
+```
+
+实操
+
+```bash
+~ via 🅒 base took 3.3s
+➜
+curl -L https://raw.githubusercontent.com/software-mansion/cairo-coverage/main/scripts/install.sh | sh
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+100  3014  100  3014    0     0   2876      0  0:00:01  0:00:01 --:--:--  2878
+Downloading and extracting cairo-coverage-v0.2.0-aarch64-apple-darwin...
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0
+100 2430k  100 2430k    0     0   989k      0  0:00:02  0:00:02 --:--:-- 1695k
+cairo-coverage (v0.2.0) has been installed successfully.
+                                
+                                
+                              
+~ via 🅒 base
+➜
+cairo-coverage -V
+cairo-coverage 0.2.0
+                                
+```
+
+#### 2. `Scarb.toml` 文件中进行如下配置
+
+```toml
+[profile.dev.cairo]
+unstable-add-statements-code-locations-debug-info = true
+unstable-add-statements-functions-debug-info = true
+inlining-strategy = "avoid"
+
+```
+
+#### 3. 调用 `cairo-coverage` 运行测试生成测试覆盖率文件
+
+```bash
+simple_storage on  main [?] via 🅒 base took 14.5s 
+➜ scarb test --coverage                                
+     Running test simple_storage (snforge test)
+   Compiling snforge_scarb_plugin v0.31.0 (git+https://github.com/foundry-rs/starknet-foundry?tag=v0.31.0#72ea785ca354e9e506de3e5d687da9fb2c1b3c67)
+    Finished `release` profile [optimized] target(s) in 0.18s
+   Compiling simple_storage v0.1.0 (/Users/qiaopengjun/Code/starknet-code/hello_starknet/simple_storage/Scarb.toml)
+    Finished release target(s) in 4 seconds
+   Compiling snforge_scarb_plugin v0.31.0 (git+https://github.com/foundry-rs/starknet-foundry?tag=v0.31.0#72ea785ca354e9e506de3e5d687da9fb2c1b3c67)
+    Finished `release` profile [optimized] target(s) in 0.13s
+   Compiling test(simple_storage_unittest) simple_storage v0.1.0 (/Users/qiaopengjun/Code/starknet-code/hello_starknet/simple_storage/Scarb.toml)
+   Compiling test(simple_storage_integrationtest) simple_storage_integrationtest v0.1.0 (/Users/qiaopengjun/Code/starknet-code/hello_starknet/simple_storage/Scarb.toml)
+    Finished release target(s) in 9 seconds
+
+
+Collected 5 test(s) from simple_storage package
+Running 5 test(s) from tests/
+[PASS] simple_storage_integrationtest::test_contract::test_initial_value (gas: ~233)
+[PASS] simple_storage_integrationtest::test_contract::test_owner (gas: ~169)
+[PASS] simple_storage_integrationtest::test_contract::test_set_and_get_data (gas: ~245)
+[PASS] simple_storage_integrationtest::test_contract::test_zero_value (gas: ~184)
+[PASS] simple_storage_integrationtest::test_contract::test_multiple_updates (gas: ~261)
+Running 0 test(s) from src/
+[WARNING] No trace data to generate coverage from
+Tests: 5 passed, 0 failed, 0 skipped, 0 ignored, 0 filtered out
+
+```
+
+查看生成的文件：
+
+```bash
+simple_storage on  main [?] via 🅒 base 
+➜ cd coverage         
+
+simple_storage/coverage on  main [?] via 🅒 base 
+➜ ls
+coverage.lcov
+
+simple_storage/coverage on  main [?] via 🅒 base 
+➜ cat coverage.lcov                                            
+TN:
+SF:/Users/qiaopengjun/Code/starknet-code/hello_starknet/simple_storage/src/simple_storage.cairo
+FN:31,simple_storage::simple_storage::SimpleStorage::SimpleStorageImpl::get_data
+FNDA:28,simple_storage::simple_storage::SimpleStor
+```
+
+#### 4. 使用 `genhtml` 工具生成并查看测试覆盖率报告
+
+##### 安装 `lcov`
+
+```bash
+brew install lcov
+
+==> Auto-updating Homebrew...
+Adjust how often this is run with HOMEBREW_AUTO_UPDATE_SECS or disable with
+HOMEBREW_NO_AUTO_UPDATE. Hide these hints with HOMEBREW_NO_ENV_HINTS (see `man brew`).
+==> Auto-updated Homebrew!
+Updated 3 taps (surrealdb/tap, homebrew/services and pulumi/tap).
+
+You have 89 outdated formulae installed.
+
+==> Fetching lcov
+==> Downloading https://mirrors.tuna.tsinghua.edu.cn/homebrew-bottles//lcov-2.1.arm64_sequoia.bottle.tar.gz
+########################################################################################################################################################## 100.0%
+==> Pouring lcov-2.1.arm64_sequoia.bottle.tar.gz
+🍺  /opt/homebrew/Cellar/lcov/2.1: 64 files, 1.9MB
+==> Running `brew cleanup lcov`...
+Disable this behaviour by setting HOMEBREW_NO_INSTALL_CLEANUP.
+Hide these hints with HOMEBREW_NO_ENV_HINTS (see `man brew`).
+
+
+genhtml --version
+genhtml: LCOV version 2.1-1
+```
+
+##### 使用[lcov 包](https://github.com/linux-test-project/lcov/tree/master)中的工具`genhtml`生成 HTML 报告
+
+```bash
+simple_storage/coverage on  main [?] via 🅒 base 
+➜ genhtml -o coverage_report coverage.lcov         
+Reading tracefile coverage.lcov.
+Found 2 entries.
+Found common filename prefix "/Users/qiaopengjun/Code/starknet-code/hello_starknet/simple_storage"
+Generating output.
+Processing file src/simple_storage.cairo
+  lines=14 hit=14 functions=7 hit=7
+Processing file tests/test_contract.cairo
+  lines=6 hit=6 functions=2 hit=2
+Overall coverage rate:
+  source files: 2
+  lines.......: 100.0% (20 of 20 lines)
+  functions...: 100.0% (9 of 9 functions)
+Message summary:
+  no messages were reported
+
+simple_storage/coverage on  main [?] via 🅒 base 
+➜ ls -l
+total 8
+-rw-r--r--   1 qiaopengjun  staff  2081 Sep 30 21:57 coverage.lcov
+drwxr-xr-x  15 qiaopengjun  staff   480 Sep 30 22:15 coverage_report
+
+```
+
+##### 在浏览器中打开`coverage_report`目录中的`index.html` 文件查看生成的覆盖率报告
 
 ### 2024.10.02
 
