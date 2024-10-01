@@ -172,6 +172,8 @@ StarkNet's tokenomics .
 
       不应声明事件（与 Solidity 不同）。
 
-      所有view函数需要包含参数self: @TContractState，external函数需要包含参数ref self: TContractState。 
+      所有view函数需要包含参数self: @TContractState，external函数需要包含参数ref self: TContractState。
+###  2024.10.1
+- 观看视频学习了rust [https://www.bilibili.com/video/BV15y421h7j7?p=9&vd_source=1356c9c3725643abb61fbb2c32756c84]
      
 <!-- Content_END -->
