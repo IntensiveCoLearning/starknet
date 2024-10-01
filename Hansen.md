@@ -12,6 +12,10 @@ timezone: Asia/Shanghai
 
 <!-- Content_START -->
 
+### 2024.10.01
+
+学习  用starkli 调用合约，  用 浏览器调用合约  
+
 ### 2024.09.30
 
 写demo合约，  并用 starkli  部署到测试网络  
