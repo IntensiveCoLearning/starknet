@@ -1130,4 +1130,38 @@ fn main() {
   2. 同一时刻只有一个所有者
   3. 所有者超出作用域时，变量将被销毁
 
+
+
+### 2024.10.02
+
+#### 所有权
+
+##### 移动变量
+
+移动一个值只是将其传递给另一个函数。在原有的作用域下引用这个值的变量会被销毁，并且不能再被使用，同时一个新的变量被创建来持有相同的值。
+
+🌰例子：
+
+~~~rust
+fn foo(mut arr: Array<u128>) {
+    arr.pop_front();
+}
+
+fn main() {
+    let mut arr: Array<u128> = array![];
+    foo(arr);
+    foo(arr);
+}
+~~~
+
+例子中`arr`变量中的数组会传递到`foo()`函数两次，将会对同一个存储单元写入两次，这是`Cairo`不允许发生的，会导致运行时错误。会提示：
+
+~~~shell
+note: Trait has no implementation in context: core::traits::Copy::<core::array::Array::<core::integer::u128>>.
+~~~
+
+一旦将数组传递到`foo()`后，变量`arr`将不是可使用的。运行时错误会提示需要实现`Copy`特征。
+
+
+
 <!-- Content_END -->
