@@ -421,4 +421,21 @@ curl --proto '=https' --tlsv1.2 -sSf https://docs.swmansion.com/scarb/install.sh
 但就不能創建帶有項目名稱的目錄，要自行創建。
 
 
+### 2024.10.02
+參考:
+https://github.com/software-mansion/scarb/tree/main/examples/hello_world
+
+* cario book
+https://book.cairo-lang.org/
+
+寫一個計數器合約
+創建一個counter.cairo
+* 增加counter.cairo
+* 更新lib.cairo
+* scarb build
+![alt text](https://github.com/MartinYeung5/starknet/blob/main/MartinYeung5/20241002_1.png?raw=true)
+如果成功，會看到一個target文件，裡面有3個.json的文件。
+
+
+
 <!-- Content_END -->
