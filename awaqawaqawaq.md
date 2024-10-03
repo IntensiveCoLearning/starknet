@@ -180,4 +180,6 @@ StarkNet's tokenomics .
 - String &str 
 - copy move
 - 可变借用，不可变借用
+###  2024.10.3
+- 观看视频学习了rust [https://www.bilibili.com/video/BV15y421h7j7?p=9&vd_source=1356c9c3725643abb61fbb2c32756c84]
 <!-- Content_END -->
