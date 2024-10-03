@@ -436,6 +436,17 @@ https://book.cairo-lang.org/
 ![alt text](https://github.com/MartinYeung5/starknet/blob/main/MartinYeung5/20241002_1.png?raw=true)
 如果成功，會看到一個target文件，裡面有3個.json的文件。
 
+### 2024.10.03
+參考:
+https://github.com/PhilippeR26/starknet.js-workshop-typescript
 
+通過JS-SDK部署合約
+
+* mkdir js
+* cd js
+* npm init
+* npm install starknet
+
+* 
 
 <!-- Content_END -->
