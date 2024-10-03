@@ -569,5 +569,42 @@ Key themes include:
 3. **Viable System Model (VSM)**: One of Beer’s most influential contributions, VSM is a framework for designing systems that can survive in complex and unpredictable environments. It is built on the idea that for any system to be viable, it must balance autonomy with central control.
 4. **Freedom and Control**: Beer challenges the traditional dichotomy between freedom and control, proposing that freedom is maximized not by removing constraints but by designing systems that allow flexibility within appropriate constraints.
 
+### 2024.10.03
+
+The **Deployment Script Example** for Starknet smart contracts guides users through setting up a testing and deployment environment, using a Bash script to automate tasks such as initializing accounts, testing contracts, building and deploying, and performing multicalls. Below is a summary of the steps:
+
+### Requirements
+- Compatible with **scarb 2.4.3**, **cairo 2.4.3**, **sierra 1.4.0**, **snforge 0.14.0**, and **sncast 0.14.0**.
+- Requires installation of **jq** for handling JSON.
+- Ensure you complete the **Starknet Devnet** setup beforehand.
+
+### Script Setup
+
+1. **Create Script File**:  
+   - Create a `script.sh` in the project’s root directory.
+   - Make the script executable using: `chmod +x script.sh`.
+
+2. **Insert Script**:  
+   The script includes functions and steps to automate the testing and deployment process. Important elements are:
+   - **Error Management**: Stops on the first error with `set -e`.
+   - **Environment Variables**: Use these for security (e.g., `ACCOUNT1_ADDRESS`, `ACCOUNT1_PRIVATE_KEY`).
+   - **Account Setup**: Defines accounts for smart contracts via JSON and manages them through `sncast`.
+   - **Contract Testing**: Runs tests using `snforge`, proceeding only if tests pass.
+   - **Contract Deployment**: Uses `scarb` to build and `sncast` to declare and deploy contracts, handling different Devnet versions (Rust or Python).
+   - **Multicalls**: Creates a `multicall.toml` to execute multiple contract function invocations.
+   - **State Queries**: Checks the contract's state (e.g., balances) after deployment.
+
+3. **Optional Adjustments**:  
+   Modify the Bash path if necessary by using `which bash`.
+
+### Execution
+To run the script, provide private key environment variables before execution:
+```bash
+ACCOUNT1_PRIVATE_KEY="your_key" ACCOUNT2_PRIVATE_KEY="your_key" ./script.sh
+```
+
+### Considerations
+- The script uses `set -e` to enhance reliability by stopping on command failure.
+- Secure private keys and sensitive information. Consider moving hardcoded values (e.g., account addresses) to a configuration file.
 
 <!-- Content_END -->
