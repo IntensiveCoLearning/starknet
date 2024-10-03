@@ -12,6 +12,12 @@ timezone: Asia/Shanghai
 
 <!-- Content_START -->
 
+
+### 2024.10.03
+
+今天学习 ，starknet-js 的sdk ，了解如何调用合约 
+另外  简单看了一下  Scaffold-Stark 项目 
+
 ### 2024.10.01
 
 学习  用starkli 调用合约，  用 浏览器调用合约  
