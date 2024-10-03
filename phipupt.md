@@ -280,4 +280,31 @@ Cairo 编程语言中的 `panic` 函数用于处理程序运行时出现的不�
 相比之下，`panic_with_felt252` 函数提供了一种更简洁的方式来引发 `panic`，而 `nopanic` 注释可以确保某个函数不会引发错误
 
 
+### 2024.10.03
+
+Cairo 笔记：错误处理总结
+
+1. 不可恢复错误与`panic`
+- 使用`panic`函数处理意外问题，导致程序终止
+- `panic_with_felt252`函数提供更简洁的panic方式
+- `panic!`宏允许使用超过31字节的错误消息
+- `nopanic`注解表示函数不会panic
+- `panic_with`属性用于标记返回`Option`或`Result`的函数
+
+2. 可恢复错误与`Result`
+- `Result<T, E>`枚举有两个变体：`Ok(T)`和`Err(E)`
+- `ResultTrait`提供了处理`Result`的方法：
+  - `expect`和`unwrap`：提取`Ok`值或panic
+  - `expect_err`和`unwrap_err`：提取`Err`值或panic
+  - `is_ok`和`is_err`：检查`Result`的变体
+
+3. `?`运算符
+- 用于更简洁的错误处理
+- 对`Ok`值进行解包，对`Err`值进行错误传播
+
+关键点
+- 使用`Result`处理可恢复错误
+- 使用模式匹配或`?`运算符处理`Result`
+- `panic`用于处理不可恢复的错误情况
+
 <!-- Content_END -->
