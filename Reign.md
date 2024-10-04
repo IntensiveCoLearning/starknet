@@ -607,4 +607,30 @@ ACCOUNT1_PRIVATE_KEY="your_key" ACCOUNT2_PRIVATE_KEY="your_key" ./script.sh
 - The script uses `set -e` to enhance reliability by stopping on command failure.
 - Secure private keys and sensitive information. Consider moving hardcoded values (e.g., account addresses) to a configuration file.
 
+### 2024.10.04
+
+Starknet.js is a JavaScript/TypeScript library used to connect decentralized applications (DApps) to Starknet, an Ethereum layer 2 solution. Its architecture is modeled after ethers.js, making it easier for developers familiar with Ethereum to work with Starknet.
+
+### Key Components:
+
+1. **Installation**:
+   - Install via npm: 
+     - Stable release: `npm install starknet`
+     - Latest features: `npm install starknet@next`
+
+2. **Core Concepts**:
+   - **Account**: Represents the end-user and their wallet. Unlike Ethereum's Externally Owned Accounts (EOAs), Starknet accounts are contracts.
+   - **Provider**: Used to interact with the Starknet network, providing a "read" connection. Services like Infura or Alchemy can be used to set up an RPC provider.
+   - **Contracts**: Interact with deployed smart contracts using the contract address and ABI. Contracts require a signer to modify blockchain states.
+
+3. **Handling Units**:
+   - Special utility functions are available to handle data types such as Cairo's Uint256 structs.
+
+4. **Deployment**:
+   Starknet.js supports deploying smart contracts. The deployment process involves setting up a Node.js environment, preparing the necessary scripts, and configuring TypeScript. It also walks through creating key pairs, compiling contract code, and deploying contracts on Starknet.
+
+5. **Additional Tools**:
+   - Automated contract deployment, interaction with account contracts, and ETH transfers using pre-defined scripts.
+
+
 <!-- Content_END -->
