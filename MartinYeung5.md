@@ -447,6 +447,10 @@ https://github.com/PhilippeR26/starknet.js-workshop-typescript
 * npm init
 * npm install starknet
 
-* 
+### 2024.10.04
+在根據教學影片中的步驟，
+需要自行編寫declare.js, deploy.js，
+雖然可以根據影片中的代碼，但有些地方不太清晰，如有文檣提供就好。
+
 
 <!-- Content_END -->
