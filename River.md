@@ -1205,4 +1205,64 @@ fn foo(p: Point) { // do something with p
 
 1. 对于像`Array`和`Felt252Dict`这种类型如何在函数间传递？
 
+
+
+### 2024.10.04
+
+#### 值的销毁
+
+​		线性类型其他的使用方式是销毁操作。销毁时必须确保“资源”被正确地释放掉。在`Rust`中可以是文件访问的关闭或者对互斥量加锁。在`Cairo`中`Felt252Dict`类型具有这样的行为。为了可验证性，字典在被销毁时必须被“压缩”。这个很容易被忽视，因此由类型系统和编译器执行。
+
+#### `Drop`特征
+
+​		实现了`Drop`特征的类型在超出作用域时会自动被销毁。这种销毁不做任何事，他是无操作的(no-op)，仅仅提示编译器这个类型一旦不被再使用就能够被安全地销毁。称之为“dropping”.
+
+​		`Drop`特征除了字典(`Felt252Dict`)和包含字典的类型，其他的所有类型都可以通过`Drop`实现派生。
+
+~~~rust
+#[derive(Drop)]
+struct A {}
+
+fn main() {
+    A {}; // Now there is no error.
+}
+~~~
+
+#### `Destruct`特征
+
+​		当一个值被销毁时，编译器首先尝试调用`drop`方法，如果不存在，则编译器尝试调用`destruct`方法，这个方法有`Destruct`特征提供。
+
+​		在`Cairo`中字典类型在销毁时必须被“压缩”，以便访问顺序可以被证明。由于开发者容易忘记这一点，因此字典实现了`Destruct`特征来确保所有的字典在超出作用域时被压缩。
+
+🌰例子：
+
+下面代码中，结构体`A`中包含类型`Felt252Dict`，但没有实现`Destruct`特征，编译将会报错
+
+~~~rust
+use core::dict::Felt252Dict;
+
+struct A {
+    dict: Felt252Dict<u128>
+}
+
+fn main() {
+    A { dict: Default::default() };
+}
+~~~
+
+正确写法应当为结构体`A`实现`Destruct`特征
+
+```rust
+use core::dict::Felt252Dict;
+
+#[derive(Destruct)]
+struct A {
+    dict: Felt252Dict<u128>
+}
+
+fn main() {
+    A { dict: Default::default() }; // No error here
+}
+```
+
 <!-- Content_END -->
