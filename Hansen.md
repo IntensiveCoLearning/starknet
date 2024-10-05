@@ -11,6 +11,20 @@ timezone: Asia/Shanghai
 ## Notes
 
 <!-- Content_START -->
+### 2024.10.05
+学习 第三章 ，结构  
+包含3个组件：Sequencers, Provers, and nodes
+
+流程： 
+1. 交易提交到网关，  
+2. 进入到sequencer ，排序，创建区块，
+3. 计算证明， 提交证明 
+
+
+Node 节点的主要作用：
+Replaying Old Transactions: 
+Relying on L2 Consensus: 
+Checking Proof Validation on L1:
 
 
 ### 2024.10.03
