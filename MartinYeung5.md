@@ -452,5 +452,7 @@ https://github.com/PhilippeR26/starknet.js-workshop-typescript
 需要自行編寫declare.js, deploy.js，
 雖然可以根據影片中的代碼，但有些地方不太清晰，如有文檣提供就好。
 
+### 2024.10.05
+在互聯網上查看declare.js, deploy.js的寫法，但各有不同，不太知道哪個是正確
 
 <!-- Content_END -->
