@@ -1622,7 +1622,80 @@ fn calculate_transport_fees() {
 
 ### 2024.10.05
 
-笔记内容
+```bash
+hello_starknet/starknet_erc20 on  main [?] via 🅒 base 
+➜ sncast --version
+sncast 0.31.0
+
+hello_starknet/starknet_erc20 on  main [?] via 🅒 base 
+➜ sncast --help   
+sncast 0.31.0
+
+hello_starknet/starknet_erc20 on  main [?] via 🅒 base 
+➜ starknet-devnet                       
+Predeployed FeeToken
+ETH Address: 0x49D36570D4E46F48E99674BD3FCC84644DDD6B96F7C741B1562B82F9E004DC7
+STRK Address: 0x04718f5a0fc34cc1af16a1cdee98ffb20c31f5cd61d6ab07201858f4287c938d
+Class Hash: 0x046ded64ae2dead6448e247234bab192a9c483644395b66f2155f2614e5804b0
+
+Predeployed UDC
+Address: 0x41A78E741E5AF2FEC34B695679BC6891742439F7AFB8484ECD7766661AD02BF
+Class Hash: 0x7B3E05F48F0C69E4A65CE5E076A66271A527AFF2C34CE1083EC6E1526997A69
+
+Chain ID: SN_SEPOLIA (0x534e5f5345504f4c4941)
+
+| Account address |  0x3db6c9af232edf8c30967fd4b64fc548becd4f116f6f385c5a1a0b1809c3114
+| Private key     |  0x524318337149f906e46d2da259025d85
+| Public key      |  0x21cfff7154f6d1401a154b255cbe71ce4b36842baf77b549fe01e4811f80534
+
+| Account address |  0x214a8703c0c869dbe7714fb67c9e33e7f2328b07a2fc15e0fad556c0b96f5e2
+| Private key     |  0x4c71ab36691675cced37d4d844ccf704
+| Public key      |  0x6d106b4c1020773adfbfcc1fa08435b0ea794fe83e7a23e9c36a80c8644203a
+
+| Account address |  0x40d2e0cf6dddb2f71d3742f723d7cd008145aa08367858007b9f3b6ee83fa22
+| Private key     |  0xad6f98f49f50c1d11955cbd60eba69f9
+| Public key      |  0xd459a874bc03dba484836a4d4fceebe6f9bbe164720fdd6f0b81bad60f6bc
+
+| Account address |  0x1d632ba8bfdb4570d242e0bfc4dfae40a27a7f23e99512b01def0b9fda372cd
+| Private key     |  0x561fd040f3a458265b9cebdd64b644ad
+| Public key      |  0x7c7343a16d2d8c60489b90c030c1e23becdb98d4364e3d87eadeed782b58b57
+
+| Account address |  0x65538c5ef657bdc9c358dcb4f358b0cde0045d9f6f4bb856ceb4ddbbe15c4cb
+| Private key     |  0xfffa8e9f23c6dc32095d97dd92a1dee2
+| Public key      |  0x270ef409d10d525c022c46e3815c2fc0cc5652e7be72c3c2d66f8e377f44df0
+
+| Account address |  0x42c64c0f44c6fd4dbd653c4d45af57c58e994d919890eef5bec47bd3e863225
+| Private key     |  0xbeda2320770634aeb473dc6ddf835904
+| Public key      |  0x6892b4d55d1eb88273abab97a39f0c9f2d582a33f403b614b2a6b8cf301608f
+
+| Account address |  0x716e42aa0855d0ee304c135cfda22281f2c964618c1ed138fee02522f1794f5
+| Private key     |  0xca0174c68d484487e9fe8ba6da3c6047
+| Public key      |  0x16a28d9ff27495bbc1970ca73727ba9fa460482eacb4bb33671b6a10c9bb933
+
+| Account address |  0x2d4a63b95ca4b01c6557a0c99bb62600f85e93c4cabe6f323615a46a7292f53
+| Private key     |  0x14c970177200d955138eb61385e44d66
+| Public key      |  0x4187ce34b27cfded378e332a7a4395bca8a064f09959a9859498b8055ef6037
+
+| Account address |  0x7b4b5b7bcb2145d6bbc100c791f1da07070cd49b19ff65d9f472f60f3482623
+| Private key     |  0x5f37eee3ec8d96fe9ce804d0ff0b5dfc
+| Public key      |  0x260fbc9f9cc7d9750be08c43189fb67ae9f6e0a07ba8ccb5d9d299e78739c7e
+
+| Account address |  0x2491ace3fbf3c8e981350089940f64d609cec2a9a8a3e4ecfd11b0a7767bc7c
+| Private key     |  0x58795cd20f7d5a402add71d74777e814
+| Public key      |  0x4ea2b3fff7cac42a16e377b7517b6c7e1c3b15a3d39705f78ed42d3ea10292a
+
+Predeployed accounts using class with hash: 0x61dac032f228abef9c6626f995015233097ae253a7f72d68552db02f2971b8f
+Initial balance of each account: 1000000000000000000000 WEI and FRI
+Seed to replicate this account sequence: 1107456642
+2024-10-05T11:13:44.245219Z  INFO starknet_devnet: Starknet Devnet listening on 127.0.0.1:5050
+
+hello_starknet/starknet_erc20 on  main [?] via 🅒 base 
+➜ sncast account add --address 0x3db6c9af232edf8c30967fd4b64fc548becd4f116f6f385c5a1a0b1809c3114 --private-key 0x524318337149f906e46d2da259025d85 --url http://127.0.0.1:5050 --type oz --name erc20-account --add-pro
+file dev-profile
+command: account add
+add_profile: Profile dev-profile successfully added to snfoundry.toml
+
+```
 
 ### 2024.10.06
 
