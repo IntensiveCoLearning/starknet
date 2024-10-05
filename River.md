@@ -1265,4 +1265,86 @@ fn main() {
 }
 ```
 
+
+
+### 2024.10.05
+
+#### 使用`clone`复制数组
+
+如果想要深拷贝数组，可以使用公共方法`clone`。
+
+🌰例子：
+
+~~~rust
+fn main() {
+    let arr1: Array<u128> = array![];
+    let arr2 = arr1.clone();
+}
+~~~
+
+`arr1`指向的值被复制，会使用新的内存单元，并且新的值`arr2`被创建并指向复制的值。
+
+#### 返回值与作用域
+
+返回值等价于移动值
+
+🌰例子：
+
+~~~rust
+#[derive(Drop)]
+struct A {}
+
+fn main() {
+    let a1 = gives_ownership();           // gives_ownership moves its return
+                                          // value into a1
+
+    let a2 = A {};                        // a2 comes into scope
+
+    let a3 = takes_and_gives_back(a2);    // a2 is moved into
+                                          // takes_and_gives_back, which also
+                                          // moves its return value into a3
+
+} // Here, a3 goes out of scope and is dropped. a2 was moved, so nothing
+  // happens. a1 goes out of scope and is dropped.
+
+fn gives_ownership() -> A {               // gives_ownership will move its
+                                          // return value into the function
+                                          // that calls it
+
+    let some_a = A {};                    // some_a comes into scope
+
+    some_a                                // some_a is returned and
+                                          // moves ownership to the calling
+                                          // function
+}
+
+// This function takes an instance some_a of A and returns it
+fn takes_and_gives_back(some_a: A) -> A { // some_a comes into scope
+
+    some_a                                // some_a is returned and 
+                                          // moves ownership to the calling
+                                          // function
+}
+~~~
+
+虽然这段代码可以运行，但是将值移动到函数中并移出来会有些繁琐。任何传进去的东西，只要还要再次使用，则需要传回来。下面是使用元组返回多个值：
+
+~~~rust
+fn main() {
+    let arr1: Array<u128> = array![];
+
+    let (arr2, len) = calculate_length(arr1);
+}
+
+fn calculate_length(arr: Array<u128>) -> (Array<u128>, usize) {
+    let length = arr.len(); // len() returns the length of an array
+
+    (arr, length)
+}
+~~~
+
+🤔️如果想要函数仅使用值但不进行移动应该怎么办？
+
+`Cairo`有两种方式在传递值的同时无需销毁或者移动——`references`和`snapshots`
+
 <!-- Content_END -->
