@@ -632,5 +632,49 @@ Starknet.js is a JavaScript/TypeScript library used to connect decentralized app
 5. **Additional Tools**:
    - Automated contract deployment, interaction with account contracts, and ETH transfers using pre-defined scripts.
 
+### 2024.10.05
 
+### Steps Overview:
+
+1. **Setup and Global Variables**: 
+   - Defines essential variables like contract names, profile names, addresses, and keys. It uses environment variables for sensitive data such as private keys, which is a good security practice, although additional precautions like using `.env` files would further improve safety.
+
+2. **Cleaning Previous Environment**:
+   - Deletes old account files to ensure a fresh environment for new accounts.
+
+3. **Running Contract Tests**:
+   - Runs tests using `snforge` and checks for failures. If tests fail, the script halts and prompts the user to fix the issues before continuing.
+
+4. **Creating Accounts**:
+   - Iterates through JSON-defined account data to add or create new accounts using `sncast`. It checks for existing accounts to avoid duplication.
+
+5. **Building, Declaring, and Deploying Contracts**:
+   - Builds the smart contract with `scarb` and declares it on the Starknet network. Depending on whether the class hash already exists, it either reuses the existing hash or declares a new one.
+   - Deploys the contract and stores the deployed contract address.
+
+6. **Executing Multicalls**:
+   - Sets up and executes multicalls using a TOML configuration file, which runs multiple contract functions in a single batch, reducing network overhead.
+
+7. **Querying Contract State**:
+   - After deployment and multicall execution, the script checks the contract’s state (e.g., the balance) to verify the correctness of the contract.
+
+8. **Cleanup**:
+   - Cleans up temporary files like the multicall TOML file once execution is complete.
+
+### Execution:
+
+- The script is run with environment variables for the private keys:
+
+   ```bash
+   ACCOUNT1_PRIVATE_KEY="0x259f4329e6f4590b" ACCOUNT2_PRIVATE_KEY="0xb4862b21fb97d" ./script.sh
+   ```
+
+### Security Considerations:
+- **Environment Variables**: Using environment variables is safer than hardcoding private keys, but they could still be exposed to other processes on the machine. For more security, you could use tools like `dotenv` or secret management systems (e.g., AWS Secrets Manager) to manage sensitive data.
+- **set -e**: Ensures that the script exits on the first error, which helps prevent the execution of subsequent steps in case of failures, enhancing reliability.
+
+### Further Enhancements:
+- **Configuration Files**: Instead of hardcoding values such as account addresses or contract names in the script, you could move them to a configuration file, making the script easier to maintain and update.
+
+This script offers a solid foundation for deploying smart contracts on Starknet in a controlled, automated fashion. It can be customized and extended to suit more complex scenarios or different environments.
 <!-- Content_END -->
