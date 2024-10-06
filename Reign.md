@@ -677,4 +677,51 @@ Starknet.js is a JavaScript/TypeScript library used to connect decentralized app
 - **Configuration Files**: Instead of hardcoding values such as account addresses or contract names in the script, you could move them to a configuration file, making the script easier to maintain and update.
 
 This script offers a solid foundation for deploying smart contracts on Starknet in a controlled, automated fashion. It can be customized and extended to suit more complex scenarios or different environments.
+
+### 2024.10.06
+
+### Summary of Starknet.js: JavaScript SDK
+
+**Overview:**
+Starknet.js is a JavaScript/TypeScript library that facilitates the connection of web applications and decentralized apps (D-Apps) to Starknet, similar in structure to ethers.js.
+
+**Installation:**
+- To install the library:
+  - For the latest release: `npm install starknet`
+  - For the latest features: `npm install starknet@next`
+
+**Key Concepts:**
+1. **Account:** Represents the end user and requires user interaction for wallet connection (e.g., ArgentX, Braavos). Starknet accounts are contracts, differing from Ethereum's Externally Owned Accounts.
+   
+   ```javascript
+   async function connectWallet() {
+       const starknet = await connect();
+       const nonce = await starknet.account.getNonce();
+       const message = await starknet.account.signMessage(...);
+   }
+   ```
+
+2. **Provider:** Enables interaction with the Starknet network as a read-only connection. It can be a default provider or through services like Infura.
+
+   ```javascript
+   export const provider = new Provider({ sequencer: { network: "goerli-alpha" } });
+   const block = await provider.getBlock("latest");
+   ```
+
+3. **Contracts:** To interact with deployed contracts, you'll need their address and ABI. A contract can be instantiated using either a provider (for read-only access) or a signer (for state-changing transactions).
+
+   ```javascript
+   const contract = new Contract(abi_erc20, contractAddress, starknet.account);
+   const balance = await contract.balanceOf(starknet.account.address);
+   ```
+
+**Unit Handling:**
+Proper handling of unit conversions, such as converting Cairo structs like Uint256, is crucial for accurate data management.
+
+**Deployment of Smart Contracts:**
+Starknet.js allows for automated smart contract deployments. Key steps include:
+1. Initializing the project environment and installing dependencies.
+2. Setting up TypeScript and environment configurations.
+3. Writing deployment scripts including account contract declaration, deployment, and interaction functions.
+
 <!-- Content_END -->
