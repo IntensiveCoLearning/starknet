@@ -455,4 +455,36 @@ https://github.com/PhilippeR26/starknet.js-workshop-typescript
 ### 2024.10.05
 在互聯網上查看declare.js, deploy.js的寫法，但各有不同，不太知道哪個是正確
 
+Starknet 殘酷共學分享會 #3: 開發框架 Scaffold-Stark
+* https://github.com/Scaffold-Stark/scaffold-stark-2
+Scaffold-Starknet與Scaffold-ETH-2有相似的地方。
+Scaffold-Starknet包含Starknet React, Starknet.js, Cairo, Next.js, Starknet Foundry。
+
+
+* git clone https://github.com/Scaffold-Stark/scaffold-stark-2.git
+* 新文件: scaffold-stark-2
+* yarn install
+![alt text](https://github.com/MartinYeung5/starknet/blob/main/MartinYeung5/20241006_1.png?raw=true)
+* yarn chain
+有錯誤:
+![alt text](https://github.com/MartinYeung5/starknet/blob/main/MartinYeung5/20241006_2.png?raw=true)
+
+參考安裝步驟:
+https://medium.com/spaceshard/how-to-run-starknet-devnet-on-windows-tech-tutorial-f8447c131193
+
+* sudo apt install python3-pip
+* sudo apt install -y libgmp3-dev
+安裝成功:
+![alt text](https://github.com/MartinYeung5/starknet/blob/main/MartinYeung5/20241006_4.png?raw=true)
+
+* pip install starknet-devnet
+都係有錯誤
+![alt text](https://github.com/MartinYeung5/starknet/blob/main/MartinYeung5/20241006_3.png?raw=true)
+
+* 使用另一方式安裝
+https://book.starknet.io/ch02-07-starknet-devnet.html
+* git clone https://github.com/0xSpaceShard/starknet-devnet-rs.git
+
+
+
 <!-- Content_END -->
