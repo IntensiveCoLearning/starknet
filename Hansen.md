@@ -11,6 +11,9 @@ timezone: Asia/Shanghai
 ## Notes
 
 <!-- Content_START -->
+### 2024.10.06
+听线上的 Starknet NFT 课程
+
 ### 2024.10.05
 学习 第三章 ，结构  
 包含3个组件：Sequencers, Provers, and nodes
