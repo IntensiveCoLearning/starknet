@@ -14,6 +14,19 @@ timezone: Asia/Shanghai
 ### 2024.10.06
 听线上的 Starknet NFT 课程
 
+Map 2.7 之上支持
+
+SRC5Component 
+ERC721Compoent  
+ERC721EnumerableCompoent
+ERC721Hooks 
+
+apibara  ：在 StarkNet 上构建应用可以采用 Apibara API
+
+integrate 
+merkle tree ：有很重要的功能 ，用于白名单项目  
+    地址 proof ，验证地址，
+
 ### 2024.10.05
 学习 第三章 ，结构  
 包含3个组件：Sequencers, Provers, and nodes
