@@ -24,6 +24,9 @@ Cartridge 是 Starknet 上的生态链游集成平台， 为游戏构建自主�
 Starknet 开发课程：优质学习资源合集
 https://foresightnews.pro/article/detail/68317
 
+Apibara：开源数据平台
+其中一个值得注意的获得支持的项目是Apibara，一个开源数据平台。该项目旨在将以太坊的执行层和共识层数据整合到Apibara中，使开发者和研究人员能够将链上数据同步到各种数据库或API。目前该平台支持PostgreSQL、MongoDB、Parquet和webhooks，并有潜力进行更多的集成。
+
 ### 2024.10.06
 听线上的 Starknet NFT 课程
 
