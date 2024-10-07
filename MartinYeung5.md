@@ -485,6 +485,41 @@ https://medium.com/spaceshard/how-to-run-starknet-devnet-on-windows-tech-tutoria
 https://book.starknet.io/ch02-07-starknet-devnet.html
 * git clone https://github.com/0xSpaceShard/starknet-devnet-rs.git
 
+### 2024.10.07
+* 運行 a local network 
+* cd starknet-devnet-rs
+* cargo on (不要用yarn chain)
+* 運行成功:
+![alt text](https://github.com/MartinYeung5/starknet/blob/main/MartinYeung5/20241006_5.png?raw=true)
+
+* 打開新的terminal
+* cd scaffold-stark-2/
+* yarn deploy
+有錯誤:
+![alt text](https://github.com/MartinYeung5/starknet/blob/main/MartinYeung5/20241006_6.png?raw=true)
+
+* 需要安裝以下工具
+* asdf install scarb 2.8.3
+![alt text](https://github.com/MartinYeung5/starknet/blob/main/MartinYeung5/20241006_7.png?raw=true)
+
+再次執行:
+* cd scaffold-stark-2/
+* yarn deploy
+
+有錯誤:
+Error: The wallet you're using to deploy the contract is not deployed in the devnet network.
+![alt text](https://github.com/MartinYeung5/starknet/blob/main/MartinYeung5/20241006_8.png?raw=true)
+
+* 需要修改/packages/nextjs/scaffold.config
+如果沒發現問題，就要修改
+* /packages/snfoundry/scripts-ts/helpers/networks.ts
+
+再次執行:
+* cd scaffold-stark-2/
+* yarn deploy
+成功Deploy:
+![alt text](https://github.com/MartinYeung5/starknet/blob/main/MartinYeung5/20241006_9.png?raw=true)
+
 
 
 <!-- Content_END -->
