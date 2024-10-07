@@ -1705,7 +1705,16 @@ Starknet是由StarkWare开发的Layer-2扩展性解决方案，致力于提高�
 
 ### 2024.10.07
 
-笔记内容
+What's in a Component?
+A component is very similar to a contract. It can contain:
+
+Storage variables
+Events
+External and internal functions
+Unlike a contract, a component cannot be deployed on its own. The component's code becomes part of the contract it's embedded to.
+
+`# [starknet::component]`
+`[embeddable_as(name)]`
 
 ### 2024.10.08
 
