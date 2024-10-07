@@ -1389,4 +1389,69 @@ fn calculate_length(arr: @Array<u128>) -> usize {
 
 ​		对于使用快照参数的函数的返回值，也无需返回参数的所有权，因为这个函数从未拥有快照参数的所有权。
 
+
+
+### 2024.10.07
+
+#### `desnap`操作符
+
+​		使用`desnap`操作符`*`可以将快照变量转换为常规变量，它的作用与快照操作符`@`相反。
+
+​		只有`Copy`类型可以被解快照。在通常情况下，因为值是不能被修改的，通过`desnap`操作符创建的新变量会重用旧的值，所以解快照是完全自由的操作，就像`Copy`一样。
+
+🌰例子：
+
+~~~rust
+#[derive(Drop)]
+struct Rectangle {
+    height: u64,
+    width: u64,
+}
+
+fn main() {
+    let rec = Rectangle { height: 3, width: 10 };
+    let area = calculate_area(@rec);
+    println!("Area: {}", area);
+}
+
+fn calculate_area(rec: @Rectangle) -> u64 {
+    // As rec is a snapshot to a Rectangle, its fields are also snapshots of the fields types.
+    // We need to transform the snapshots back into values using the desnap operator `*`.
+    // This is only possible if the type is copyable, which is the case for u64.
+    // Here, `*` is used for both multiplying the height and width and for desnapping the snapshots.
+    *rec.height * *rec.width
+}
+~~~
+
+如果想要在传递快照时修改一些东西会发生什么？
+
+~~~rust
+#[derive(Copy, Drop)]
+struct Rectangle {
+    height: u64,
+    width: u64,
+}
+
+fn main() {
+    let rec = Rectangle { height: 3, width: 10 };
+    flip(@rec);
+}
+
+fn flip(rec: @Rectangle) {
+    let temp = rec.height;
+    rec.height = rec.width;
+    rec.width = temp;
+}
+~~~
+
+上面例子会报错：
+
+~~~shell
+error: Invalid left-hand side of assignment
+error: could not compile `listing_04_04` due to previous error
+error: `scarb metadata` exited with error
+~~~
+
+编译器不允许修改与快照关联的值。
+
 <!-- Content_END -->
