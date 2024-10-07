@@ -21,11 +21,13 @@ Cartridge 是 Starknet 上的生态链游集成平台， 为游戏构建自主�
 - Slot: 我们提供的托管基础设施服务
 - World Explorer: 利用Dojo提供的结构来构建一个通用的接口，用于探索过去、与现在互动以及创造链上游戏和Autonomous Worlds的未来。World Explorer将是一个关键的推动者，为玩家和开发者提供一个观察链上状态的低级接口和一个管理自主世界协作、演化过程的通用接口。
 
-Starknet 开发课程：优质学习资源合集
+- Starknet 开发课程：优质学习资源合集
 https://foresightnews.pro/article/detail/68317
 
-Apibara：开源数据平台
+- Apibara：开源数据平台
 其中一个值得注意的获得支持的项目是Apibara，一个开源数据平台。该项目旨在将以太坊的执行层和共识层数据整合到Apibara中，使开发者和研究人员能够将链上数据同步到各种数据库或API。目前该平台支持PostgreSQL、MongoDB、Parquet和webhooks，并有潜力进行更多的集成。
+
+- Merkle树是一种可以有效验证部分数据存在于指定数据集并且未被篡改的 高效的哈希树结构，作为一种底层技术广泛应用在各种区块链的实现当中， 对于商品溯源、知识产权确认、区块链公证等区块链应用起着重要的作用。
 
 ### 2024.10.06
 听线上的 Starknet NFT 课程
