@@ -724,4 +724,61 @@ Starknet.js allows for automated smart contract deployments. Key steps include:
 2. Setting up TypeScript and environment configurations.
 3. Writing deployment scripts including account contract declaration, deployment, and interaction functions.
 
+### 2024.10.07
+
+### Summary: Counter Smart Contract UI Integration Guide
+
+This guide provides a step-by-step process for integrating a simple counter smart contract with a frontend application. Readers will learn to:
+
+1. **Connect the Frontend to a Smart Contract**: Establish a link to interact with the smart contract.
+2. **Initiate Transactions**: Execute functions to increment or decrement the counter.
+3. **Read and Display Data**: Retrieve and show the current counter value on the frontend.
+
+For a more in-depth exploration, viewers are encouraged to attend the Basecamp frontend session, which includes theoretical and practical components.
+
+### Tools Used
+- **React.js**: Framework for building the frontend.
+- **@argent/get-starknet**: Library for interacting with Starknet wallets.
+- **Starknet.js**: JavaScript library for Starknet interactions.
+
+### Setting Up the Environment
+1. Clone the project repository:
+   ```bash
+   git clone https://github.com/Darlington02/basecamp-frontend-boilerplate
+   ```
+2. Navigate to the directory and install dependencies:
+   ```bash
+   cd basecamp-frontend-boilerplate
+   npm install
+   ```
+3. Launch the project:
+   ```bash
+   yarn start
+   ```
+
+### Key Functions in index.js
+- **connectWallet**: Connects to the blockchain via wallet providers (e.g., ArgentX).
+- **disconnectWallet**: Ends the connection to the wallet.
+- **increaseCounter**: Triggers the increment of the counter.
+- **decreaseCounter**: Triggers the decrement of the counter.
+- **getCounter**: Retrieves the current counter value.
+
+### Managing Connection
+- **connectWallet**: Asynchronously connects to the blockchain and updates the component state with connection details.
+- **disconnectWallet**: Asynchronously disconnects and resets the component's state.
+
+### Using EagerlyConnect
+The `useEffect` hook is employed to automatically connect to Starknet when the component mounts.
+
+### Important Concepts for Smart Contract Interactions
+- **ABI (Application Binary Interface)**: Defines the functions and variables of the smart contract.
+- **Signer**: Authorizes transactions and bears execution fees.
+- **Provider**: Facilitates communication with the blockchain and data fetching.
+
+### Invoking Functions
+- **increaseCounter**: Interacts with the smart contract to increment the counter.
+- **decreaseCounter**: Interacts with the smart contract to decrement the counter.
+- **getCounter**: Fetches the current count using a provider.
+
+
 <!-- Content_END -->
