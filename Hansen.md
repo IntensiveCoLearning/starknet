@@ -11,6 +11,19 @@ timezone: Asia/Shanghai
 ## Notes
 
 <!-- Content_START -->
+### 2024.10.07
+
+Starknet 的另一个重要链上游戏基础设施是 Cartridge ，官网 cartridge.gg
+Cartridge 是 Starknet 上的生态链游集成平台， 为游戏构建自主世界和基础设施
+我们的使命是实现全链游戏和自助世界 Provable Games and Autonomous Worlds
+- Controller: 
+- Dojo： 为可证明游戏提供了基础，提供了一个ECS框架、和进行迁移规划和部署的工具Sozo、进行实时自动索引的工具Torii，以及一个进行高性能、模块化排序的工具Katana。
+- Slot: 我们提供的托管基础设施服务
+- World Explorer: 利用Dojo提供的结构来构建一个通用的接口，用于探索过去、与现在互动以及创造链上游戏和Autonomous Worlds的未来。World Explorer将是一个关键的推动者，为玩家和开发者提供一个观察链上状态的低级接口和一个管理自主世界协作、演化过程的通用接口。
+
+Starknet 开发课程：优质学习资源合集
+https://foresightnews.pro/article/detail/68317
+
 ### 2024.10.06
 听线上的 Starknet NFT 课程
 
