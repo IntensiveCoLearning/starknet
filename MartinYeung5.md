@@ -520,6 +520,49 @@ Error: The wallet you're using to deploy the contract is not deployed in the dev
 成功Deploy:
 ![alt text](https://github.com/MartinYeung5/starknet/blob/main/MartinYeung5/20241006_9.png?raw=true)
 
+### 2024.10.08
+繼續學習，根據影片的教學:
+* yarn start
+成功執行:
+![alt text](https://github.com/MartinYeung5/starknet/blob/main/MartinYeung5/20241006_10.png?raw=true)
+
+檢查:
+* http://localhost:3000/
+![alt text](https://github.com/MartinYeung5/starknet/blob/main/MartinYeung5/20241006_11.png?raw=true)
+
+
+* 使用https://docs.scaffoldstark.com/hooks/useScaffoldMultiWriteContract
+
+[14:55]
+* 更新.env (/packages/snfoundry/.env)
+PRIVATE_KEY_SEPOLIA
+RPC_URL_SEPOLIA
+ACCOUNT_ADDRESS_SEPOLIA
+* 注意: 會對應於: /packages/snfoundry/scripts-ts/helpers/networks.ts
+
+[15:36]
+* 要在speolla deploy
+1. update package/nextjs/scaffold.config.ts
+```
+targetNetworks: [chains.speolla],
+```
+2. update .env
+```
+PRIVATE_KEY_SEPOLIA=
+RPC_URL_SEPOLIA=
+ACCOUNT_ADDRESS_SEPOLIA=
+```
+
+
+yarn deploy --network sepolia
+成功:
+![alt text](https://github.com/MartinYeung5/starknet/blob/main/MartinYeung5/20241006_12.png?raw=true)
+
+* contract:
+0xa28b01e90d769aa69d9326dc96913d8f333c7e1d14eb05cf8974e1c724ece5
+
+* 檢查:
+https://sepolia.starkscan.co/contract/0x00a28b01e90d769aa69d9326dc96913d8f333c7e1d14eb05cf8974e1c724ece5
 
 
 <!-- Content_END -->
