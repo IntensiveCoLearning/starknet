@@ -11,6 +11,16 @@ timezone: Asia/Shanghai
 ## Notes
 
 <!-- Content_START -->
+### 2024.10.08
+了解scaffold-stark 项目， 它能快速的构建starknet 的Dapp ，听了录播的课程
+https://scaffoldstark.com/
+ 1. 构建了一个基本的 dapp 的框架  
+ 2. 可以很方便的部署，测试 合约  
+ 3. 可以方便的调用别人的 合约 。
+
+另外发现了 ，  speedrun starknet  帮助学习 stark的
+
+
 ### 2024.10.07
 
 Starknet 的另一个重要链上游戏基础设施是 Cartridge ，官网 cartridge.gg
