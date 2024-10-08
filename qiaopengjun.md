@@ -1718,7 +1718,21 @@ Unlike a contract, a component cannot be deployed on its own. The component's co
 
 ### 2024.10.08
 
-笔记内容
+在 Cairo 中，事件是通过事件枚举。
+你需要使用#[event]和#[derive(Drop, starknet::Event)]属性，每个事件变体成员必须是一个与变体同名的结构体。
+然后，你需要定义事件结构体，它也需要使用#[derive(Drop, starknet::Event)]属性，并将你想要记录的参数添加为成员。
+
+要释放事件，你需要使用self.emit()方法，并把要记录的数据作为参数。
+
+在 Cairo 中，只有可变变量可以用 ref 标记，因为它们在函数结束时被隐式更新。
+在 Cairo 中，接口是用 #[starknet::interface] 属性标记的 trait，功能与 Solidity 中类似。规则如下：
+
+必须明确声明函数的装饰器。
+其中的函数不应被实现。
+不应声明构造函数。
+不应声明状态变量。
+不应声明事件（与 Solidity 不同）。
+所有view函数需要包含参数self: @TContractState，external函数需要包含参数ref self: TContractState。
 
 ### 2024.10.09
 
