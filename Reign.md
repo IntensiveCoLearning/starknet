@@ -780,5 +780,19 @@ The `useEffect` hook is employed to automatically connect to Starknet when the c
 - **decreaseCounter**: Interacts with the smart contract to decrement the counter.
 - **getCounter**: Fetches the current count using a provider.
 
+### 2024.10.08
 
+1. **目标**：构建基于Starknet-react和StarknetKit的web3应用，使用Cairo编写的ERC-20智能合约。
+
+2. **环境设置**：使用特定版本的工具和库，包括Scarb、Cairo、Starknet-react等。
+
+3. **合约开发**：编写和部署ERC-20合约，使用Openzeppelin库，定义代币名称和符号。
+
+4. **前端构建**：使用NextJS、Starknet-react和StarknetKit，配置合约连接。
+
+5. **钱包连接**：支持Argent和Braavos钱包，允许用户连接和断开。
+
+6. **功能实现**：读取代币余额和转账功能，用户可以发送和接收代币。
+
+7. **结果**：在Sepolia测试网成功完成代币的部署和交互。
 <!-- Content_END -->
