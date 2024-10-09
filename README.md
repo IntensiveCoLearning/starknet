@@ -364,5 +364,16 @@ Starknet 残酷共学是由 LXDAO、Starknet Astro、AAStar 联合发起，旨�
 
 
 
+
 <!-- STATISTICALDATA_START -->
+
+
+## 统计数据
+
+- 总参与人数: 14
+- 完成人数: 7
+- 全勤用户: Reign, qiaopengjun, River, phipupt
+- 淘汰人数: 7
+- 淘汰率: 50.00%
+- Fork人数: 15
 <!-- STATISTICALDATA_END -->
