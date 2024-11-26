@@ -96,7 +96,7 @@ Telegram：https://t.me/LXDAO/11973
     ```
     - 日期格式为 `### 2024.09.18`，请不要随意更改
 
-## Starknet 残酷共学打卡记录表
+## 残酷共学打卡记录表
 
 ✅ = Done ⭕️ = Missed ❌ = Failed
 
