@@ -143,6 +143,7 @@ Telegram：https://t.me/LXDAO/11973
 
 
 
+
 <!-- STATISTICALDATA_START -->
 
 
@@ -150,6 +151,7 @@ Telegram：https://t.me/LXDAO/11973
 
 - 总参与人数: 14
 - 完成人数: 7
+- 完成用户: Hansen, Reign, qiaopengjun, River, awaqawaqawaq, phipupt, MartinYeung5
 - 全勤用户: Reign, qiaopengjun, River, phipupt
 - 淘汰人数: 7
 - 淘汰率: 50.00%
