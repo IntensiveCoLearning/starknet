@@ -2,59 +2,12 @@
 timezone: Asia/Shanghai # 中国标准时间 (UTC+8)
 ---
 
-> 请在上边的 timezone 添加你的当地时区，这会有助于你的打卡状态的自动化更新，如果没有添加，默认为北京时间 UTC+8 时区
-> 时区请参考以下列表，请移除 # 以后的内容
-
-timezone: Pacific/Honolulu # 夏威夷-阿留申标准时间 (UTC-10)
-
-timezone: America/Anchorage # 阿拉斯加标准时间 (UTC-9)
-
-timezone: America/Los_Angeles # 太平洋标准时间 (UTC-8)
-
-timezone: America/Denver # 山地标准时间 (UTC-7)
-
-timezone: America/Chicago # 中部标准时间 (UTC-6)
-
-timezone: America/New_York # 东部标准时间 (UTC-5)
-
-timezone: America/Halifax # 大西洋标准时间 (UTC-4)
-
-timezone: America/St_Johns # 纽芬兰标准时间 (UTC-3:30)
-
-timezone: America/Sao_Paulo # 巴西利亚时间 (UTC-3)
-
-timezone: Atlantic/Azores # 亚速尔群岛时间 (UTC-1)
-
-timezone: Europe/London # 格林威治标准时间 (UTC+0)
-
-timezone: Europe/Berlin # 中欧标准时间 (UTC+1)
-
-timezone: Europe/Helsinki # 东欧标准时间 (UTC+2)
-
-timezone: Europe/Moscow # 莫斯科标准时间 (UTC+3)
-
-timezone: Asia/Dubai # 海湾标准时间 (UTC+4)
-
-timezone: Asia/Kolkata # 印度标准时间 (UTC+5:30)
-
-timezone: Asia/Dhaka # 孟加拉国标准时间 (UTC+6)
-
-timezone: Asia/Bangkok # 中南半岛时间 (UTC+7)
-
-timezone: Asia/Shanghai # 中国标准时间 (UTC+8)
-
-timezone: Asia/Tokyo # 日本标准时间 (UTC+9)
-
-timezone: Australia/Sydney # 澳大利亚东部标准时间 (UTC+10)
-
-timezone: Pacific/Auckland # 新西兰标准时间 (UTC+12)
-
 ---
 
 # {你的名字}
 
 1. 自我介绍
-    Qiao Pengjun 乔鹏军。有Python、Go、Rust、solidity的开发经验。大约是去年开始了解Web3，最近在学习solidity。对区块链技术很感兴趣。了解了一点Solana、Sui、Starknet... 正在继续学习。希望本次学习能让我更深入的了解Web3。拥抱Web3，拥抱未来。
+   Qiao Pengjun 乔鹏军。有 Python、Go、Rust、solidity 的开发经验。大约是去年开始了解 Web3，最近在学习 solidity。对区块链技术很感兴趣。了解了一点 Solana、Sui、Starknet... 正在继续学习。希望本次学习能让我更深入的了解 Web3。拥抱 Web3，拥抱未来。
 
 2. 你认为你会完成本次残酷学习吗？
    我认为我会完成本次残酷学习，因为我有信心，并且我相信我能够克服任何困难。
@@ -111,7 +64,7 @@ katana 0.7.4
 部署合约前一定要先部署钱包账户，否则会报错。
 <https://docs.starknet.io/quick-start/set-up-an-account/>
 
- Cairo  在 `Starknet` 智能合约中怎么写？
+Cairo 在 `Starknet` 智能合约中怎么写？
 
 - 需要定义一个模块 mod
 - 需要使用属性 `#[starknet::contract]`
@@ -119,9 +72,9 @@ katana 0.7.4
 - 属性是宏
 - 宏的作用是消耗你在宏下定义的代码，并转换为其它代码
 - 在这种情况下，转化是将模块转换为智能合约，所以这就是所谓的元编程
-- 元编程在Rust当中流行起来、同样也在 cairo 中使用，只是使用了不同的宏或属性
+- 元编程在 Rust 当中流行起来、同样也在 cairo 中使用，只是使用了不同的宏或属性
 - 当我们想要定义合约的存储时，实际上是定义了一个结构体，这个结构体必须叫 `Storage`
-- 这个存储必须使用属性   `#[storage]` 来注解
+- 这个存储必须使用属性 `#[storage]` 来注解
 - 在 trait 中必须为 self 定义类型
 
 ### 2024.09.20
@@ -156,11 +109,11 @@ remix 第一次部署调用合约成功，第二次无法点击 Declare， 调�
 猜测原因是缓存问题， 清理缓存后可以成功。
 <https://www.youtube.com/watch?v=qrnbf2Ji-oU>
 
-STARKWARE ：是位于以色列的公司，开发了 Starknet，包括 Starknet 相关的技术，目前负责构建和发展， Starknet 的核心团队是 Starkware 的员工。 Starkware 的创始人及现任的CEO 发明了 Starks ZK
+STARKWARE ：是位于以色列的公司，开发了 Starknet，包括 Starknet 相关的技术，目前负责构建和发展， Starknet 的核心团队是 Starkware 的员工。 Starkware 的创始人及现任的 CEO 发明了 Starks ZK
 
-的证明，这种证明推动了所有这些创新。 STARKWARE 做的第一个 ZKSTARKS 的实现被称为 STARKEx，STARKEx 是一个需要授权的系统，所以你不能直接使用STARKEx，你需要与 STARKWARE 签订合同协议才能使用它。STARKEx 有一些固定的功能，比如说你可以交易代币，做期货合约、资产交易等待。例如：DYDXVERSION3 实际就是运行在 STARKEx 上的。许多应用程序幕后都是使用的是STARKEx。 这是 STARKWARE 开发的第一个产品。
+的证明，这种证明推动了所有这些创新。 STARKWARE 做的第一个 ZKSTARKS 的实现被称为 STARKEx，STARKEx 是一个需要授权的系统，所以你不能直接使用 STARKEx，你需要与 STARKWARE 签订合同协议才能使用它。STARKEx 有一些固定的功能，比如说你可以交易代币，做期货合约、资产交易等待。例如：DYDXVERSION3 实际就是运行在 STARKEx 上的。许多应用程序幕后都是使用的是 STARKEx。 这是 STARKWARE 开发的第一个产品。
 
-实际上Cairo 就是为 STARKEx 开发的。最初是作为一种内部工具，以便更容易提高系统的能力，一段时间以后，它们希望创建一种系统，使用相同的技术、相同类型的零知识证明，使得人们可以自己使用 Cairo 创建智能合约，并随时部署它们，无须任何许可。这就是 STARKNET。因此 STARKNET是一个无需许可的系统。是一个二层汇总。使用以太坊作为安全层，你可以通过智能合约部署你的代码逻辑，无需得到 STARKWARE 的任何许可。
+实际上 Cairo 就是为 STARKEx 开发的。最初是作为一种内部工具，以便更容易提高系统的能力，一段时间以后，它们希望创建一种系统，使用相同的技术、相同类型的零知识证明，使得人们可以自己使用 Cairo 创建智能合约，并随时部署它们，无须任何许可。这就是 STARKNET。因此 STARKNET 是一个无需许可的系统。是一个二层汇总。使用以太坊作为安全层，你可以通过智能合约部署你的代码逻辑，无需得到 STARKWARE 的任何许可。
 
 STARKNET Foundation ： STARKNET 基金会是成立大约一年的一个非营利组织。目标是帮助发展 STARKNET 生态系统，或者与一些开发者达成协议来创建一些应用，或者帮助分散系统的治理。
 
@@ -187,7 +140,7 @@ Cairo 在 Starknet 智能合约中怎么写？
 属性是宏
 宏的作用是消耗你在宏下定义的代码，并转换为其它代码
 在这种情况下，转化是将模块转换为智能合约，所以这就是所谓的元编程
-元编程在Rust当中流行起来、同样也在 cairo 中使用，只是使用了不同的宏或属性
+元编程在 Rust 当中流行起来、同样也在 cairo 中使用，只是使用了不同的宏或属性
 当我们想要定义合约的存储时，实际上是定义了一个结构体，这个结构体必须叫 Storage
 这个存储必须使用属性 #[storage] 来注解
 在 trait 中必须为 self 定义类型
@@ -207,14 +160,14 @@ mod SimpleStorage {
   struct Storage {
     stored_data: u128
   }
-  
+
   // 以下实现将成为智能合约的 ABI ，所以这是任何人都可以调用的智能合约的公共接口
   #[abi(embed_v0)]
   impl SimpleStorage of super::ISimpleStorage<ContractState> {
     fn set(ref self: ContractState, x: u128) {
       self.stored_data.write(x);
     }
-    
+
     fn get(self: @ContractState) -> u128 {
       self.stored_data.read()
     }
@@ -225,13 +178,13 @@ mod SimpleStorage {
 ### 2024.09.23
 
 L1 最终确认
-以太坊的最终确认大约是每6分钟实现一次
+以太坊的最终确认大约是每 6 分钟实现一次
 
 在乐观汇总中，从 L2 提取资金到 L1，大约需要一周的时间
 
-在 Starknet 的情况下，这个等待时间只有2个小时
+在 Starknet 的情况下，这个等待时间只有 2 个小时
 
-每2个小时就从 Starknet 发送有效性证明到 L1
+每 2 个小时就从 Starknet 发送有效性证明到 L1
 
 一旦证明被验证，你就可以将资金转移到 L1
 
@@ -258,8 +211,8 @@ L2 的最终确认也就是 Starknet 的最终确认非常短
 问题：
 
 ```shell
-hellostarknet on  main [?] via 🅒 base took 4.7s 
-➜ scarb test 
+hellostarknet on  main [?] via 🅒 base took 4.7s
+➜ scarb test
      Running test hellostarknet (snforge test)
    Compiling snforge_scarb_plugin v0.1.0 (git+https://github.com/foundry-rs/starknet-foundry?tag=v0.30.0#196f06b251926697c3d66800f2a93ae595e76496)
     Finished `release` profile [optimized] target(s) in 0.17s
@@ -317,7 +270,7 @@ cargo install universal-sierra-compiler --force
 
 ### 2024.09.25
 
-Cairo 是一种可证明的编程语言，它的语法类似于Rust。Cairo 不直接编译为 Cairo AM 字节码
+Cairo 是一种可证明的编程语言，它的语法类似于 Rust。Cairo 不直接编译为 Cairo AM 字节码
 
 这个编译过程是由排序器 Sequencer 完成的
 
@@ -340,7 +293,7 @@ Prover (SHARP) RUN trace
 validity proof 作为一个交易发送到 以太坊 Ethereum 进行 Verifier
 result
 
-声明和部署是Starknet 上两个不同的操作
+声明和部署是 Starknet 上两个不同的操作
 
 声明智能合约只是在 Starknet 上注册代码
 
@@ -565,7 +518,7 @@ mod tests {
     }
 }
 // 当我们使用简单类型 （u8 u16 u32） 时， 不需要关注所有权类型，只有报错的时候才关注
-// 当遇到所有权的时候，不想改变则使用 @ Span 快照类型  修改则使用 ref 要求是可变的变量 使用 mut 
+// 当遇到所有权的时候，不想改变则使用 @ Span 快照类型  修改则使用 ref 要求是可变的变量 使用 mut
 
 ```
 
@@ -574,13 +527,13 @@ mod tests {
 <https://learnblockchain.cn/article/9415>
 Transactions
 transaction 是由你的钱包发起的，可以是智能手机或笔记本电脑中的钱包
-你签署一笔交易，并将其发送到Starknet 上
+你签署一笔交易，并将其发送到 Starknet 上
 接受该交易的 Starknet 节点称为 Sequencer 排序器
 目前 Starknet 只有一个排序器，它具有类似内存池的功能
 接收你的交易，并在实际执行交易前进行一些基本的交易验证
-由于Starknet 智能合约实际上时 Cairo 程序，因此必须在Cairo 虚拟机上执行
-交易从内存池发送到Cairo虚拟机，一旦执行完成，该执行的 trace 会发送到证明器，我们称其为 SHARP
-被称为 SHARP的原因是它不只是给 Starknet 使用，也给STARKEx 使用
+由于 Starknet 智能合约实际上时 Cairo 程序，因此必须在 Cairo 虚拟机上执行
+交易从内存池发送到 Cairo 虚拟机，一旦执行完成，该执行的 trace 会发送到证明器，我们称其为 SHARP
+被称为 SHARP 的原因是它不只是给 Starknet 使用，也给 STARKEx 使用
 `SHARP· 中的证明模块创建了有效性证明，确保其计算的完整性
 交易执行的结果，有效性证明会发送到以太坊上一个名为验证器的智能合约，如果验证器认为此证明正确，则该执行结果就是正确的。
 
@@ -590,13 +543,13 @@ Tx 生命周期
 你发送一笔交易，需要对其进行签署，然后该交易被发送到内存池，内存池会检查该交易结构是否正确、字段是否正确以及格式是否正确
 当交易被确认时，Starknet 就会接收它， 这时候它的状态就会变成 RECEIVED
 如果发生某些事情，比如智能手机和排序器直接的连接中断了，你的交易将被忽略，故它的状态会变成 IGNORED
-这个状态并不是一个标准状态，它意味着Starknet不会知道你的交易
-有可能发生交易已经到了内存池，但因为格式不正确，比如使用了错误的客户端或SDK。在这种情况下，Sequencer 排序器会忽略该交易，不会解析其中的数据。
-如果交易格式正确，被排序器和内存池接收，下一步就到签名验证阶段了，每笔交易都必须签名，如果签名不正确，意味着它的公私钥不对应，交易会被拒绝。如果签名有效，它就继续在CairoVM 虚拟机中运行。
-如果排序器能成功使用 CairoVM 执行该交易，它的状态会变为ACCEPTEN_ON_L2。也就是在L2 上被接受。这就是在L2 上最终被确认的状态。是在Starknet 上执行你的交易后网络的新状态。
+这个状态并不是一个标准状态，它意味着 Starknet 不会知道你的交易
+有可能发生交易已经到了内存池，但因为格式不正确，比如使用了错误的客户端或 SDK。在这种情况下，Sequencer 排序器会忽略该交易，不会解析其中的数据。
+如果交易格式正确，被排序器和内存池接收，下一步就到签名验证阶段了，每笔交易都必须签名，如果签名不正确，意味着它的公私钥不对应，交易会被拒绝。如果签名有效，它就继续在 CairoVM 虚拟机中运行。
+如果排序器能成功使用 CairoVM 执行该交易，它的状态会变为 ACCEPTEN_ON_L2。也就是在 L2 上被接受。这就是在 L2 上最终被确认的状态。是在 Starknet 上执行你的交易后网络的新状态。
 如果在执行过程中发生某些事情，例如、燃气耗尽或者断言错误，交易将停止并执行回滚。但你仍然会被收取执行交易从发生到回滚哪一刻产生的费用，最终的状态会变为 REVERTED。
-无论交易成功或失败，最终都会生成 trace，并发送给证明者，证明者会生成有效证明，如果被以太坊接受，交易状态将变为ACCEPTED_ON_L1，也就是说在 L1 上被接受。
-总结：你的交易首先被内存池接收并确认，如果结构正确，通过签名验证，它将进入CairoVM 虚拟机执行，如果执行失败，交易将被拒绝。如果执行成功，交易将获得在L2 上被接受的状态，即 ACCEPTED_ON_L2。并在L2 上达到最终确认。有效性证明生成后发送给以太坊的验证器，如果被接受，交易状态将变为在L1上被接受，即 ACCEPTED_ON_L1。这就是整个生命周期
+无论交易成功或失败，最终都会生成 trace，并发送给证明者，证明者会生成有效证明，如果被以太坊接受，交易状态将变为 ACCEPTED_ON_L1，也就是说在 L1 上被接受。
+总结：你的交易首先被内存池接收并确认，如果结构正确，通过签名验证，它将进入 CairoVM 虚拟机执行，如果执行失败，交易将被拒绝。如果执行成功，交易将获得在 L2 上被接受的状态，即 ACCEPTED_ON_L2。并在 L2 上达到最终确认。有效性证明生成后发送给以太坊的验证器，如果被接受，交易状态将变为在 L1 上被接受，即 ACCEPTED_ON_L1。这就是整个生命周期
 
 Tx 类型
 声明 Declare
@@ -643,8 +596,8 @@ Tx 类型
 ```shell
 brew install asdf
 
-asdf plugin add scarb 
-asdf install scarb latest 
+asdf plugin add scarb
+asdf install scarb latest
 asdf global scarb latest
 
 scarb --version
@@ -727,10 +680,10 @@ WRITE => INVOKE (it's a transaction = gas to pay)
 ```rust
 #[starknet::contract]
 mod CounterContract {
-  
+
   #[storage]
   struct Storage {
-    
+
   }
 }
 ```
@@ -744,7 +697,7 @@ mod CounterContract {
   struct Storage {
     counter: u32,
   }
-  
+
   #[constructor]
   fn constructor(ref self: ContractState, initial_counter: u32) {
     self.counter.write(initial_counter);
@@ -760,7 +713,7 @@ impl CounterContract of super::ICounterContract<ContractState> {
   fn get_counter(self: @ContractState) -> u32 {
     self.counter.read()
   }
-  
+
   fn increase_counter(ref self: ContractState) {
     let current_counter = self.counter.read();
     self.counter.write(current_counter + 1);
@@ -808,12 +761,12 @@ trait IData<T>{
 mod MyContract {
   use starknet::ContractAddress;
   use super::{IDataDispatcher, IDataDispatcherTrait};
-  
+
   #[storage]
   struct Storage {
-    
+
   }
-  
+
   #[abi(embed_v0)]
   fn get_data_call(self: @ContractState, data_address: ContractAddress) -> felt252 {
     let dispatcher = IDataDispatcher {contract_address: data_address};
@@ -834,20 +787,20 @@ trait IOwnable<TCcontractState> {
 mod ownable_component {
   #[storage]
   struct Storage {
-    
+
   }
-  
+
   #[event]
   #[derive(Drop, starknet::Event)]
   enum Event {
     OwnershipTransferred: OwnershipTransferred
   }
-  
+
   #[derive(Drop, starknet::Event)]
   struct OwnershipTransferred {
     // CODE
   }
-  
+
   #[embeddable_as(OwnableImpl)]
   impl Ownable<TContractState, +HasComponent<TContractState>> of super::IOwnable<ComponentState<TContractState>> {
     // CODE
@@ -861,19 +814,19 @@ mod ownable_component {
 
 <https://github.com/starknet-edu/counter-workshop>
 
-使用vscode 打开并安装 `Cairo 1` 扩展
+使用 vscode 打开并安装 `Cairo 1` 扩展
 
 ### 2024.09.29
 
-序列器的角色类似于以太坊的验证者，主要任务是接收用户的transacton，按顺序排列这些transaction，处理这些transaction，然后将它们打包成块。
-序列器对transaction处理的方法包括：排序、执行、打包以及生成区块。
-序列器需要不断的快速的处理transaction，因此序列器需要强大且可靠的计算基础设施。
-Starknet的发展路线包括将序列器的角色去中心化，从而提高网络的鲁棒性，并减少中心化的风险。
+序列器的角色类似于以太坊的验证者，主要任务是接收用户的 transacton，按顺序排列这些 transaction，处理这些 transaction，然后将它们打包成块。
+序列器对 transaction 处理的方法包括：排序、执行、打包以及生成区块。
+序列器需要不断的快速的处理 transaction，因此序列器需要强大且可靠的计算基础设施。
+Starknet 的发展路线包括将序列器的角色去中心化，从而提高网络的鲁棒性，并减少中心化的风险。
 
-证明器也是Starknet一个非常关键的组件，证明器的职责包括：接收区块、处理生成证明、将证明发送到以太坊。
-Starknet中的证明器充当二次验证的角色，在序列器处理并批量将transaction打包成区块以后，这些区块会传递给证明器，证明器会重新处理这些区块，以确保所有的StarkNet均以正确执行，然后证明器为每个区块生成证明，并将它们发送到以太坊网络进行验证。
+证明器也是 Starknet 一个非常关键的组件，证明器的职责包括：接收区块、处理生成证明、将证明发送到以太坊。
+Starknet 中的证明器充当二次验证的角色，在序列器处理并批量将 transaction 打包成区块以后，这些区块会传递给证明器，证明器会重新处理这些区块，以确保所有的 StarkNet 均以正确执行，然后证明器为每个区块生成证明，并将它们发送到以太坊网络进行验证。
 这个步骤的计算量是非常巨大的 ，证明器被设计为处理复杂任务的一种组件，它的工作可以是异步的，证明器的工作可以被分成多个部分，允许并行处理和高效的证明生成，这种灵活性的工作方式使得负载可以在多个证明器之间分配，每个证明器可以处理不同的区块，实现并行性和高效的证明生成。
-在这种情况下，以太坊托管了一个能够验证这些Stark证明的智能合约，如果证明有效，stark状态根就会在L1上更新。
+在这种情况下，以太坊托管了一个能够验证这些 Stark 证明的智能合约，如果证明有效，stark 状态根就会在 L1 上更新。
 
 ### 2024.09.30
 
@@ -882,17 +835,17 @@ Starknet中的证明器充当二次验证的角色，在序列器处理并批量
 3. Event 事件，主要方便于链下索引，是避免链上状态空间膨胀的重要措施
 4. Constructor 构造器，用于合约初始化
 
-StarkNet中的节点与比特币或以太坊区块链的节点相比，有着独特的功能。
-以太坊中的节点充当网络的审计者，维护着网络的状状态，例如每个参与者拥有多少ETH，或者特定智能合约的当前状态
+StarkNet 中的节点与比特币或以太坊区块链的节点相比，有着独特的功能。
+以太坊中的节点充当网络的审计者，维护着网络的状状态，例如每个参与者拥有多少 ETH，或者特定智能合约的当前状态
 
-节点通过处理transaction，并保存所有的transaction记录来实现这一点，StarkNet节点不一定需要处理所有transaction 来维护这种状态。
+节点通过处理 transaction，并保存所有的 transaction 记录来实现这一点，StarkNet 节点不一定需要处理所有 transaction 来维护这种状态。
 
 通常节点访问网络状态数据的三种主要方法包括：
-第一种方法是重放旧的transaction，这种方式类似于以太坊或比特币，节点可以取走所有的transaction，并重新执行它们。尽管这种方法准确，但除非你拥有能够处理这些负载的强大机器，否则它并不可扩展。如果能重放所有的transaction，这就可以作为一个序列器使用了。
+第一种方法是重放旧的 transaction，这种方式类似于以太坊或比特币，节点可以取走所有的 transaction，并重新执行它们。尽管这种方法准确，但除非你拥有能够处理这些负载的强大机器，否则它并不可扩展。如果能重放所有的 transaction，这就可以作为一个序列器使用了。
 
-第二种方法是依赖L2的共识，所有节点信任序列器能够正确的执行网络，这种方法就涉及到一些信任假设，但是他的资源需求较少。目前Stacknet围绕一个序列器进行，所以这些节点是信任Stackware 不会破坏网络的。
+第二种方法是依赖 L2 的共识，所有节点信任序列器能够正确的执行网络，这种方法就涉及到一些信任假设，但是他的资源需求较少。目前 Stacknet 围绕一个序列器进行，所以这些节点是信任 Stackware 不会破坏网络的。
 
-第三种方法是在L1上检查证明并验证，节点呢可以通过观察L1，并确保每次发送证明能收到更新的状态来监控网络的状态，这样他们不必信任任何人，只需要跟踪StarkNet上最新的有效的transaction就可以。
+第三种方法是在 L1 上检查证明并验证，节点呢可以通过观察 L1，并确保每次发送证明能收到更新的状态来监控网络的状态，这样他们不必信任任何人，只需要跟踪 StarkNet 上最新的有效的 transaction 就可以。
 
 ### 2024.10.01
 
@@ -903,7 +856,7 @@ StarkNet中的节点与比特币或以太坊区块链的节点相比，有着独
 #### 运行所有测试
 
 ```bash
-simple_storage on  main [?] via 🅒 base 
+simple_storage on  main [?] via 🅒 base
 ➜ scarb test
      Running test simple_storage (snforge test)
    Compiling snforge_scarb_plugin v0.31.0 (git+https://github.com/foundry-rs/starknet-foundry?tag=v0.31.0#72ea785ca354e9e506de3e5d687da9fb2c1b3c67)
@@ -931,8 +884,8 @@ Tests: 5 passed, 0 failed, 0 skipped, 0 ignored, 0 filtered out
 #### 运行指定测试
 
 ```bash
-simple_storage on  main [?] via 🅒 base took 14.1s 
-➜ scarb test test_set_and_get_data          
+simple_storage on  main [?] via 🅒 base took 14.1s
+➜ scarb test test_set_and_get_data
      Running test simple_storage (snforge test)
    Compiling snforge_scarb_plugin v0.31.0 (git+https://github.com/foundry-rs/starknet-foundry?tag=v0.31.0#72ea785ca354e9e506de3e5d687da9fb2c1b3c67)
     Finished `release` profile [optimized] target(s) in 0.18s
@@ -956,8 +909,8 @@ Tests: 1 passed, 0 failed, 0 skipped, 0 ignored, 4 filtered out
 #### [显示测试期间使用的资源](https://foundry-rs.github.io/starknet-foundry/testing/running-tests.html#displaying-resources-used-during-tests)
 
 ```bash
-simple_storage on  main [?] via 🅒 base took 14.6s 
-➜ scarb test test_set_and_get_data --detailed-resources       
+simple_storage on  main [?] via 🅒 base took 14.6s
+➜ scarb test test_set_and_get_data --detailed-resources
      Running test simple_storage (snforge test)
    Compiling snforge_scarb_plugin v0.31.0 (git+https://github.com/foundry-rs/starknet-foundry?tag=v0.31.0#72ea785ca354e9e506de3e5d687da9fb2c1b3c67)
     Finished `release` profile [optimized] target(s) in 0.18s
@@ -977,7 +930,7 @@ Running 1 test(s) from tests/
         memory holes: 1057
         builtins: (range_check: 115, pedersen: 7)
         syscalls: (StorageWrite: 3, StorageRead: 2, CallContract: 2, Deploy: 1, GetExecutionInfo: 1)
-        
+
 Running 0 test(s) from src/
 Tests: 1 passed, 0 failed, 0 skipped, 0 ignored, 4 filtered out
 
@@ -1010,14 +963,14 @@ Downloading and extracting cairo-coverage-v0.2.0-aarch64-apple-darwin...
   0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0
 100 2430k  100 2430k    0     0   989k      0  0:00:02  0:00:02 --:--:-- 1695k
 cairo-coverage (v0.2.0) has been installed successfully.
-                                
-                                
-                              
+
+
+
 ~ via 🅒 base
 ➜
 cairo-coverage -V
 cairo-coverage 0.2.0
-                                
+
 ```
 
 #### 2. `Scarb.toml` 文件中进行如下配置
@@ -1033,8 +986,8 @@ inlining-strategy = "avoid"
 #### 3. 调用 `cairo-coverage` 运行测试生成测试覆盖率文件
 
 ```bash
-simple_storage on  main [?] via 🅒 base took 14.5s 
-➜ scarb test --coverage                                
+simple_storage on  main [?] via 🅒 base took 14.5s
+➜ scarb test --coverage
      Running test simple_storage (snforge test)
    Compiling snforge_scarb_plugin v0.31.0 (git+https://github.com/foundry-rs/starknet-foundry?tag=v0.31.0#72ea785ca354e9e506de3e5d687da9fb2c1b3c67)
     Finished `release` profile [optimized] target(s) in 0.18s
@@ -1063,15 +1016,15 @@ Tests: 5 passed, 0 failed, 0 skipped, 0 ignored, 0 filtered out
 查看生成的文件：
 
 ```bash
-simple_storage on  main [?] via 🅒 base 
-➜ cd coverage         
+simple_storage on  main [?] via 🅒 base
+➜ cd coverage
 
-simple_storage/coverage on  main [?] via 🅒 base 
+simple_storage/coverage on  main [?] via 🅒 base
 ➜ ls
 coverage.lcov
 
-simple_storage/coverage on  main [?] via 🅒 base 
-➜ cat coverage.lcov                                            
+simple_storage/coverage on  main [?] via 🅒 base
+➜ cat coverage.lcov
 TN:
 SF:/Users/qiaopengjun/Code/starknet-code/hello_starknet/simple_storage/src/simple_storage.cairo
 FN:31,simple_storage::simple_storage::SimpleStorage::SimpleStorageImpl::get_data
@@ -1110,8 +1063,8 @@ genhtml: LCOV version 2.1-1
 ##### 使用[lcov 包](https://github.com/linux-test-project/lcov/tree/master)中的工具`genhtml`生成 HTML 报告
 
 ```bash
-simple_storage/coverage on  main [?] via 🅒 base 
-➜ genhtml -o coverage_report coverage.lcov         
+simple_storage/coverage on  main [?] via 🅒 base
+➜ genhtml -o coverage_report coverage.lcov
 Reading tracefile coverage.lcov.
 Found 2 entries.
 Found common filename prefix "/Users/qiaopengjun/Code/starknet-code/hello_starknet/simple_storage"
@@ -1127,7 +1080,7 @@ Overall coverage rate:
 Message summary:
   no messages were reported
 
-simple_storage/coverage on  main [?] via 🅒 base 
+simple_storage/coverage on  main [?] via 🅒 base
 ➜ ls -l
 total 8
 -rw-r--r--   1 qiaopengjun  staff  2081 Sep 30 21:57 coverage.lcov
@@ -1188,15 +1141,15 @@ simple_counter on  main [?] via 🅒 base
 ➜
 
 
-simple_counter on  main [?] via 🅒 base took 10.3s 
+simple_counter on  main [?] via 🅒 base took 10.3s
 ➜ scarb fmt && scarb build
    Compiling snforge_scarb_plugin v0.31.0 (git+https://github.com/foundry-rs/starknet-foundry?tag=v0.31.0#72ea785ca354e9e506de3e5d687da9fb2c1b3c67)
     Finished `release` profile [optimized] target(s) in 0.10s
    Compiling simple_counter v0.1.0 (/Users/qiaopengjun/Code/starknet-code/hello_starknet/simple_counter/Scarb.toml)
     Finished release target(s) in 3 seconds
 
-simple_counter on  main [?] via 🅒 base took 3.1s 
-➜ scarb test              
+simple_counter on  main [?] via 🅒 base took 3.1s
+➜ scarb test
      Running test simple_counter (snforge test)
    Compiling snforge_scarb_plugin v0.31.0 (git+https://github.com/foundry-rs/starknet-foundry?tag=v0.31.0#72ea785ca354e9e506de3e5d687da9fb2c1b3c67)
     Finished `release` profile [optimized] target(s) in 0.11s
@@ -1623,16 +1576,16 @@ fn calculate_transport_fees() {
 ### 2024.10.05
 
 ```bash
-hello_starknet/starknet_erc20 on  main [?] via 🅒 base 
+hello_starknet/starknet_erc20 on  main [?] via 🅒 base
 ➜ sncast --version
 sncast 0.31.0
 
-hello_starknet/starknet_erc20 on  main [?] via 🅒 base 
-➜ sncast --help   
+hello_starknet/starknet_erc20 on  main [?] via 🅒 base
+➜ sncast --help
 sncast 0.31.0
 
-hello_starknet/starknet_erc20 on  main [?] via 🅒 base 
-➜ starknet-devnet                       
+hello_starknet/starknet_erc20 on  main [?] via 🅒 base
+➜ starknet-devnet
 Predeployed FeeToken
 ETH Address: 0x49D36570D4E46F48E99674BD3FCC84644DDD6B96F7C741B1562B82F9E004DC7
 STRK Address: 0x04718f5a0fc34cc1af16a1cdee98ffb20c31f5cd61d6ab07201858f4287c938d
@@ -1689,7 +1642,7 @@ Initial balance of each account: 1000000000000000000000 WEI and FRI
 Seed to replicate this account sequence: 1107456642
 2024-10-05T11:13:44.245219Z  INFO starknet_devnet: Starknet Devnet listening on 127.0.0.1:5050
 
-hello_starknet/starknet_erc20 on  main [?] via 🅒 base 
+hello_starknet/starknet_erc20 on  main [?] via 🅒 base
 ➜ sncast account add --address 0x3db6c9af232edf8c30967fd4b64fc548becd4f116f6f385c5a1a0b1809c3114 --private-key 0x524318337149f906e46d2da259025d85 --url http://127.0.0.1:5050 --type oz --name erc20-account --add-pro
 file dev-profile
 command: account add
@@ -1699,7 +1652,7 @@ add_profile: Profile dev-profile successfully added to snfoundry.toml
 
 ### 2024.10.06
 
-Starknet是由StarkWare开发的Layer-2扩展性解决方案，致力于提高以太坊和其他区块链的性能和扩展性。该平台采用零知识证明技术，旨在为开发者提供一个可扩展、安全和高性能的环境，以构建去中心化应用（DApps）。Starknet允许用户在去中心化环境中创建和部署高效、低成本的智能合约，并支持跨链通信和互操作性。该平台的目标是通过提供更快、更便宜的交易，以及更高的隐私性和安全性，推动去中心化应用的发展和采用。
+Starknet 是由 StarkWare 开发的 Layer-2 扩展性解决方案，致力于提高以太坊和其他区块链的性能和扩展性。该平台采用零知识证明技术，旨在为开发者提供一个可扩展、安全和高性能的环境，以构建去中心化应用（DApps）。Starknet 允许用户在去中心化环境中创建和部署高效、低成本的智能合约，并支持跨链通信和互操作性。该平台的目标是通过提供更快、更便宜的交易，以及更高的隐私性和安全性，推动去中心化应用的发展和采用。
 
 在 `self` 前增加了 `ref` 标识，此标识代表该函数可以修改当前合约状态
 
@@ -1722,7 +1675,7 @@ Unlike a contract, a component cannot be deployed on its own. The component's co
 你需要使用#[event]和#[derive(Drop, starknet::Event)]属性，每个事件变体成员必须是一个与变体同名的结构体。
 然后，你需要定义事件结构体，它也需要使用#[derive(Drop, starknet::Event)]属性，并将你想要记录的参数添加为成员。
 
-要释放事件，你需要使用self.emit()方法，并把要记录的数据作为参数。
+要释放事件，你需要使用 self.emit()方法，并把要记录的数据作为参数。
 
 在 Cairo 中，只有可变变量可以用 ref 标记，因为它们在函数结束时被隐式更新。
 在 Cairo 中，接口是用 #[starknet::interface] 属性标记的 trait，功能与 Solidity 中类似。规则如下：
@@ -1732,7 +1685,7 @@ Unlike a contract, a component cannot be deployed on its own. The component's co
 不应声明构造函数。
 不应声明状态变量。
 不应声明事件（与 Solidity 不同）。
-所有view函数需要包含参数self: @TContractState，external函数需要包含参数ref self: TContractState。
+所有 view 函数需要包含参数 self: @TContractState，external 函数需要包含参数 ref self: TContractState。
 
 ### 2024.10.09
 
