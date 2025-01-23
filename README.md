@@ -109,15 +109,16 @@ Telegram：https://t.me/LXDAO/11973
 | MartinYeung5 | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ⭕️ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ⭕️ | ✅ | ✅ |
 | Ellenp2p | ✅ | ⭕️ | ⭕️ | ✅ | ✅ | ✅ | ⭕️ | ⭕️ | ❌ | | | | | | | | | | | | |
 | aliyan404 | ✅ | ✅ | ✅ | ⭕️ | ✅ | ✅ | ⭕️ | ⭕️ | ❌ | | | | | | | | | | | | |
-| awaqawaqawaq | ✅ | ✅ | ✅ | ⭕️ |   | ✅ | ✅ | ✅ | ✅ | ✅ | ⭕️ | ⭕️ | ✅ | ✅ | ✅ | ✅ | ✅ | ⭕️ | ⭕️ | ✅ | ✅ |
-| CavnHan | ✅ | ✅ | ⭕️ | ⭕️ |   | ⭕️ | ⭕️ | ❌ | | | | | | | | | | | | | |
+| awaqawaqawaq | ✅ | ✅ | ✅ | ⭕️ | ⭕️ | ✅ | ✅ | ✅ | ✅ | ✅ | ⭕️ | ⭕️ | ✅ | ✅ | ✅ | ✅ | ✅ | ⭕️ | ⭕️ | ✅ | ✅ |
+| CavnHan | ✅ | ✅ | ⭕️ | ⭕️ | ❌ | | | | | | | | | | | | | | | | |
 | coco | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ |
 | taoranzhishang | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ |
 | phipupt | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ |
 | wodeche | ⭕️ | ⭕️ | ❌ | | | | | | | | | | | | | | | | | | |
-| dethan3 | ✅ | ⭕️ | ✅ | ⭕️ |   | ⭕️ | ⭕️ | ❌ | | | | | | | | | | | | | |
+| dethan3 | ✅ | ⭕️ | ✅ | ⭕️ | ❌ | | | | | | | | | | | | | | | | |
 | linghuccc | ✅ | ⭕️ | ⭕️ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ⭕️ | ✅ | ⭕️ | ⭕️ | ❌ | | | | | | |
 <!-- END_COMMIT_TABLE -->
+
 
 
 
@@ -173,8 +174,8 @@ Telegram：https://t.me/LXDAO/11973
 ## 统计数据
 
 - 总参与人数: 14
-- 完成人数: 6
-- 完成用户: nocb, QiaoPengjun5162, MartinYeung5, coco, taoranzhishang, phipupt
+- 完成人数: 7
+- 完成用户: nocb, QiaoPengjun5162, MartinYeung5, awaqawaqawaq, coco, taoranzhishang, phipupt
 - 全勤用户: QiaoPengjun5162, coco, taoranzhishang, phipupt
 - 淘汰人数: 7
 - 淘汰率: 50.00%
