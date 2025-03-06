@@ -106,10 +106,10 @@ Telegram：https://t.me/LXDAO/11973
 | [geyu](https://github.com/IntensiveCoLearning/starknet/blob/main/geyu.md) | ⭕️ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ⭕️ | ⭕️ | ✅ | ✅ | ✅ | ⭕️ | ⭕️ | ❌ | | | | | | |
 | [nocb](https://github.com/IntensiveCoLearning/starknet/blob/main/nocb.md) | ✅ | ✅ | ⭕️ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ⭕️ | ✅ | ⭕️ | ✅ | ✅ | ✅ | ✅ |
 | [QiaoPengjun5162](https://github.com/IntensiveCoLearning/starknet/blob/main/QiaoPengjun5162.md) | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ |
-| [MartinYeung5](https://github.com/IntensiveCoLearning/starknet/blob/main/MartinYeung5.md) | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ⭕️ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ⭕️ | ✅ | ✅ |
+| [MartinYeung5](https://github.com/IntensiveCoLearning/starknet/blob/main/MartinYeung5.md) | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ⭕️ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ |   | ✅ | ✅ |
 | [Ellenp2p](https://github.com/IntensiveCoLearning/starknet/blob/main/Ellenp2p.md) | ✅ | ⭕️ | ⭕️ | ✅ | ✅ | ✅ | ⭕️ | ⭕️ | ❌ | | | | | | | | | | | | |
 | [aliyan404](https://github.com/IntensiveCoLearning/starknet/blob/main/aliyan404.md) | ✅ | ✅ | ✅ | ⭕️ | ✅ | ✅ | ⭕️ | ⭕️ | ❌ | | | | | | | | | | | | |
-| [awaqawaqawaq](https://github.com/IntensiveCoLearning/starknet/blob/main/awaqawaqawaq.md) | ✅ | ✅ | ✅ | ⭕️ | ⭕️ | ✅ | ✅ | ✅ | ✅ | ✅ | ⭕️ | ⭕️ | ✅ | ✅ | ✅ | ✅ | ✅ |   | ⭕️ | ✅ | ✅ |
+| [awaqawaqawaq](https://github.com/IntensiveCoLearning/starknet/blob/main/awaqawaqawaq.md) | ✅ | ✅ | ✅ | ⭕️ | ⭕️ | ✅ | ✅ | ✅ | ✅ | ✅ | ⭕️ | ⭕️ | ✅ | ✅ | ✅ | ✅ | ✅ | ⭕️ |   | ✅ | ✅ |
 | [CavnHan](https://github.com/IntensiveCoLearning/starknet/blob/main/CavnHan.md) | ✅ | ✅ | ⭕️ | ⭕️ | ❌ | | | | | | | | | | | | | | | | |
 | [coco](https://github.com/IntensiveCoLearning/starknet/blob/main/coco.md) | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ |
 | [taoranzhishang](https://github.com/IntensiveCoLearning/starknet/blob/main/taoranzhishang.md) | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ |
@@ -118,6 +118,7 @@ Telegram：https://t.me/LXDAO/11973
 | [dethan3](https://github.com/IntensiveCoLearning/starknet/blob/main/dethan3.md) | ✅ | ⭕️ | ✅ | ⭕️ | ❌ | | | | | | | | | | | | | | | | |
 | [linghuccc](https://github.com/IntensiveCoLearning/starknet/blob/main/linghuccc.md) | ✅ | ⭕️ | ⭕️ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ⭕️ | ✅ | ⭕️ | ⭕️ | ❌ | | | | | | |
 <!-- END_COMMIT_TABLE -->
+
 
 
 
