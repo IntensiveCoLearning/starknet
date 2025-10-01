@@ -103,7 +103,7 @@ Telegram：https://t.me/LXDAO/11973
 <!-- START_COMMIT_TABLE -->
 | Name | 9.18 | 9.19 | 9.20 | 9.21 | 9.22 | 9.23 | 9.24 | 9.25 | 9.26 | 9.27 | 9.28 | 9.29 | 9.30 | 10.01 | 10.02 | 10.03 | 10.04 | 10.05 | 10.06 | 10.07 | 10.08 |
 | ------------- | ---- | ---- | ---- | ---- | ---- | ---- | ---- | ---- | ---- | ---- | ---- | ---- | ---- | ---- | ---- | ---- | ---- | ---- | ---- | ---- | ---- |
-| [geyu](https://github.com/IntensiveCoLearning/starknet/blob/main/geyu.md) | ⭕️ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ⭕️ | ⭕️ | ✅ | ✅ | ✅ |   | ⭕️ | ⭕️ | ❌ | | | | | |
+| [geyu](https://github.com/IntensiveCoLearning/starknet/blob/main/geyu.md) | ⭕️ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ⭕️ | ⭕️ | ✅ | ✅ | ✅ | ⭕️ |   | ⭕️ | ❌ | | | | | |
 | [nocb](https://github.com/IntensiveCoLearning/starknet/blob/main/nocb.md) | ✅ | ✅ | ⭕️ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ⭕️ | ✅ | ⭕️ | ✅ | ✅ | ✅ | ✅ |
 | [QiaoPengjun5162](https://github.com/IntensiveCoLearning/starknet/blob/main/QiaoPengjun5162.md) | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ |
 | [MartinYeung5](https://github.com/IntensiveCoLearning/starknet/blob/main/MartinYeung5.md) | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ⭕️ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ⭕️ | ✅ | ✅ |
@@ -116,8 +116,9 @@ Telegram：https://t.me/LXDAO/11973
 | [phipupt](https://github.com/IntensiveCoLearning/starknet/blob/main/phipupt.md) | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ |
 | [wodeche](https://github.com/IntensiveCoLearning/starknet/blob/main/wodeche.md) | ⭕️ | ⭕️ | ❌ | | | | | | | | | | | | | | | | | | |
 | [dethan3](https://github.com/IntensiveCoLearning/starknet/blob/main/dethan3.md) | ✅ | ⭕️ | ✅ | ⭕️ | ❌ | | | | | | | | | | | | | | | | |
-| [linghuccc](https://github.com/IntensiveCoLearning/starknet/blob/main/linghuccc.md) | ✅ | ⭕️ | ⭕️ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ⭕️ | ✅ |   | ⭕️ | ⭕️ | ❌ | | | | | |
+| [linghuccc](https://github.com/IntensiveCoLearning/starknet/blob/main/linghuccc.md) | ✅ | ⭕️ | ⭕️ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ⭕️ | ✅ | ⭕️ |   | ⭕️ | ❌ | | | | | |
 <!-- END_COMMIT_TABLE -->
+
 
 
 
